@@ -73,3 +73,7 @@ NFT 민팅 실패 시 HBUB는 자동 소각되며, 공급량이 점차 감소하
 ---
 
 > "Burn the bread. Raise the stake. 🍞🔥"
+
+## 📜 License
+This project is licensed under the [MIT License](./LICENSE).
+
