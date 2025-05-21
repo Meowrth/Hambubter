@@ -49,8 +49,8 @@ We are the anonymous Breadsmiths.
 If you believe in the art of hamster baking, join us on the channels below.
 
 - 🐦 [Twitter](https://twitter.com/hambubter)  
-- 💬 Discord: [https://discord.gg/32HWdufF](https://discord.gg/32HWdufF) 
-- 🧑‍💻 GitHub: [https://github.com/hambubter](https://github.com/hambubter)  
+- 💬 [Discord](https://discord.gg/32HWdufF) 
+- 🧑‍💻 [GitHub](https://github.com/hambubter)  
 - 📄 [Whitepaper](https://hambubter.com/whitepaper.html)
 
 ---
