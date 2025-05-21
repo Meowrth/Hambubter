@@ -1,74 +1,73 @@
-
 # 🍔 Hambubter ($HBUB) - Too Hungry to Stop
 
-Hambubter는 햄스터, 버터, 빵이 만나 탄생한 전설적인 밈코인입니다.  
-이 프로젝트는 단순한 유머를 넘어 **식탐의 철학**과 **블록체인 기술**이 결합된 커뮤니티 중심의 Web3 실험입니다.
+Hambubter is the legendary meme coin born from the fusion of hamster, butter, and bread.  
+This project goes beyond mere humor — it’s a community-driven Web3 experiment where **the philosophy of hunger** meets **blockchain technology**.
 
-> **"우리는 굽습니다. 하루 3번, 때로는 33번."**
-
----
-
-## 🧠 개요
-
-전설에 따르면 Hambubter 종족은 **버터 부족 사태** 이후 블록체인 위에 새로운 굽기의 왕국을 세웠습니다.  
-이제 우리는 HBUB이라는 연료로 움직이며, 식탐 DAO의 이름 아래 굽고, 민트하고, 소각합니다.
+> **"We bake. Three times a day, sometimes thirty-three."**
 
 ---
 
-## 🔥 HBUB 토큰
+## 🧠 Overview
 
-- **토큰명**: Hambubter
-- **심볼**: $HBUB
-- **총 발행량**: 100,000,000,000 HBUB
+According to legend, the Hambubter tribe founded a new kingdom of baking on the blockchain following the **Great Butter Shortage**.  
+Fueled by HBUB, we bake, mint, and burn under the name of the Appetite DAO.
+
+---
+
+## 🔥 HBUB Token
+
+- **Name**: Hambubter  
+- **Symbol**: $HBUB  
+- **Total Supply**: 100,000,000,000 HBUB
 
 ### 🧩 Utility
-- NFT 민팅 재료로 사용
-- 굽기 실패 시 자동 소각 (Burn)
-- DAO 투표 참여 (예: 어떤 빵을 굽을지)
-- 커뮤니티 이벤트 참여
+- Used as an ingredient for NFT minting  
+- Automatically burned upon failed baking attempts  
+- Voting power in the DAO (e.g., what kind of bread to bake)  
+- Entry to community-driven events
 
 ### 🔥 Burn Mechanism
-모든 재료는 굽지 않으면 썩습니다.  
-NFT 민팅 실패 시 HBUB는 자동 소각되며, 공급량이 점차 감소하게 됩니다.
+All ingredients rot if left unbaked.  
+Failed NFT mints result in automatic burning of HBUB, gradually reducing total supply and preserving scarcity.
 
 ---
 
 ## 🗺️ Roadmap
 
-| 분기 | 목표 |
-|------|------|
-| Q1   | HBUB 토큰 배포, 공식 웹사이트 오픈 |
-| Q2   | NFT 출시, 글로벌 밈 대회 개최 |
-| Q3   | 밈 게임 개발, DAO 가동 시작 |
-| Q4   | 햄붑터버거 굿즈 협업, 커뮤니티 확장 |
+| Quarter | Goal |
+|---------|------|
+| Q1      | Launch HBUB token and official website |
+| Q2      | Release unique NFTs and host a global meme contest |
+| Q3      | Begin development of meme-themed game and activate DAO |
+| Q4      | Collaborate on official Hambubter burger merchandise to expand brand and community reach |
 
 ---
 
 ## 👥 Team & Community
 
-우리는 익명의 빵쟁이들입니다.  
-햄스터의 굽기를 믿는다면, 아래 채널에서 함께해주세요.
+We are the anonymous Breadsmiths.  
+If you believe in the art of hamster baking, join us on the channels below.
 
-- 🐦 [Twitter](https://twitter.com/MarsMeowrth)
-- 💬 Discord: Coming soon
-- 🧑‍💻 GitHub: [https://github.com/Meowrth/meowrth-homepage](https://github.com/Meowrth/meowrth-homepage)
+- 🐦 [Twitter](https://twitter.com/hambubter)  
+- 💬 Discord: [https://discord.gg/32HWdufF](https://discord.gg/32HWdufF) 
+- 🧑‍💻 GitHub: [https://github.com/hambubter](https://github.com/hambubter)  
 - 📄 [Whitepaper](https://hambubter.com/whitepaper.html)
 
 ---
 
-## 🧈 참여 방법
+## 🧈 How to Participate
 
-1. HBUB 토큰 구매 또는 에어드롭 참여
-2. NFT 민팅 시도 및 굽기 도전
-3. DAO에 의견 제출
-4. 커뮤니티 굽기 대회 참가
+1. Buy $HBUB or join an airdrop  
+2. Try minting NFTs and start baking  
+3. Submit your voice in the DAO  
+4. Join our meme baking contests
 
 ---
 
-## 📜 라이선스
+## 📜 License
 
-본 프로젝트는 커뮤니티 중심의 공공 자산입니다.  
-오픈소스로 참여하되, 굽는 데 진심인 자만 환영합니다.
+This is a community-driven public asset.  
+Open source is welcome — but only for those who bake with heart.
 
 ---
 
@@ -76,4 +75,3 @@ NFT 민팅 실패 시 HBUB는 자동 소각되며, 공급량이 점차 감소하
 
 ## 📜 License
 This project is licensed under the [MIT License](./LICENSE).
-
