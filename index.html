@@ -14,14 +14,14 @@
   <!-- Open Graph for Facebook, Discord, etc. -->
   <meta property="og:title" content="Hambubter [$HBUB] - Too Hungry to Stop" />
   <meta property="og:description" content="Hambubter is the meme coin for those who snack, hodl, and conquer. Built on Solana, fueled by hunger." />
-  <meta property="og:type" content="https://www.hambubter.com" />
-  <meta property="og:url" content="https://www.hambubter.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.hambubter.com/" />
   <meta property="og:image" content="https://www.hambubter.com/images/og-image.png" />
   <meta property="og:image:alt" content="Hambubter Hamster Meme Coin Logo" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@hambubter" />
+  <meta name="twitter:site" content="@YourHambubterX" />
   <meta name="twitter:title" content="Hambubter [$HBUB] - Too Hungry to Stop" />
   <meta name="twitter:description" content="Hambubter is a Solana-based meme coin with a hunger for greatness. Join the $HBUB movement now!" />
   <meta name="twitter:image" content="https://www.hambubter.com/images/og-image.png" />
@@ -130,10 +130,102 @@
       right: 0.5rem;
     }
   }
+.fixed-btn-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.fixed-btn-wrapper button {
+  width: 120px;
+  height: 40px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fixed-btn-wrapper button:hover {
+  background-color: #555;
+}
+
+.fixed-top-btn {
+  background-color: #007BFF;
+}
+
+.fixed-top-btn:hover {
+  background-color: #0056b3;
+}
+.fixed-btn-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.fixed-btn-wrapper button {
+  width: 120px;
+  height: 40px;
+}
 </style>
 </head>
-  <section class="hero">
-<button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">View Whitepaper</button>
+<body>
+  <!-- 상단 메뉴 -->
+  <header style="background-color: #222; padding: 10px 20px;">
+    <nav style="display: flex; gap: 20px; justify-content: center;" aria-label="Main navigation">
+      <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
+      <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
+      <a href="#tokenomics" style="color: white; text-decoration: none;">Tokenomics</a>
+      <a href="#metadata" style="color: white; text-decoration: none;">Metadata</a>
+      <a href="#community" style="color: white; text-decoration: none;">Community</a>
+      <a href="#team" style="color: white; text-decoration: none;">Team</a>
+    </nav>
+  </header>
+
+<section class="hero">
+ <div class="fixed-btn-wrapper">
+  <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
+  <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
+</div>
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<style>
+  .fixed-btn-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background-color: #555;
+  }
+</style>
   <h1>Too Hungry to Stop</h1>
 <p class="highlight">"The unstoppable appetite of Hambubter [$HBUB]!"</p>
 <p class="highlight">"A cute and crazy meme revolution born from hamster, butter, and bread!"</p>
@@ -284,6 +376,31 @@
     <li>Total Supply: <strong>100,000,000,000 HBUB</strong></li>
     <li>Chain: <strong>Solana</strong></li>
   </ul>
+
+  <h3>📦 On-Chain Metadata</h3>
+  <ul>
+    <li><strong>Token Name</strong>: Hambubter</li>
+    <li><strong>Symbol</strong>: HBUB</li>
+    <li><strong>Mint Address</strong>: <code>Hb3rPuZv3ykmVpEwgBxt1wwHrwZHY8Z8NTndtBHFxTuB</code></li>
+    <li><strong>Update Authority</strong>: <code>DPQp7jFMpBaEAgH7pgvZMkd2WKwW2tenyDpxLjPXqAxT</code></li>
+    <li><strong>Token Standard</strong>: SPL / Metaplex v2</li>
+    <li><strong>Primary Sale</strong>: Not happened</li>
+    <li><strong>Mutable</strong>: No (Immutable)</li>
+    <li><strong>Metadata URI</strong>:  
+      <a href="https://ipfs.io/ipfs/QmYspegjZfYvqEZ1D8N11VSjBHKa7pmoWoZDZejFfUYsAv" target="_blank">
+        https://ipfs.io/ipfs/QmYspegjZfYvqEZ1D8N11VSjBHKa7pmoWoZDZejFfUYsAv
+      </a>
+    </li>
+  </ul>
+
+  <p>🎯 This means the HBUB token has been <strong>officially minted and locked</strong> on Solana, and its metadata is stored immutably on IPFS for transparency.</p>
+
+  <p>🔗 <strong>On-Chain Verified</strong><br>
+    HBUB is already minted on Solana with metadata stored on IPFS:<br>
+    📄 <a href="https://ipfs.io/ipfs/QmYspegjZfYvqEZ1D8N11VSjBHKa7pmoWoZDZejFfUYsAv" target="_blank">
+      Token Metadata
+    </a>
+  </p>
 </section>
 
 <section class="section" id="community">
@@ -360,8 +477,8 @@
   </div>
 </section>
 
-  <footer>
-    <p>&copy; 2025 Hambubter. All rights buttered.</p>
-  </footer>
+<footer>
+  &copy; 2025 Hambubter Team. All rights reserved. | Built on Solana with ❤️
+</footer>
 </body>
 </html>
