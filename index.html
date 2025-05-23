@@ -42,6 +42,11 @@
       color: #5e3200;
     }
     header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    }
+    header {
       background-color: #fbdc8e;
       padding: 1rem 2rem;
       display: flex;
@@ -121,7 +126,11 @@
       right: 0.75rem;
     }
   }
-
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
   @media (max-width: 480px) {
     .fixed-whitepaper-btn {
       font-size: 0.8rem;
@@ -140,6 +149,20 @@
   z-index: 1000;
 }
 
+.fixed-btn-wrapper .btn {
+  width: 120px;
+  height: 40px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.fixed-btn-wrapper .btn:hover {
+  background-color: #555;
+}
 .fixed-btn-wrapper button {
   width: 120px;
   height: 40px;
@@ -177,6 +200,13 @@
   width: 120px;
   height: 40px;
 }
+[id]::before {
+  content: "";
+  display: block;
+  height: 80px; /* 메뉴 높이에 따라 조정 */
+  margin-top: -80px;
+  visibility: hidden;
+}
 </style>
 </head>
 <body>
@@ -202,6 +232,16 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
+<script>
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 <style>
   .fixed-btn-wrapper {
     position: fixed;
@@ -222,15 +262,15 @@
     font-weight: bold;
   }
 
-  .btn:hover {
-    background-color: #555;
-  }
+   .btn:hover {
+    transform: scale(1.05);
+    background-color: #ff9933;
+   }
 </style>
-  <h1>Too Hungry to Stop</h1>
+  <h1>Too Hungry to Stop</h1> 
 <p class="highlight">"The unstoppable appetite of Hambubter [$HBUB]!"</p>
 <p class="highlight">"A cute and crazy meme revolution born from hamster, butter, and bread!"</p>
   </section>
-
 <section class="section" id="about">
   <h2>What is Hambubter?</h2>
   <p><strong>Hambubter [$HBUB]</strong> is a one-of-a-kind meme coin born from the fusion of three irresistible forces: Hamster, Butter, and Bun.</p>
@@ -377,7 +417,7 @@
     <li>Chain: <strong>Solana</strong></li>
   </ul>
 
-  <h3>📦 On-Chain Metadata</h3>
+  <h3 id="metadata">📦 On-Chain Metadata</h3>
   <ul>
     <li><strong>Token Name</strong>: Hambubter</li>
     <li><strong>Symbol</strong>: HBUB</li>
