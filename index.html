@@ -32,46 +32,79 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background-color: #fff8ec;
+      font-family: "Nunito", "Arial", sans-serif;
+      background: #fff8ef;
+      padding: 80px 20px 40px; /* 상단 메뉴 높이만큼 패딩 추가 */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       color: #444;
       line-height: 1.6;
     }
+
     h1, h2, h3 {
       font-family: 'Fredoka One', cursive;
       color: #5e3200;
     }
+
     header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      z-index: 1000;
     }
-    header {
-      background-color: #fbdc8e;
-      padding: 1rem 2rem;
+
+ nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
     }
+
     nav a {
-      margin: 0 1rem;
+      color: white;
       text-decoration: none;
-      color: #5e3200;
       font-weight: 600;
     }
-    .hero {
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+/* 히어로 섹션 스타일 */
+.hero {
+      background: linear-gradient(to right, #f9d29d, #ffd7b5);
       text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(to bottom, #fff2cc, #ffe1a8);
+      padding: 100px 20px 80px;
+      font-family: 'Segoe UI', sans-serif;
+      color: #222;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 60px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+    .highlight {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 1rem auto;
+      box-sizing: border-box;
+      color: #ff944d;
+      font-weight: 700;
     }
-    .hero p {
-      font-size: 1.2rem;
-      color: #804000;
-    }
+
     .section {
       padding: 3rem 2rem;
       max-width: 800px;
@@ -186,15 +219,6 @@
 .fixed-top-btn:hover {
   background-color: #0056b3;
 }
-.fixed-btn-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
 
 .fixed-btn-wrapper button {
   width: 120px;
@@ -207,41 +231,151 @@
   margin-top: -80px;
   visibility: hidden;
 }
+    section {
+      max-width: 900px;
+      width: 100%;
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #3a2c00;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .tribe-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .member-card {
+      flex: 1 1 250px;
+      background: #fff5dc;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .dialogue-container {
+      width: 100%;
+    }
+
+    .dialogue-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      gap: 15px;
+    }
+    .dialogue-row.left { flex-direction: row; }
+    .dialogue-row.right { flex-direction: row-reverse; }
+
+    .character-image {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    .bubble-content {
+      max-width: 70%;
+      position: relative;
+      border-radius: 20px;
+      padding: 14px 20px;
+      font-size: 16px;
+      line-height: 1.4;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 3px solid;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    .bubble-content.left::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -15px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: #fff4cc;
+      border-width: 10px 15px 10px 0;
+    }
+
+    .bubble-content.right::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: -15px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-left-color: #dce3f7;
+      border-width: 10px 0 10px 15px;
+    }
+
+    .character-name {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 18px;
+      user-select: none;
+    }
+
+    .bubble-족장 { background-color: #fff4cc; border-color: #fbb03b; color: #6b4d00; }
+    .bubble-의사 { background-color: #e5fff9; border-color: #5bb4a1; color: #216b5b; }
+    .bubble-장군 { background-color: #dce3f7; border-color: #334d80; color: #1a2a4d; }
+    .bubble-해적 { background-color: #ffe5e5; border-color: #d82c2c; color: #6b0a0a; }
+    .bubble-마법사 { background-color: #f2e5ff; border-color: #8e44ad; color: #4a1d75; }
+    .bubble-부족남성 { background-color: #ffe8d0; border-color: #c25c00; color: #6b3c00; }
+    .bubble-부족여성 { background-color: #ffeaf0; border-color: #e67ea1; color: #a0415a; }
+    .bubble-부족어린이 { background-color: #fff0d6; border-color: #d9b15e; color: #7a5a20; }
+
+    @media (max-width: 600px) {
+      .character-image { width: 70px; height: 70px; }
+      .bubble-content { font-size: 14px; max-width: 80%; }
+      .character-name { font-size: 16px; }
+    }
 </style>
 </head>
-<body>
-  <!-- 상단 메뉴 -->
-  <header style="background-color: #222; padding: 10px 20px;">
-    <nav style="display: flex; gap: 20px; justify-content: center;" aria-label="Main navigation">
-      <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
-      <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
-      <a href="#tokenomics" style="color: white; text-decoration: none;">Tokenomics</a>
-      <a href="#metadata" style="color: white; text-decoration: none;">Metadata</a>
-      <a href="#community" style="color: white; text-decoration: none;">Community</a>
-      <a href="#team" style="color: white; text-decoration: none;">Team</a>
-    </nav>
-  </header>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+<body>
+<!-- 상단 메뉴 -->
+<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: #222; z-index: 1000;">
+  <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0;" aria-label="Main navigation">
+    <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
+    <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
+    <a href="#tokenomics" style="color: white; text-decoration: none;">Tokenomics</a>
+    <a href="#metadata" style="color: white; text-decoration: none;">Metadata</a>
+    <a href="#community" style="color: white; text-decoration: none;">Community</a>
+    <a href="#team" style="color: white; text-decoration: none;">Team</a>
+  </nav>
+</header>
+
+<!-- 고정 버튼 -->
 <section class="hero">
- <div class="fixed-btn-wrapper">
-  <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
-  <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
-</div>
+  <div class="fixed-btn-wrapper">
+    <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
+    <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
+  </div>
+</section>
+
+<!-- 스크립트 -->
 <script>
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
-<script>
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-</script>
+
+<!-- 스타일 -->
 <style>
   .fixed-btn-wrapper {
     position: fixed;
@@ -250,27 +384,36 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 1000;
   }
 
   .btn {
-    background-color: #222;
-    color: #fff;
+    padding: 10px 16px;
+    font-size: 14px;
     border: none;
-    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
 
-   .btn:hover {
-    transform: scale(1.05);
-    background-color: #ff9933;
-   }
+  .fixed-whitepaper-btn {
+    background-color: #ffc107;
+    color: #000;
+  }
+
+  .fixed-top-btn {
+    background-color: #444;
+    color: #fff;
+  }
 </style>
   <h1>Too Hungry to Stop</h1> 
-<p class="highlight">"The unstoppable appetite of Hambubter [$HBUB]!"</p>
-<p class="highlight">"A cute and crazy meme revolution born from hamster, butter, and bread!"</p>
-  </section>
+  <p><strong>"The unstoppable appetite of Hambubter [$HBUB]!"</strong></p>
+  <p><strong>"A cute and crazy meme revolution born from hamster, butter, and bread!"</strong></p>
+  <div class="fixed-btn-wrapper">
+    <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
+    <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
+ </div>
+
 <section class="section" id="about">
   <h2>What is Hambubter?</h2>
   <p><strong>Hambubter [$HBUB]</strong> is a one-of-a-kind meme coin born from the fusion of three irresistible forces: Hamster, Butter, and Bun.</p>
@@ -432,6 +575,22 @@
       </a>
     </li>
   </ul>
+ <ul>
+  <h2 id="roadmap">Roadmap</h2>
+
+  <h3 style="color:#007bff; margin-top:1.5rem;">DEX Listing Planned</h3>
+  <ul style="list-style-type: disc; padding-left: 1.5rem; line-height:1.6;">
+    <li>Token listing planned on major decentralized exchanges (DEX)</li>
+    <li>Providing liquidity pools to activate the market</li>
+    <li>Building and engaging the initial community</li>
+  </ul>
+
+  <h3 style="color:#dc3545; margin-top:1.5rem;">CEX Listing Planned</h3>
+  <ul style="list-style-type: disc; padding-left: 1.5rem; line-height:1.6;">
+    <li>Preparing collaboration with centralized exchanges (CEX)</li>
+    <li>Proceeding with listing reviews and procedures</li>
+    <li>Expanding user base through improved accessibility and liquidity</li>
+  </ul>
 
   <p>🎯 This means the HBUB token has been <strong>officially minted and locked</strong> on Solana, and its metadata is stored immutably on IPFS for transparency.</p>
 
@@ -493,6 +652,146 @@
   </p>
 
 </section>
+<body>
+<section class="section" id="tribe-members">
+  <h2>Members of the Hambubter Tribe</h2>
+  <p>
+The Hambubter tribe is a unique and vibrant community where every member plays an important role. From the wise chief Kobi to the brave General Alex, and the thoughtful doctor Mina, each individual brings their own personality and strength to the tribe. The mysterious wizard Celine wields ancient butter magic, while the adventurous pirate Jack sets out to find treasures beyond the seas. Ordinary tribe members like Taro, Selemie, and little Ammu carry on the spirit of the tribe with warmth and kindness.
+  </p>
+  </section>
+<body>
+<section class="section" id="Introductions">
+  <h2>Hambubter Tribe Detailed Character Introductions</h2>
+<div class="tribe-grid">
+
+<div class="member-card">
+<h3><strong>1.Chief Kobi</strong><br/></h3>
+The wise and respected leader of the Hambubter tribe, Kobi embodies the spirit of buttery harmony and strength. With a calm yet powerful presence, Kobi guides the tribe through challenges and inspires everyone to uphold their buttery traditions.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>2.General Alex</strong><br/></h3>
+A fierce and loyal warrior, General Alex commands the tribe’s defenses with unwavering courage. Known for rallying the troops with his fiery speeches, Alex embodies the tribe’s relentless spirit and determination to protect their buttery homeland.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>3.Doctor Mina</strong><br/></h3>
+The tribe’s gentle healer, Mina nurtures both body and mind. With her deep knowledge of herbal remedies and care, she ensures the tribe remains healthy and strong, reminding everyone that true power comes from well-being.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>4.Wizard Celine</strong><br/></h3>
+A mysterious mage wielding ancient butter magic, Celine is the tribe’s source of mystical power. Her spells are said to unlock hidden strength and blessings, guiding the tribe with magical wisdom in times of need.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>5.Pirate Jack</strong><br/></h3>
+The adventurous soul of the tribe, Pirate Jack sails across endless seas in search of buttery treasures beyond imagination. His boldness and love for exploration inspire the tribe to dream big and embrace the unknown.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>6.Taro</strong><br/></h3>
+A hardworking hunter, Taro’s skill and dedication bring food and resources for the tribe. Though sometimes wishing for more butter, his steady presence and loyalty are vital to the tribe’s daily life.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>7.Selemie</strong><br/></h3>
+Selemie brings warmth and kindness to the Hambubter tribe. She is known for her gentle nature and ability to lift spirits, reminding everyone of the simple joys found in their buttery home.
+  </p>
+</div>
+<div class="member-card">
+<h3><strong>8.Ammu</strong><br/></h3>
+The youngest member of the tribe, Ammu is full of curiosity and endless energy. With an innocent love for butter’s scent and flavor, Ammu’s laughter and playfulness bring joy to all.
+  </p>
+</div>
+    </div>
+  </div>
+</section>
+
+<section>
+<body>
+<section class="section"">
+  <div class="dialogue-container">
+
+    <div class="dialogue-row left">
+      <img src="https://via.placeholder.com/90?text=Chief" alt="Kobi" class="character-image" />
+      <div class="bubble-content bubble-족장 left">
+        <span class="character-name">[Kobi]</span><br/>
+        Today was a deeply touching day filled with buttery goodness.  
+        I hope our tribe never forgets this power as we move forward.
+      </div>
+    </div>
+
+    <div class="dialogue-row right">
+      <img src="https://via.placeholder.com/90?text=General" alt="Alex" class="character-image" />
+      <div class="bubble-content bubble-장군 right">
+        <span class="character-name">[Alex]</span><br/>
+        Everyone, get your lines ready!  
+        Our buttery spirit will never back down!  
+        Hold strong and claim victory till the end!
+      </div>
+    </div>
+
+    <div class="dialogue-row left">
+      <img src="https://via.placeholder.com/90?text=Doctor" alt="Mina" class="character-image" />
+      <div class="bubble-content bubble-의사 left">
+        <span class="character-name">[Mina]</span><br/>
+        Even the deepest buttery feelings inside the heart  
+        require careful healing.  
+        A healthy mind is the true source of strength.
+      </div>
+    </div>
+
+    <div class="dialogue-row right">
+      <img src="https://via.placeholder.com/90?text=Wizard" alt="Celine" class="character-image" />
+      <div class="bubble-content bubble-마법사 right">
+        <span class="character-name">[Celine]</span><br/>
+        Ancient butter magic,  
+        break free from your deep seal,  
+        and unleash your power upon this world!
+      </div>
+    </div>
+
+    <div class="dialogue-row left">
+      <img src="https://via.placeholder.com/90?text=Pirate" alt="Jack" class="character-image" />
+      <div class="bubble-content bubble-해적 left">
+        <span class="character-name">[Jack]</span><br/>
+        Let's set sail across endless seas  
+        in search of butter more precious than treasure!
+      </div>
+    </div>
+
+    <div class="dialogue-row right">
+      <img src="https://via.placeholder.com/90?text=Tribe+M" alt="Taro" class="character-image" />
+      <div class="bubble-content bubble-부족남성 right">
+        <span class="character-name">[Taro]</span><br/>
+        The hunt went smoothly.  
+        But if only we had butter, it would have been perfect...
+      </div>
+    </div>
+
+    <div class="dialogue-row left">
+      <img src="https://via.placeholder.com/90?text=Tribe+F" alt="Selemie" class="character-image" />
+      <div class="bubble-content bubble-부족여성 left">
+        <span class="character-name">[Selemie]</span><br/>
+        The buttery breeze gently embraces us once again today.  
+        Days like this truly bring happiness.
+      </div>
+    </div>
+
+    <div class="dialogue-row right">
+      <img src="https://via.placeholder.com/90?text=Tribe+Child" alt="Ammu" class="character-image" />
+      <div class="bubble-content bubble-부족어린이 right">
+        <span class="character-name">[Ammu]</span><br/>
+        I love the smell of butter so much,  
+        I can't help but sniff it all the time!  
+        It's just irresistible~!
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
 <section class="section" id="official" style="font-size:16px;">
   <h2>Official Channels</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 12px;">
