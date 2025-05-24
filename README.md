@@ -1,4 +1,4 @@
-# 🍔 Hambubter ($HBUB) - Too Hungry to Stop
+# 🐹 Hambubter ($HBUB) - Too Hungry to Stop
 
 Hambubter is the legendary meme coin born from the fusion of hamster, butter, and bread.  
 This project goes beyond mere humor — it’s a community-driven Web3 experiment where **the philosophy of hunger** meets **blockchain technology**.
