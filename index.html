@@ -34,7 +34,7 @@
       margin: 0;
       font-family: "Nunito", "Arial", sans-serif;
       background: #fff8ef;
-      padding: 80px 20px 40px; /* 상단 메뉴 높이만큼 패딩 추가 */
+      padding: 80px 20px 40px; /* extra padding for the height of the top menu */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -73,7 +73,7 @@
       text-decoration: underline;
     }
 
-/* 히어로 섹션 스타일 */
+/* Hero Section Styles */
 .hero {
       background: linear-gradient(to right, #f9d29d, #ffd7b5);
       text-align: center;
@@ -230,7 +230,7 @@
 [id]::before {
   content: "";
   display: block;
-  height: 80px; /* 메뉴 높이에 따라 조정 */
+  height: 80px; /* Adjust according to menu height */
   margin-top: -80px;
   visibility: hidden;
 }
@@ -364,7 +364,7 @@
   </nav>
 </header>
 
-<!-- 고정 버튼 -->
+<!-- Fixed Button -->
 <section>
   <div class="fixed-btn-wrapper">
     <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
@@ -372,25 +372,25 @@
   </div>
 </section>
   <script>
-    // 백서 보기 버튼 (페이지 내 버튼)
+    // Whitepaper View Button (button within the page)
     document.getElementById('openWhitepaperBtn').addEventListener('click', function() {
       window.location.href = 'Hambubter백서.html';
     });
 
-    // Top 버튼 기능
+    // Scroll to Top button functionality
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
-<!-- 스크립트 -->
+<!-- Script -->
 <script>
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
 
-<!-- 스타일 -->
+<!-- Styles -->
 <style>
   .fixed-btn-wrapper {
     position: fixed;
@@ -421,9 +421,24 @@
     color: #fff;
   }
 </style>
-  <h1>Too Hungry to Stop</h1> 
-  <p><strong>"The unstoppable appetite of Hambubter [$HBUB]!"</strong></p>
-  <p><strong>"A cute and crazy meme revolution born from hamster, butter, and bread!"</strong></p>
+<section style="text-align: center; padding: 1.5rem; background-color: #fff8fb; border-radius: 16px;">
+  <h1 style="font-size: 1.8em; color: #ff69b4; margin-bottom: 0.5rem;">Too Hungry to Stop</h1>
+  <p style="font-size: 1em; font-weight: bold; color: #333; margin: 0.3rem 0;">
+    "The unstoppable appetite of Hambubter [$HBUB]!"
+  </p>
+  <p style="font-size: 0.95em; color: #555; margin: 0.3rem 0;">
+    A cute and crazy meme revolution born from <strong>hamster</strong>, <strong>butter</strong>, and <strong>bread</strong>! 🐹🧈🍞
+  </p>
+
+  <div style="margin-top: 1.5rem;">
+    <h2 style="font-size: 1.5em; color: #ff69b4; margin-bottom: 0.5rem;">HBUB Power! Meme Power! Your Power! 🔥</h2>
+    <p style="font-size: 0.95em; color: #333; margin: 0;">
+      The cutest and most powerful meme coin is waiting for 
+      <strong style="color: #ff4500;">your power</strong>.<br>
+      Join the <strong style="color: #6a5acd;">HBUB world</strong> where fun and community collide!
+    </p>
+  </div>
+</section>
   <div class="fixed-btn-wrapper">
     <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
     <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
@@ -564,7 +579,7 @@
     all designed to promote sustainable growth and price stability.
   </p>
   <p>
-    Hambubter [$HBUB] strikes a balance between fun and functionality — powered by a strong community and innovative tokenomics, it is poised to secure a unique place in the future crypto market.
+    Hambubter [$HBUB] strikes a balance between fun and functionality - powered by a strong community and innovative tokenomics, it is poised to secure a unique place in the future crypto market.
   </p>
 
   <ul>
