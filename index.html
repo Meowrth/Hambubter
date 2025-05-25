@@ -825,7 +825,7 @@ Oooo! Oooo! Oooo! Oooo!"
 </body>
 
 <section class="section" id="official">
-  <h2>Official Channels</h2>
+  <h3>Official Channels</h3>
   <div class="official-links">
     <div class="official-item">
       <strong>Website:</strong> <a href="https://hbubcoin.com" target="_blank" rel="noopener noreferrer">HBUBCoin</a>
@@ -843,6 +843,24 @@ Oooo! Oooo! Oooo! Oooo!"
       <strong>Discord:</strong> <a href="https://discord.gg/32HWdufF" target="_blank" rel="noopener noreferrer">Join our Discord</a>
     </div>
   </div>
+  <h3>Donate to Support</h3>
+  <p><strong>If you love Hambubter [$HBUB], consider donating to support the project!</strong></p>
+  <p style="display: flex; align-items: center; gap: 10px;">
+    SOL Donation Address: 
+    <code id="sol-address" style="user-select: all;">CP18zeZVzMAtnRgBSwEfUv7SvDc7543nJH14LBXB15rA</code>
+  <button id="copy-btn" type="button" style="padding: 4px 12px; cursor: pointer;">Copy</button>
+</p>
+
+<script>
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    const address = document.getElementById('sol-address').textContent;
+    navigator.clipboard.writeText(address).then(() => {
+      alert('Donation address copied to clipboard!');
+    }).catch(() => {
+      alert('Failed to copy. Please copy manually.');
+    });
+  });
+</script>
 </section>
   <p>&copy; 2025 Hambubter Team. All rights reserved. | Built on Solana with ❤️</p>
 
