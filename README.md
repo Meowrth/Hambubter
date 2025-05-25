@@ -41,6 +41,8 @@ Failed NFT mints result in automatic burning of HBUB, gradually reducing total s
 | Q3      | Begin development of meme-themed game and activate DAO |
 | Q4      | Collaborate on official Hambubter burger merchandise to expand brand and community reach |
 
+Future Vision & Sustainability
+At Hambubter, our journey doesn’t end here.
 ---
 
 ## 👥 Team & Community
