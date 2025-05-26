@@ -384,17 +384,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <body>
-<!-- 상단 메뉴 -->
 <header style="position: fixed; top: 0; left: 0; width: 100%; background-color: #222; z-index: 1000;">
-  <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0;" aria-label="Main navigation">
-    <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
-    <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
-    <a href="#tokenomics" style="color: white; text-decoration: none;">Tokenomics</a>
-    <a href="#community" style="color: white; text-decoration: none;">Community</a>
-    <a href="#team" style="color: white; text-decoration: none;">Team</a>
-    <a href="https://hambubter.netlify.app/whitepaper.html" style="color: white; text-decoration: none;">Whitepaper</a>
+  <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0; align-items: center;" aria-label="Main navigation">
+    <!-- 햄버거 버튼 -->
+    <button id="menu-toggle" 
+            style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
+      &#9776;
+    </button>
+
+    <!-- 메뉴 리스트 -->
+    <div id="menu-links" style="display: flex; gap: 20px;">
+      <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
+      <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
+      <a href="#tokenomics" style="color: white; text-decoration: none;">Tokenomics</a>
+      <a href="#community" style="color: white; text-decoration: none;">Community</a>
+      <a href="#team" style="color: white; text-decoration: none;">Team</a>
+      <a href="https://hambubter.netlify.app/whitepaper.html" style="color: white; text-decoration: none;">Whitepaper</a>
+    </div>
   </nav>
 </header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuLinks = document.getElementById('menu-links');
+
+  // 화면 너비 체크 후 햄버거 버튼 표시 / 메뉴 토글 함수
+  function checkWidth() {
+    if (window.innerWidth <= 768) {
+      menuToggle.style.display = 'block';
+      menuLinks.style.display = 'none'; // 처음엔 숨김
+    } else {
+      menuToggle.style.display = 'none';
+      menuLinks.style.display = 'flex'; // 넓으면 메뉴 항상 보임
+    }
+  }
+
+  menuToggle.addEventListener('click', () => {
+    if (menuLinks.style.display === 'none') {
+      menuLinks.style.display = 'flex';
+      menuLinks.style.flexDirection = 'column'; // 세로 정렬
+      menuLinks.style.backgroundColor = '#222';
+      menuLinks.style.position = 'absolute';
+      menuLinks.style.top = '50px';
+      menuLinks.style.left = '0';
+      menuLinks.style.width = '100%';
+      menuLinks.style.padding = '10px 0';
+    } else {
+      menuLinks.style.display = 'none';
+    }
+  });
+
+  window.addEventListener('resize', checkWidth);
+  window.addEventListener('load', checkWidth);
+</script>
 
 <!-- Fixed Button -->
 <section>
