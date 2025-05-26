@@ -2,34 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Hambubter - Too Hungry to Stop</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Basic Meta Tags -->
   <meta name="description" content="Hambubter [$HBUB] - A meme coin powered by unstoppable hunger. Join the hamster revolution on Solana!" />
   <meta name="keywords" content="Hambubter, HBUB, meme coin, Solana, crypto, hamster, coin, blockchain, decentralized, meme" />
   <meta name="author" content="Hambubter Team" />
-
-  <!-- Open Graph for Facebook, Discord, etc. -->
   <meta property="og:title" content="Hambubter [$HBUB] - Too Hungry to Stop" />
   <meta property="og:description" content="Hambubter is the meme coin for those who snack, hodl, and conquer. Built on Solana, fueled by hunger." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www..hbubcoin.com/" />
-  <meta property="og:image" content="https://www..hbubcoin.com/images/og-image.png" />
+  <meta property="og:url" content="https://www.hbubcoin.com/" />
+  <meta property="og:image" content="https://www.hbubcoin.com/images/og-image.png" />
   <meta property="og:image:alt" content="Hambubter Hamster Meme Coin Logo" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@YourHambubterX" />
+  <meta name="twitter:site" content="@Hambubter_coin" />
   <meta name="twitter:title" content="Hambubter [$HBUB] - Too Hungry to Stop" />
   <meta name="twitter:description" content="Hambubter is a Solana-based meme coin with a hunger for greatness. Join the $HBUB movement now!" />
   <meta name="twitter:image" content="https://www.hbubcoin.com/images/og-image.png" />
-
-  <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -73,6 +64,17 @@
     nav a:hover {
       text-decoration: underline;
     }
+
+nav .menu-open {
+  display: flex !important;
+  flex-direction: column;
+  background-color: #222;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
 
 /* Hero Section Styles */
 .hero {
@@ -349,7 +351,6 @@
       .character-name { font-size: 16px; }
     }
 
-/* 모바일 화면용 */
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -386,13 +387,12 @@
 <body>
 <header style="position: fixed; top: 0; left: 0; width: 100%; background-color: #222; z-index: 1000;">
   <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0; align-items: center;" aria-label="Main navigation">
-    <!-- 햄버거 버튼 -->
+
     <button id="menu-toggle" 
             style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
       &#9776;
     </button>
 
-    <!-- 메뉴 리스트 -->
     <div id="menu-links" style="display: flex; gap: 20px;">
       <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
       <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
@@ -405,44 +405,51 @@
 </header>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuLinks = document.getElementById('menu-links');
+const menuToggle = document.getElementById('menu-toggle');
+const menuLinks = document.getElementById('menu-links');
 
-  // 화면 너비 체크 후 햄버거 버튼 표시 / 메뉴 토글 함수
-  function checkWidth() {
-    if (window.innerWidth <= 768) {
-      menuToggle.style.display = 'block';
-      menuLinks.style.display = 'none'; // 처음엔 숨김
-    } else {
-      menuToggle.style.display = 'none';
-      menuLinks.style.display = 'flex'; // 넓으면 메뉴 항상 보임
-    }
+function checkWidth() {
+  if (window.innerWidth <= 768) {
+    menuToggle.style.display = 'block';
+    menuLinks.style.display = 'none';
+    menuLinks.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  } else {
+    menuToggle.style.display = 'none';
+    menuLinks.style.display = 'flex';
+    menuLinks.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
   }
+}
 
-  menuToggle.addEventListener('click', () => {
-    if (menuLinks.style.display === 'none') {
-      menuLinks.style.display = 'flex';
-      menuLinks.style.flexDirection = 'column'; // 세로 정렬
-      menuLinks.style.backgroundColor = '#222';
-      menuLinks.style.position = 'absolute';
-      menuLinks.style.top = '50px';
-      menuLinks.style.left = '0';
-      menuLinks.style.width = '100%';
-      menuLinks.style.padding = '10px 0';
-    } else {
-      menuLinks.style.display = 'none';
-    }
-  });
+menuToggle.addEventListener('click', () => {
+  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+  
+  if (!isExpanded) {
+    menuLinks.style.display = 'flex';
+    menuLinks.style.flexDirection = 'column';
+    menuLinks.style.backgroundColor = '#222';
+    menuLinks.style.position = 'absolute';
+    menuLinks.style.top = '50px';
+    menuLinks.style.left = '0';
+    menuLinks.style.width = '100%';
+    menuLinks.classList.add('menu-open');
+  } else {
+    menuLinks.style.display = 'none';
+    menuLinks.classList.remove('menu-open');
+  }
+});
 
-  window.addEventListener('resize', checkWidth);
-  window.addEventListener('load', checkWidth);
+window.addEventListener('resize', checkWidth);
+window.addEventListener('load', checkWidth);
 </script>
 
 <!-- Fixed Button -->
 <section>
   <div class="fixed-btn-wrapper">
     <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'" style="display:none;">Whitepaper</button>
-    <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
+    <button class="fixed-top-btn" onclick="scrollToTop()">Top</button>
   </div>
 </section>
   <script>
@@ -512,6 +519,12 @@
   <div class="fixed-btn-wrapper">
     <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
  </div>
+<button id="menu-toggle" 
+        aria-controls="menu-links" 
+        aria-expanded="false"
+        style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
+  &#9776;
+</button>
 
 <section class="section" id="about">
   <h2>What is Hambubter?</h2>
