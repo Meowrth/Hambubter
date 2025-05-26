@@ -74,6 +74,48 @@
       text-decoration: underline;
     }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 12px 0;
+    border-top: 1px solid #444;
+  }
+
+  nav.show {
+    display: flex;
+  }
+}
 /* Hero Section Styles */
 .hero {
       background: linear-gradient(to right, #f9d29d, #ffd7b5);
@@ -349,7 +391,6 @@
       .character-name { font-size: 16px; }
     }
 
-/* 모바일 화면용 */
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -421,6 +462,21 @@
     display: flex;
   }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .highlight {
+    margin: 0 auto;
+  }
+
+  .section {
+    margin: 0 auto;
+  }
+}
 </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -436,13 +492,11 @@
     <a href="#community" style="color: white; text-decoration: none;">Community</a>
     <a href="#team" style="color: white; text-decoration: none;">Team</a>
   <div class="nav-container">
-    <div class="logo">🍔 HBUB</div>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-    <nav class="nav-links" id="navLinks">
+    <div class="hambubter" onclick="toggleMenu()">&#9776;</div>
+    <nav id="main-nav">
       <a href="#about">About</a>
       <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#nfts">NFTs</a>
+      <a href="#nfts">NFT</a>
       <a href="#team">Team</a>
       <a href="#whitepaper">Whitepaper</a>
     </nav>
@@ -483,6 +537,12 @@
       navLinks.classList.toggle("show");
     });
   });
+</script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    nav.classList.toggle('show');
+  }
 </script>
 <!-- Styles -->
 <style>
