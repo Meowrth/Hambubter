@@ -376,7 +376,9 @@
     text-align: center;
   }
 }
-
+.fixed-whitepaper-btn {
+  display: none;
+}
 </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -397,16 +399,11 @@
 <!-- Fixed Button -->
 <section>
   <div class="fixed-btn-wrapper">
-    <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'">Whitepaper</button>
+    <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'" style="display:none;">Whitepaper</button>
     <button class="btn fixed-top-btn" onclick="scrollToTop()">Top</button>
   </div>
 </section>
   <script>
-    // Whitepaper View Button (button within the page)
-    document.getElementById('openWhitepaperBtn').addEventListener('click', function() {
-      window.location.href = 'Hambubter백서.html';
-    });
-
     // Scroll to Top button functionality
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
