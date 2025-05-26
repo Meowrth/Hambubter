@@ -377,6 +377,50 @@
   }
 }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #222;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
 </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -391,7 +435,18 @@
     <a href="#metadata" style="color: white; text-decoration: none;">Metadata</a>
     <a href="#community" style="color: white; text-decoration: none;">Community</a>
     <a href="#team" style="color: white; text-decoration: none;">Team</a>
-  </nav>
+  <div class="nav-container">
+    <div class="logo">🍔 HBUB</div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#nfts">NFTs</a>
+      <a href="#team">Team</a>
+      <a href="#whitepaper">Whitepaper</a>
+    </nav>
+  </div>
 </header>
 
 <!-- Fixed Button -->
@@ -419,7 +474,16 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
 
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  });
+</script>
 <!-- Styles -->
 <style>
   .fixed-btn-wrapper {
