@@ -591,6 +591,28 @@ window.addEventListener('load', checkWidth);
     color: #fff;
   }
 
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; 
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 1rem;
+  border: 1px solid #e0c38c;
+  text-align: left;
+}
+
+.responsive-table td:first-child {
+  font-weight: bold;
+}
+
 </style>
 <section style="text-align: center; padding: 1.5rem; background-color: #fff8fb; border-radius: 16px;">
   <h1 style="font-size: 1.8em; color: #ff69b4; margin-bottom: 0.5rem;">Too Hungry to Stop</h1>
@@ -664,9 +686,10 @@ window.addEventListener('load', checkWidth);
   <h2>NFT Rarity Guide - Expected to be Released -</h2>
   <p>The rarity of each NFT is determined by the level of baking, type of butter, and topping combinations.</p>
   <p>Check out the delicious rarity chart below, baked to perfection by the Hambubter [$HBUB] artisans!</p>
-  <table style="width:100%; border-collapse: collapse; margin-top: 1.5rem;">
-    <thead style="background-color: #fbdc8e;">
-      <tr>
+<div class="table-wrapper">
+  <table class="responsive-table">
+    <thead>
+      <tr style="background-color: #fbdc8e;">
         <th style="padding: 1rem; border: 1px solid #e0c38c;">Tier</th>
         <th style="padding: 1rem; border: 1px solid #e0c38c;">Name</th>
         <th style="padding: 1rem; border: 1px solid #e0c38c;">Features</th>
@@ -675,31 +698,32 @@ window.addEventListener('load', checkWidth);
     </thead>
     <tbody>
       <tr>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">🌕 Legendary</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Golden Crust</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Golden butter + Immortal toppings / Airdrop priority</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">1%</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Legendary</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Golden Crust</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Golden butter + Immortal toppings / Airdrop priority</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">1%</td>
       </tr>
       <tr>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">🔥 Epic</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Burnt Edge</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Crispy crust + Rare toppings / Swap fee discount</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">5%</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Epic</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Burnt Edge</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Crispy crust + Rare toppings / Swap fee discount</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">5%</td>
       </tr>
       <tr>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">🍯 Rare</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Honey Butter</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Sweet butter combo / Special baking animation</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">15%</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Rare</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Honey Butter</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Sweet butter combo / Special baking animation</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">15%</td>
       </tr>
       <tr>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">🥖 Common</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Toasty Bun</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">Standard bread + Basic butter</td>
-        <td style="padding: 1rem; border: 1px solid #f3e0b2;">79%</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Common</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Toasty Bun</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">Standard bread + Basic butter</td>
+        <td style="padding: 1rem; border: 1px solid #e0c38c;">79%</td>
       </tr>
     </tbody>
   </table>
+</div>
   <p style="text-align: center; margin-top: 1.5rem; font-weight: bold; color: #5e3200;">
     Ready to bake the crispiest Hambubter [$HBUB] of them all?
   </p>
