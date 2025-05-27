@@ -527,26 +527,71 @@ nav .menu-open {
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <body>
-<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: #222; z-index: 1000;">
-  <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0; align-items: center;" aria-label="Main navigation">
+  <header style="position: fixed; top: 0; left: 0; width: 100%; background-color: #222; z-index: 1000;">
+    <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0; align-items: center;" aria-label="Main navigation">
+      <button id="menu-toggle" 
+              style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
+        &#9776;
+      </button>
 
-    <button id="menu-toggle" 
-            style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
-      &#9776;
-    </button>
+   <div id="menu-links" class="collapsed-menu">
+     <a href="#about">Hambubter?</a>
+     <a href="#philosophy">Philosophy</a>
+     <a href="#tokenomics">Tokenomics</a>
+     <a href="#community">Community</a>
+     <a href="#team">Team</a>
+     <a href="https://hbubcoin.com/whitepaper/index.html">Whitepaper</a>
+   </div>
+    </nav>
+  </header>
+<script>
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  const menu = document.getElementById("menu-links");
+  const toggle = document.getElementById("menu-toggle");
 
-    <div id="menu-links" style="display: flex; gap: 20px;">
-      <a href="#about" style="color: white; text-decoration: none;">Hambubter?</a>
-      <a href="#philosophy" style="color: white; text-decoration: none;">Philosophy</a>
-      <a href="#tokenomics" style="color: white; text-decoration: none;">Tokenomics</a>
-      <a href="#community" style="color: white; text-decoration: none;">Community</a>
-      <a href="#team" style="color: white; text-decoration: none;">Team</a>
-      <a href="https://hbubcoin.com/whitepaper/index.html" style="color: white; text-decoration: none;">Whitepaper</a>
-    </div>
-  </nav>
-</header>
+  menu.classList.toggle("menu-open");
+  menu.classList.remove("collapsed-menu");
 
+  // 아이콘 토글
+  toggle.innerHTML = menu.classList.contains("menu-open") ? "&times;" : "&#9776;";
+});
+
+// 외부 클릭 시 메뉴 닫기
+document.addEventListener("click", function (event) {
+  const menu = document.getElementById("menu-links");
+  const toggle = document.getElementById("menu-toggle");
+
+  if (
+    window.innerWidth < 768 &&
+    !menu.contains(event.target) &&
+    !toggle.contains(event.target)
+  ) {
+    menu.classList.remove("menu-open");
+    toggle.innerHTML = "&#9776;";
+  }
+});
+
+// 초기화 및 리사이즈 대응
+function checkMobileView() {
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu-links");
+
+  if (window.innerWidth < 768) {
+    toggle.style.display = "block";
+    menu.classList.add("collapsed-menu");
+    menu.classList.remove("menu-open");
+  } else {
+    toggle.style.display = "none";
+    menu.classList.remove("collapsed-menu");
+    menu.classList.remove("menu-open");
+  }
+}
+
+window.addEventListener("resize", checkMobileView);
+window.addEventListener("load", checkMobileView);
+</script>
 <style>
+
   /* 공통 메뉴 링크 스타일 */
   #menu-links a {
     color: white;
@@ -562,31 +607,39 @@ nav .menu-open {
   }
 
   /* 모바일 토글 상태 초기화 */
-  @media (max-width: 768px) {
-    #menu-toggle {
-      display: block !important;
-    }
-
-    #menu-links {
-      display: flex;
-      flex-direction: column;
-      background-color: #222;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #menu-links.menu-open {
-      max-height: 500px;
-      opacity: 1;
-      pointer-events: auto;
-    }
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block !important;
   }
+
+  #menu-links {
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  #menu-links.menu-open {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #menu-links.collapsed-menu {
+    display: none !important;
+  }
+}
+
+  body {
+      margin-top: 60px; /* 고정 헤더로 인한 상단 여백 */
+    }
 </style>
 
 <section>
