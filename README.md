@@ -50,7 +50,7 @@ At Hambubter, our journey doesn’t end here.
 We are the anonymous Breadsmiths.  
 If you believe in the art of hamster baking, join us on the channels below.
 
-- 🐦 [Twitter](https://twitter.com/hambubter)  
+- 🐦 [Twitter](https://twitter.com/Hambubter_coin)
 - 💬 [Discord](https://discord.gg/32HWdufF) 
 - 🧑‍💻 [GitHub](https://github.com/hambubter)  
 - 📄 [Whitepaper](https://hbubcoin.com/whitepaper/index.html)
