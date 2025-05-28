@@ -552,11 +552,9 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
   menu.classList.toggle("menu-open");
   menu.classList.remove("collapsed-menu");
 
-  // 아이콘 토글
-  toggle.innerHTML = menu.classList.contains("menu-open") ? "&times;" : "&#9776;";
+    toggle.innerHTML = menu.classList.contains("menu-open") ? "&times;" : "&#9776;";
 });
 
-// 외부 클릭 시 메뉴 닫기
 document.addEventListener("click", function (event) {
   const menu = document.getElementById("menu-links");
   const toggle = document.getElementById("menu-toggle");
@@ -571,7 +569,6 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// 초기화 및 리사이즈 대응
 function checkMobileView() {
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu-links");
@@ -592,21 +589,18 @@ window.addEventListener("load", checkMobileView);
 </script>
 <style>
 
-  /* 공통 메뉴 링크 스타일 */
-  #menu-links a {
+    #menu-links a {
     color: white;
     text-decoration: none;
     padding: 10px;
   }
 
-  /* 기본 데스크탑 메뉴 */
-  #menu-links {
+    #menu-links {
     display: flex;
     gap: 20px;
     transition: max-height 0.3s ease, opacity 0.3s ease;
   }
-
-  /* 모바일 토글 상태 초기화 */
+  
 @media (max-width: 768px) {
   #menu-toggle {
     display: block !important;
@@ -638,7 +632,7 @@ window.addEventListener("load", checkMobileView);
 }
 
   body {
-      margin-top: 20px; /* 고정 헤더로 인한 상단 여백 */
+      margin-top: 20px;
     }
 </style>
 
@@ -751,7 +745,7 @@ window.addEventListener("load", checkMobileView);
   <p>From the charming character design and solid tokenomics to the ever evolving NFT baking collections and community events <strong>Hambubter [$HBUB]</strong> isn't just a meme, it's a dynamic Web3 playground where participation, profits, humor, and storytelling collide.</p>
   <p>Now it's your turn to stack your buns, spread your butter, and join the Hambubter tribe to <strong>“Bake, Laugh, and Earn.”</strong></p>
   <p style="font-size: 2rem; font-weight: 900; color: #5e3200; text-align: center;">
-    <strong>[$HBUB] Welcome to the oven.</strong>
+    <strong>Welcome to the oven.</strong>
   </p>
 </section>
 
@@ -832,7 +826,7 @@ window.addEventListener("load", checkMobileView);
 </section>
 
 <section class="section" id="philosophy">
-  <h2>[$HBUB] World Philosophy</h2>
+  <h2>World Philosophy</h2>
   <p><strong>Hambubter [$HBUB]</strong> is more than just a meme character.<br />
   He is a <strong>greedy little hamster who always craves bread and butter</strong> and a reflection of us investors, chasing infinite possibilities.</p>
 
