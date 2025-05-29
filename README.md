@@ -41,8 +41,9 @@ Failed NFT mints result in automatic burning of HBUB, gradually reducing total s
 | Q3      | Begin development of meme-themed game and activate DAO |
 | Q4      | Collaborate on official Hambubter burger merchandise to expand brand and community reach |
 
-Future Vision & Sustainability
+*Future Vision & Sustainability:*  
 At Hambubter, our journey doesn’t end here.
+
 ---
 
 ## 👥 Team & Community
@@ -51,9 +52,8 @@ We are the anonymous Breadsmiths.
 If you believe in the art of hamster baking, join us on the channels below.
 
 - 🐦 [Twitter](https://twitter.com/Hambubter_coin)
-- 💬 [Discord](https://discord.gg/32HWdufF) 
-- 🧑‍💻 [GitHub](https://github.com/hambubter)  
-- 📄 [Whitepaper](https://hbubcoin.com/whitepaper/index.html)
+- 💬 [Discord](https://discord.gg/32HWdufF)
+- 📄 [Whitepaper](https://hbubcoin.com)
 
 ---
 
@@ -68,12 +68,22 @@ If you believe in the art of hamster baking, join us on the channels below.
 
 ## 📜 License
 
-This is a community-driven public asset.  
-Open source is welcome — but only for those who bake with heart.
+### 🧩 Token Code — [MIT License](./LICENSE)
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+
+The smart contract and token-related logic are open-source under the MIT License.  
+You are free to use, modify, and distribute with proper attribution.
+
+---
+
+### 🖥️ Website Code — Proprietary
+![Proprietary License](https://img.shields.io/badge/License-Proprietary-red.svg)
+
+The contents of the `/website` directory (HTML/CSS/JS, assets, UI design) are proprietary.  
+You may **not** copy, reproduce, or reuse without written permission.
+
+> 📧 For inquiries: [help@hbubcoin.com](mailto:help@hbubcoin.com)
 
 ---
 
 > "Burn the bread. Raise the stake. 🍞🔥"
-
-## 📜 License
-This project is licensed under the [MIT License](./LICENSE).
