@@ -1056,34 +1056,23 @@ Oooo! Oooo! Oooo! Oooo!"
     </div>
   </div>
 </section>
+<style>
+  .dialogue-row {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
 
+  .dialogue-row.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 <body>
-  <div class="official-item full-width">
-  <div style="text-align: center; margin: 2rem auto 3rem auto; max-width: 90%;">
-  <button onclick="showNextDialogue()" style="
-  background: linear-gradient(145deg, #f8bbd0, #ff8fc2);
-  color: white;
-  font-family: 'Fredoka One', cursive;
-  padding: 14px 28px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-  cursor: pointer;
-  transition: all 0.25s ease;
-"
-onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.25)'; this.style.background='linear-gradient(145deg, #f8bbd0, #ff5fa5)'"
-onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'; this.style.background='linear-gradient(145deg, #f8bbd0, #ff8fc2)'"
->
-  Tribe Dialogue (Click)
-</button>
-  </div>
-</div>
-<section class="section"">
+<section class="section">
   <div class="dialogue-container">
 
-    <div class="dialogue-row left">
+    <div class="dialogue-row left" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Kobi.png" alt="Kobi" class="character-image" />
       <div class="bubble-content bubble-Kobi left">
         <span class="character-name">[Kobi]</span><br/>
@@ -1092,7 +1081,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row right">
+    <div class="dialogue-row right" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/alex.png" alt="Alex" class="character-image" />
       <div class="bubble-content bubble-alex right">
         <span class="character-name">[Alex]</span><br/>
@@ -1102,7 +1091,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row left">
+    <div class="dialogue-row left" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Brakk.png" alt="Brakk" class="character-image" />
       <div class="bubble-content bubble-Brakk left">
         <span class="character-name">[Brakk]</span><br/>
@@ -1110,7 +1099,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row right">
+    <div class="dialogue-row right" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Mina.png" alt="Mina" class="character-image" />
       <div class="bubble-content bubble-Mina right">
         <span class="character-name">[Mina]</span><br/>
@@ -1120,7 +1109,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row left">
+    <div class="dialogue-row left" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Celine.png" alt="Celine" class="character-image" />
       <div class="bubble-content bubble-Celine left">
         <span class="character-name">[Celine]</span><br/>
@@ -1130,7 +1119,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row right">
+    <div class="dialogue-row right" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Jack.png" alt="Jack" class="character-image" />
       <div class="bubble-content bubble-Jack right">
         <span class="character-name">[Jack]</span><br/>
@@ -1139,7 +1128,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row left">
+    <div class="dialogue-row left" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Taro.png" alt="Taro" class="character-image" />
       <div class="bubble-content bubble-Taro left">
         <span class="character-name">[Taro]</span><br/>
@@ -1148,7 +1137,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row right">
+    <div class="dialogue-row right" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Selemie.png" alt="Selemie" class="character-image" />
       <div class="bubble-content bubble-Selemie right">
         <span class="character-name">[Selemie]</span><br/>
@@ -1157,7 +1146,7 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
 
-    <div class="dialogue-row left">
+    <div class="dialogue-row left" style="display: none;">
       <img src="https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Ammu.png" alt="Ammu" class="character-image" />
       <div class="bubble-content bubble-Ammu left">
         <span class="character-name">[Ammu]</span><br/>
@@ -1167,7 +1156,89 @@ onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgb
       </div>
     </div>
   </div>
+  <div class="official-item full-width">
+ <div style="text-align: center; margin: 2rem auto;">
+ <button
+  onclick="showNextDialogue()"
+  id="dialogueBtn"
+  style="
+    background: linear-gradient(145deg, #f8bbd0, #ff8fc2);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  "
+  onmouseover="
+    this.style.transform='scale(1.05)';
+    this.style.boxShadow='0 6px 12px rgba(0,0,0,0.25)';
+    this.style.background='linear-gradient(145deg, #f8bbd0, #ff5fa5)';
+  "
+  onmouseout="
+    this.style.transform='scale(1)';
+    this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';
+    this.style.background='linear-gradient(145deg, #f8bbd0, #ff8fc2)';
+  "
+>
+  Tribe Dialogue (Click)
+</button>
+  </div>
 </section>
+
+<script>
+function showNextDialogue() {
+  const dialogues = document.querySelectorAll(".dialogue-row");
+  const dialogue = dialogues[currentDialogue];
+
+  if (currentDialogue < dialogues.length) {
+    dialogue.style.display = "flex";
+    setTimeout(() => {
+      dialogue.classList.add("show");
+    }, 50);
+
+    const btn = document.getElementById("dialogueBtn");
+    btn.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+
+    currentDialogue++;
+  } else {
+    location.reload();
+  }
+}
+
+  let currentDialogue = 0;
+  const dialogues = document.querySelectorAll(".dialogue-row");
+
+  dialogues.forEach(d => d.style.display = "none");
+
+  function showNextDialogue() {
+    if (currentDialogue < dialogues.length) {
+      const dialogue = dialogues[currentDialogue];
+      dialogue.style.display = "flex";
+
+      setTimeout(() => {
+        dialogue.classList.add("show");
+      }, 50); 
+
+      dialogue.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+
+      currentDialogue++;
+    } else {
+      location.reload();
+    }
+  }
+</script>
+
 </body>
 <section class="section" id="official">
 <h3>Official Channels</h3>
