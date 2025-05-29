@@ -335,71 +335,61 @@ nav .menu-open {
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
     }
 
-    .dialogue-container {
-      width: 100%;
-    }
+  .dialogue-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    .dialogue-row {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 25px;
-      gap: 15px;
-    }
-    .dialogue-row.left { flex-direction: row; }
-    .dialogue-row.right { flex-direction: row-reverse; }
+.dialogue-row {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
 
-    .character-image {
-      width: 90px;
-      height: 90px;
-      border-radius: 20px;
-      object-fit: cover;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-      flex-shrink: 0;
-    }
+.dialogue-row:nth-child(1) { animation-delay: 0.2s; }
+.dialogue-row:nth-child(2) { animation-delay: 0.4s; }
+/* ... 계속 증가 */
 
-    .bubble-content {
-      max-width: 70%;
-      position: relative;
-      border-radius: 20px;
-      padding: 14px 20px;
-      font-size: 16px;
-      line-height: 1.4;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border: 3px solid;
-      font-weight: 500;
-      user-select: none;
-    }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .bubble-content.left::after {
-      content: "";
-      position: absolute;
-      top: 20px;
-      left: -15px;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-      border-right-color: #fff4cc;
-      border-width: 10px 15px 10px 0;
-    }
+  .dialogue-row.right {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
 
-    .bubble-content.right::after {
-      content: "";
-      position: absolute;
-      top: 20px;
-      right: -15px;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-      border-left-color: #dce3f7;
-      border-width: 10px 0 10px 15px;
-    }
+  .character-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd700;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
 
-    .character-name {
-      font-weight: bold;
-      margin-bottom: 6px;
-      font-size: 18px;
-      user-select: none;
-    }
+  .bubble-content {
+    padding: 1rem;
+    background: #fff9e6;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 70%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+  }
+
+  .character-name {
+    font-weight: bold;
+    color: #d48806;
+    font-family: 'Fredoka One', cursive;
+  }
 
     .bubble-Kobi { background-color: #fff4cc; border-color: #fbb03b; color: #6b4d00; }
     .bubble-Min { background-color: #e5fff9; border-color: #5bb4a1; color: #216b5b; }
@@ -1068,6 +1058,28 @@ Oooo! Oooo! Oooo! Oooo!"
 </section>
 
 <body>
+  <div class="official-item full-width">
+  <div style="text-align: center; margin: 2rem auto 3rem auto; max-width: 90%;">
+  <button onclick="showNextDialogue()" style="
+  background: linear-gradient(145deg, #f8bbd0, #ff8fc2);
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+"
+onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.25)'; this.style.background='linear-gradient(145deg, #f8bbd0, #ff5fa5)'"
+onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'; this.style.background='linear-gradient(145deg, #f8bbd0, #ff8fc2)'"
+>
+  Tribe Dialogue (Click)
+</button>
+  </div>
+</div>
 <section class="section"">
   <div class="dialogue-container">
 
@@ -1195,6 +1207,17 @@ Oooo! Oooo! Oooo! Oooo!"
       alert("Address copied!");
     });
   });
+
+let current = 0;
+const dialogues = document.querySelectorAll('.dialogue-row');
+dialogues.forEach(d => d.style.display = 'none');
+
+function showNextDialogue() {
+  if (current < dialogues.length) {
+    dialogues[current].style.display = 'flex';
+    current++;
+  }
+}
 </script>
 </section>
   <p>&copy; 2025 Hambubter Team. All rights reserved. | Built on Solana with ❤️</p>
