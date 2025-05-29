@@ -1,22 +1,135 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>HBUB 이벤트 관리자</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: 'Arial', sans-serif; background: #fffdf7; padding: 1rem; }
-    h1, h2 { color: #cc6600; }
-    .container { max-width: 800px; margin: auto; }
-    form, .event { background: #fff3d1; margin: 1rem 0; padding: 1rem; border-radius: 10px; }
-    input, textarea, button {
-      width: 100%; margin: 0.3rem 0; padding: 0.5rem;
-      border: 1px solid #ccc; border-radius: 5px;
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fffdf7;
+      padding: 1rem;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
-    .hidden { display: none; }
-    .event small { color: #888; }
-    .actions { display: flex; gap: 10px; margin-top: 0.5rem; }
-    .actions button { flex: 1; }
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+    h1, h2 {
+      color: #cc6600;
+      margin-bottom: 0.5rem;
+    }
+    form, .event, #filterContainer {
+      background: #fff3d1;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    input, textarea, button, select {
+      width: 100%;
+      margin: 0.3rem 0;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    button {
+      cursor: pointer;
+      background: #cc6600;
+      color: white;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background: #aa5500;
+    }
+    .hidden {
+      display: none;
+    }
+    .event {
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2c27b;
+    }
+    .event:last-child {
+      border-bottom: none;
+    }
+    .event small {
+      color: #888;
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+    .actions button {
+      flex: 1;
+      padding: 0.4rem;
+      font-size: 0.9rem;
+    }
+    #filterContainer input {
+      max-width: 300px;
+    }
+    /* Modal 스타일 */
+    #modalOverlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    #modalOverlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    #modalContent {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      position: relative;
+    }
+    #modalContent h3 {
+      margin-top: 0;
+      color: #cc6600;
+    }
+    #modalClose {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: #cc6600;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      cursor: pointer;
+      line-height: 30px;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .actions {
+        flex-direction: column;
+      }
+      .actions button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -25,30 +138,44 @@
 
     <!-- 로그인 -->
     <form id="loginForm">
-      <input type="password" id="loginPw" placeholder="비밀번호 입력" required />
+      <input type="password" id="loginPw" placeholder="비밀번호 입력" required autocomplete="current-password" />
       <button type="submit">로그인</button>
     </form>
 
     <!-- 관리자 영역 -->
-    <div id="adminPanel" class="hidden">
-      <h2>이벤트 등록</h2>
-      <form id="eventForm">
-        <input type="text" id="eventTitle" placeholder="이벤트 제목" required />
-        <textarea id="eventDesc" placeholder="이벤트 설명" required></textarea>
+    <div id="adminPanel" class="hidden" aria-live="polite">
+      <h2>이벤트 등록 / 수정</h2>
+      <form id="eventForm" novalidate>
+        <input type="text" id="eventTitle" placeholder="이벤트 제목" required maxlength="100" autocomplete="off" />
+        <textarea id="eventDesc" placeholder="이벤트 설명" required maxlength="500" rows="4"></textarea>
         <input type="date" id="eventDate" required />
         <input type="hidden" id="editIndex" />
         <button type="submit">저장</button>
       </form>
 
-      <h2>등록된 이벤트</h2>
-      <div id="eventList"></div>
+      <div id="filterContainer">
+        <input type="text" id="filterInput" placeholder="이벤트 제목 검색..." autocomplete="off" />
+      </div>
 
-      <form id="changePwForm">
-        <input type="password" id="newPw" placeholder="새 비밀번호 변경" required />
+      <h2>등록된 이벤트</h2>
+      <div id="eventList" aria-live="polite" aria-atomic="true"></div>
+
+      <form id="changePwForm" novalidate>
+        <input type="password" id="newPw" placeholder="새 비밀번호 변경" required autocomplete="new-password" />
         <button type="submit">비밀번호 변경</button>
       </form>
 
-      <button onclick="logout()">로그아웃</button>
+      <button id="logoutBtn">로그아웃</button>
+    </div>
+  </div>
+
+  <!-- 이벤트 상세 모달 -->
+  <div id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div id="modalContent">
+      <button id="modalClose" aria-label="닫기">&times;</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <small id="modalDate"></small>
     </div>
   </div>
 
@@ -57,32 +184,47 @@
     const adminPanel = document.getElementById('adminPanel');
     const eventForm = document.getElementById('eventForm');
     const eventList = document.getElementById('eventList');
+    const filterInput = document.getElementById('filterInput');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const changePwForm = document.getElementById('changePwForm');
+
+    // Modal Elements
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalDate = document.getElementById('modalDate');
+    const modalClose = document.getElementById('modalClose');
 
     async function hashPassword(pw) {
       const buf = new TextEncoder().encode(pw);
       const digest = await crypto.subtle.digest("SHA-256", buf);
-      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
+      return Array.from(new Uint8Array(digest))
+        .map(b => b.toString(16).padStart(2, "0"))
+        .join("");
     }
 
-    // 초기 비밀번호 설정
-    if (!localStorage.getItem("adminHash")) {
-      hashPassword("admin123").then(hash => {
-        localStorage.setItem("adminHash", hash);
-      });
+    async function initAdminHash() {
+      if (!localStorage.getItem("adminHash")) {
+        const defaultHash = await hashPassword("admin123");
+        localStorage.setItem("adminHash", defaultHash);
+      }
     }
 
-    // 로그인 처리
-    loginForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const inputPw = document.getElementById("loginPw").value;
-      const inputHash = await hashPassword(inputPw);
+    function formatDate(dateStr) {
+      const d = new Date(dateStr);
+      if (isNaN(d)) return dateStr;
+      return d.toLocaleDateString("ko-KR", { year: 'numeric', month: '2-digit', day: '2-digit' });
+    }
+
+    async function login(password) {
+      const inputHash = await hashPassword(password);
       if (inputHash === localStorage.getItem("adminHash")) {
         localStorage.setItem("isAdmin", "true");
         showAdmin();
       } else {
         alert("비밀번호가 틀렸습니다.");
       }
-    });
+    }
 
     function showAdmin() {
       loginForm.classList.add("hidden");
@@ -90,30 +232,101 @@
       renderEvents();
     }
 
-    // 로그아웃
     function logout() {
       localStorage.removeItem("isAdmin");
       location.reload();
     }
 
-    // 비밀번호 변경
-    document.getElementById("changePwForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const newPw = document.getElementById("newPw").value;
+    async function changePassword(newPw) {
       const newHash = await hashPassword(newPw);
       localStorage.setItem("adminHash", newHash);
-      alert("비밀번호가 변경되었습니다.");
-    });
+      alert("비밀번호가 변경되었습니다. 다시 로그인해주세요.");
+      logout();
+    }
 
-    // 이벤트 저장
+    function getEvents() {
+      return JSON.parse(localStorage.getItem("events") || "[]");
+    }
+
+    function saveEvents(events) {
+      localStorage.setItem("events", JSON.stringify(events));
+    }
+
+    function resetEventForm() {
+      eventForm.reset();
+      document.getElementById("editIndex").value = "";
+    }
+
+    function renderEvents(filter = "") {
+      const events = getEvents();
+      const filteredEvents = events.filter(e =>
+        e.title.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      eventList.innerHTML = filteredEvents.length
+        ? filteredEvents.map((event, idx) => `
+          <div class="event" tabindex="0" role="button" aria-pressed="false" data-index="${idx}">
+            <strong>${event.title}</strong>
+            <small>등록일: ${formatDate(event.date)}</small>
+            <div class="actions">
+              <button type="button" aria-label="이벤트 수정: ${event.title}" onclick="editEvent(${idx})">수정</button>
+              <button type="button" aria-label="이벤트 삭제: ${event.title}" onclick="deleteEvent(${idx})">삭제</button>
+            </div>
+          </div>
+        `).join("")
+        : "<p>등록된 이벤트가 없습니다.</p>";
+    }
+
+    function editEvent(index) {
+      const events = getEvents();
+      if (!events[index]) return;
+      const e = events[index];
+      document.getElementById("eventTitle").value = e.title;
+      document.getElementById("eventDesc").value = e.desc;
+      document.getElementById("eventDate").value = e.date;
+      document.getElementById("editIndex").value = index;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function deleteEvent(index) {
+      if (!confirm("삭제하시겠습니까?")) return;
+      const events = getEvents();
+      events.splice(index, 1);
+      saveEvents(events);
+      renderEvents(filterInput.value);
+    }
+
+    // 이벤트 상세 모달 열기
+    function openModal(index) {
+      const events = getEvents();
+      if (!events[index]) return;
+      const e = events[index];
+      modalTitle.textContent = e.title;
+      modalDesc.textContent = e.desc;
+      modalDate.textContent = `등록일: ${formatDate(e.date)}`;
+      modalOverlay.classList.add('active');
+      modalOverlay.focus();
+    }
+
+    // 이벤트 상세 모달 닫기
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+    }
+
+    // 이벤트 등록/수정 폼 제출 처리
     eventForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const title = document.getElementById("eventTitle").value;
-      const desc = document.getElementById("eventDesc").value;
+      const title = document.getElementById("eventTitle").value.trim();
+      const desc = document.getElementById("eventDesc").value.trim();
       const date = document.getElementById("eventDate").value;
       const editIndex = document.getElementById("editIndex").value;
 
-      const events = JSON.parse(localStorage.getItem("events") || "[]");
+      if (!title || !desc || !date) {
+        alert("모든 필드를 입력해주세요.");
+        return;
+      }
+
+      const events = getEvents();
 
       if (editIndex === "") {
         events.push({ title, desc, date });
@@ -121,56 +334,72 @@
         events[editIndex] = { title, desc, date };
       }
 
-      localStorage.setItem("events", JSON.stringify(events));
-      eventForm.reset();
-      document.getElementById("editIndex").value = "";
-      renderEvents();
+      saveEvents(events);
+      resetEventForm();
+      renderEvents(filterInput.value);
     });
 
-    // 이벤트 출력
-    function renderEvents() {
-      const events = JSON.parse(localStorage.getItem("events") || "[]");
-      eventList.innerHTML = "";
+    // 로그인 폼 제출 처리
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const pw = document.getElementById("loginPw").value;
+      await login(pw);
+    });
 
-      events.forEach((event, index) => {
-        const div = document.createElement("div");
-        div.className = "event";
-        div.innerHTML = `
-          <strong>${event.title}</strong>
-          <p>${event.desc}</p>
-          <small>등록일: ${event.date}</small>
-          <div class="actions">
-            <button onclick="editEvent(${index})">수정</button>
-            <button onclick="deleteEvent(${index})">삭제</button>
-          </div>
-        `;
-        eventList.appendChild(div);
-      });
-    }
+    // 비밀번호 변경 폼 제출 처리
+    changePwForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const newPw = document.getElementById("newPw").value.trim();
+      if (!newPw) {
+        alert("새 비밀번호를 입력해주세요.");
+        return;
+      }
+      await changePassword(newPw);
+    });
 
-    // 이벤트 수정
-    function editEvent(index) {
-      const events = JSON.parse(localStorage.getItem("events") || "[]");
-      const e = events[index];
-      document.getElementById("eventTitle").value = e.title;
-      document.getElementById("eventDesc").value = e.desc;
-      document.getElementById("eventDate").value = e.date;
-      document.getElementById("editIndex").value = index;
-    }
+    // 필터 입력 시 이벤트 리스트 필터링
+    filterInput.addEventListener("input", (e) => {
+      renderEvents(e.target.value);
+    });
 
-    // 이벤트 삭제
-    function deleteEvent(index) {
-      if (!confirm("삭제하시겠습니까?")) return;
-      const events = JSON.parse(localStorage.getItem("events") || "[]");
-      events.splice(index, 1);
-      localStorage.setItem("events", JSON.stringify(events));
-      renderEvents();
-    }
+    // 로그아웃 버튼
+    logoutBtn.addEventListener("click", logout);
 
-    // 로그인 유지 시 자동 진입
-    if (localStorage.getItem("isAdmin") === "true") {
-      showAdmin();
-    }
+    // 이벤트 목록 클릭 시 상세 모달 열기
+    eventList.addEventListener("click", (e) => {
+      const target = e.target.closest(".event");
+      if (!target) return;
+      const index = target.getAttribute("data-index");
+      if (index === null) return;
+      openModal(Number(index));
+    });
+
+    // 모달 닫기 버튼 및 오버레이 클릭 시 닫기
+    modalClose.addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+
+    // 모달 내에서 키보드 이벤트 처리 (ESC 키 닫기)
+    modalOverlay.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // 페이지 진입 시 초기화
+    (async () => {
+      await initAdminHash();
+      if (localStorage.getItem("isAdmin") === "true") {
+        showAdmin();
+      }
+    })();
+
+    // 전역에 editEvent, deleteEvent 노출 (버튼 onclick에서 호출)
+    window.editEvent = editEvent;
+    window.deleteEvent = deleteEvent;
   </script>
 </body>
 </html>
