@@ -12,15 +12,14 @@
       background-color: #fffdf7;
       color: #333;
     }
-header {
-  background-color: #ffcc66;
-  padding: 1.2rem;
-  text-align: center;
-  font-family: 'Fredoka One', cursive;
-  font-size: 2rem;
-  color: #e75480; /* 분홍색으로 변경 */
-}
-
+    header {
+      background-color: #ffcc66;
+      padding: 1.2rem;
+      text-align: center;
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      color: #e75480; /* 분홍색 */
+    }
     .container {
       max-width: 900px;
       margin: 2rem auto;
@@ -36,6 +35,12 @@ header {
     .event h2 {
       margin-top: 0;
       color: #cc6600;
+    }
+    .event img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 0.8rem 0;
+      display: block;
     }
     .event p {
       margin: 0.5rem 0;
@@ -53,16 +58,6 @@ header {
 </head>
 <body>
   <header>📢 HBUB 이벤트 안내</header>
-<style>
-  header {
-    background-color: #ffcc66;
-    padding: 1.2rem;
-    text-align: center;
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    color: #e75480; /* 여기를 분홍색으로 */
-  }
-</style>
   <div class="container" id="eventList"></div>
   <footer>© 2025 Hambubter ($HBUB) Team</footer>
 
@@ -71,6 +66,8 @@ header {
 
     function renderEvents() {
       const events = JSON.parse(localStorage.getItem("events") || "[]");
+      eventList.innerHTML = ""; // 초기화
+
       if (events.length === 0) {
         eventList.innerHTML = "<p style='text-align:center;'>등록된 이벤트가 없습니다.</p>";
         return;
@@ -81,6 +78,7 @@ header {
         div.className = "event";
         div.innerHTML = `
           <h2>${event.title}</h2>
+          ${event.image ? `<img src="${event.image}" alt="${event.title} 이미지" />` : ""}
           <p>${event.desc}</p>
           <small>등록일: ${event.date}</small>
         `;
@@ -92,4 +90,3 @@ header {
   </script>
 </body>
 </html>
-
