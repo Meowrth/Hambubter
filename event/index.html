@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the HBUB Airdrop event and claim your free HBUB meme coins now! Limited time only." />
+  <link rel="canonical" href="https://hbubcoin.com/event" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HBUB Airdrop Event" />
+  <meta property="og:description" content="Claim your free HBUB meme coin now!" />
+  <meta property="og:image" content="https://hbubcoin.com/banner.jpg" />
+  <meta property="og:url" content="https://hbubcoin.com/event" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HBUB Airdrop Event" />
+  <meta name="twitter:description" content="Claim your free HBUB meme coin now!" />
+  <meta name="twitter:image" content="https://hbubcoin.com/banner.jpg" />
+
+  <!-- Favicon & Apple -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#ff9d00" />
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
   <title>HBUB Airdrop</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -31,6 +55,18 @@
       background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
       box-shadow: 0 0 20px #ffb347, 0 0 40px #ff9d00;
       max-width: 90vw;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .glow-text {
@@ -65,6 +101,7 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease;
+      animation: pulse 1.5s infinite;
     }
 
     .btn:hover {
@@ -76,9 +113,15 @@
       transform: scale(0.95);
     }
 
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
     .home-bottom {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 30px;
       padding: 16px 32px;
       font-size: 1.2rem;
       background-color: #ffffff;
@@ -123,14 +166,28 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="banner">
     <div class="glow-text">Claim Free HBUB!</div>
     <a class="btn" href="https://x.com/Hambubter_coin" target="_blank">Join via Twitter</a>
     <br />
+    <a class="btn" href="https://twitter.com/intent/tweet?text=Claim%20your%20free%20HBUB%20meme%20coin%20now!%20%23HBUB%20%23Airdrop%20https%3A%2F%2Fhbubcoin.com%2Fevent" target="_blank">Share on Twitter</a>
+    <br />
     <a class="home-bottom" href="https://hbubcoin.com/">Go to HBUB Home</a>
   </div>
+
+  <!-- Google Analytics (replace G-XXXXXXX with real ID if needed) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
 
   <script>
     document.querySelector('.btn').addEventListener('click', () => {
