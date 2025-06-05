@@ -152,6 +152,18 @@ body {
   z-index: 2;
 }
 
+/* hbub3.png 전용 스타일 */
+.hero-logo {
+  max-width: 200px;         /* 최대 너비 제한 */
+  display: block;           /* 블록 요소로 중앙 정렬 가능 */
+  margin: 0 auto 1rem;      /* 아래쪽 마진 1rem */
+  transition: transform 0.3s ease; 
+  z-index: 3;
+}
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
 .hero-content {
   position: relative;
   z-index: 3;
