@@ -1,4 +1,3 @@
-// ======================== DOM 요소 선택 ========================
 const menuToggle = document.getElementById("menu-toggle");
 const menuLinks = document.getElementById("menu-links");
 const copyBtn = document.getElementById("copy-btn");
@@ -6,7 +5,6 @@ const solAddress = document.getElementById("sol-address");
 const dialogueBtn = document.getElementById("dialogueBtn");
 const dialogues = document.querySelectorAll(".dialogue-row");
 
-// ======================== 메뉴 토글 (모바일) ========================
 menuToggle.addEventListener("click", () => {
   const expanded = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!expanded));
@@ -24,7 +22,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// 초기 및 리사이즈 시 뷰 확인
 function checkViewport() {
   if (window.innerWidth < 768) {
     menuToggle.style.display = "block";
@@ -39,22 +36,21 @@ function checkViewport() {
 window.addEventListener("load", checkViewport);
 window.addEventListener("resize", checkViewport);
 
-// ======================== Scroll to Top ========================
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// ======================== 솔라나 주소 복사 ========================
 copyBtn.addEventListener("click", () => {
   const address = solAddress.innerText.trim();
-  navigator.clipboard.writeText(address).then(() => {
-    alert("Address copied!");
-  }).catch((err) => {
-    console.error("복사 실패:", err);
-  });
+  navigator.clipboard.writeText(address)
+    .then(() => {
+      alert("Address copied!");
+    })
+    .catch((err) => {
+      console.error("복사 실패:", err);
+    });
 });
 
-// ======================== Tribe Dialogue 로직 ========================
 let currentDialogue = 0;
 dialogues.forEach((d) => (d.style.display = "none"));
 
@@ -66,7 +62,6 @@ function showNextDialogue() {
     dialogue.scrollIntoView({ behavior: "smooth", block: "center" });
     currentDialogue++;
   } else {
-    // 끝에 도달하면 리로딩(또는 버튼 숨김 등 대체 로직 가능)
     location.reload();
   }
 }
