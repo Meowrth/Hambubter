@@ -14,7 +14,6 @@
   padding: 0;
 }
 
-/* ======================== 기본 폰트 설정 ======================== */
 body {
   font-family: "Nunito", "Arial", sans-serif;
   background: #fff8ef;
@@ -140,50 +139,47 @@ body {
   z-index: 1;
 }
 
-.hero-logo {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  z-index: 2;
-}
-
+/* =================== 햄스터 이미지 (패럴럭스) =================== */
 .hero-img {
   position: absolute;
-  bottom: 0;
-  right: 5%;
-  width: 40vw;              /* 화면 너비의 40%로 설정 */
-  max-width: 600px;          /* 최대 500px 너비를 넘지 않도록 */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;           /* 화면 너비의 60% 만큼 */
+  max-width: 800px;      /* 최대 800px 너비 */
   z-index: 1;
   pointer-events: none;
+  transition: transform 0.1s ease-out;
 }
 
+/* ======================== 히어로 텍스트 ======================== */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
   padding: 20px;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .hero-title {
   font-family: "Fredoka One", cursive;
   font-size: 3rem;
-  color: #222;
+  color: #fff;
   margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 1.5rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .typing-text {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  /* 애니메이션은 JS에서 구현하거나, 제거해도 무방합니다. */
 }
 
 /* ======================== 버튼 스타일 ======================== */
@@ -224,7 +220,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
-  /* ★ 버그 수정 핵심: 헤더 높이에 맞춘 scroll-margin-top */
+  /* ★ 헤더 높이에 맞춘 scroll-margin-top */
   scroll-margin-top: 80px;
 }
 
@@ -513,11 +509,9 @@ body {
 
 /* ======================== 반응형(Responsive) ======================== */
 @media (max-width: 768px) {
-  .hero-img {
-    width: 50vw;
-    max-width: 500px;
+  .menu-toggle {
+    display: block;
   }
-}
 
   .menu-links {
     flex-direction: column;
@@ -542,8 +536,8 @@ body {
   }
 
   .hero-img {
-    max-width: 200px;
-    right: 5%;
+    width: 80vw;      /* 태블릿 이하에서 더 크게 보이도록 */
+    max-width: 600px;
   }
 
   .hero-title {
@@ -559,5 +553,10 @@ body {
   .btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .hero-img {
+    width: 90vw;      /* 모바일에서 거의 화면 가득 */
+    max-width: 400px;
   }
 }
