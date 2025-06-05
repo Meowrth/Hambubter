@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ======================== 기본 메타 태그 ======================== -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO용 단일 meta description/keywords -->
   <meta name="description" content="Hambubter [HBUB] is a fast-rising Solana meme coin inspired by Dogecoin, BONK, and FLOKI. Join the buttery hamster's journey to meme greatness with NFT rewards, community fun, and crypto innovation." />
   <meta name="keywords" content="Hambubter, HBUB, Solana meme coin, Dogecoin, BONK, FLOKI, NFT, meme token, crypto, hamster coin" />
   <meta name="author" content="Hambubter Team" />
 
-  <!-- ========== Open Graph (페이스북/카카오 등 공유) ========== -->
   <meta property="og:title" content="HBUB Power! Meme Power! Your Power!" />
   <meta property="og:description" content="Inspired by BONK, WIF, FLOKI — Hambubter brings buttery hamster energy to the Solana blockchain. Are you hungry enough to HODL?" />
   <meta property="og:type" content="website" />
@@ -18,41 +15,29 @@
   <meta property="og:image" content="https://hbubcoin.com/images/ico.png" />
   <meta property="og:image:alt" content="HBUB Power! Meme Power! Your Power!" />
 
-  <!-- ========== Twitter Card ========== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Hambubter_coin" />
   <meta name="twitter:title" content="HBUB Power! Meme Power! Your Power!" />
   <meta name="twitter:description" content="Inspired by BONK, WIF, and FLOKI — Hambubter is the toast-loving hamster meme coin on Solana. Join $HBUB and meme your way to the moon." />
   <meta name="twitter:image" content="https://hbubcoin.com/images/ico.png" />
 
-  <!-- 팔리오 대체 언어 페이지가 있다면 hreflang 설정 -->
-  <!--
   <link rel="alternate" href="https://hbubcoin.com/index.html" hreflang="en" />
   <link rel="alternate" href="https://hbubcoin.com/index_ko.html" hreflang="ko" />
   <link rel="alternate" href="https://hbubcoin.com/index_zh.html" hreflang="zh" />
-  …  
-  -->
 
-  <!-- 파비콘 / 애플 터치 아이콘 -->
-  <link rel="icon" href="/images/ico.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/images/ico.png" />
+  <link rel="icon" href="https://hbubcoin.com/images/ico.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://hbubcoin.com/images/ico.png" />
 
-  <!-- 구글 폰트 -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- 외부 CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 
   <title>Hambubter(HBUB) Solana Meme Coin</title>
 </head>
 
 <body>
-  <!-- ======================== 헤더 & 내비게이션 ======================== -->
   <header role="banner" class="site-header">
     <nav role="navigation" aria-label="Main navigation" class="navbar">
-      <!-- 로고 (필요 시 추가) -->
-      <!-- <a href="/" class="logo"><img src="images/logo.png" alt="Hambubter Logo" /></a> -->
-
       <!-- 햄버거 메뉴 토글 버튼 -->
       <button id="menu-toggle" class="menu-toggle" aria-controls="menu-links" aria-expanded="false" aria-label="Toggle menu">
         ☰
@@ -65,22 +50,20 @@
         <li><a href="#tokenomics">Tokenomics</a></li>
         <li><a href="#community">Community</a></li>
         <li><a href="#team">Team</a></li>
-        <li><a href="https://hbubcoin.com/whitepaper/index.html" target="_blank" rel="noopener">Whitepaper</a></li>
+        <li><a href="whitepaper/index.html" target="_blank" rel="noopener">Whitepaper</a></li>
         <li><a href="https://solscan.io/token/Hb3rPuZv3ykmVpEwgBxt1wwHrwZHY8Z8NTndtBHFxTuB" target="_blank" rel="noopener">Explore Solana</a></li>
-        <li><a href="https://hbubcoin.com/event/index.html" target="_blank" rel="noopener">Airdrop Event</a></li>
+        <li><a href="event/index.html" target="_blank" rel="noopener">Airdrop Event</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ======================== 고정 버튼들 ======================== -->
   <div class="fixed-btn-wrapper">
-    <button class="btn btn-whitepaper" onclick="window.location.href='whitepaper.html'">Whitepaper</button>
-    <button class="btn btn-top" onclick="scrollToTop()" aria-label="Scroll to top">Top</button>
+    <button class="btn btn-whitepaper" onclick="window.location.href='whitepaper/index.html'">Whitepaper</button>
+    <button class="btn btn-top" onclick="scrollToTop()">Top</button>
   </div>
 
-  <!-- ======================== 히어로 섹션 ======================== -->
   <section class="hero" id="hero">
-    <div class="hero-content">
+    <div>
       <h1>Hambubter Solana Meme Coin HBUB</h1>
       <p class="subtitle">“The unstoppable appetite of Hambubter [$HBUB]!”</p>
       <p>A cute and crazy meme revolution born from <strong>hamster</strong>, <strong>butter</strong>, and <strong>bread</strong>! 🐹🧈🍞</p>
@@ -92,7 +75,6 @@
     </div>
   </section>
 
-  <!-- ======================== 섹션: About ======================== -->
   <main role="main">
     <section class="section" id="about">
       <h2>What is Hambubter?</h2>
@@ -106,7 +88,6 @@
       <p class="welcome"><strong>Welcome to the ❤️ HAMBUBTER</strong></p>
     </section>
 
-    <!-- ======================== 섹션: NFT Preview ======================== -->
     <section class="section" id="upcoming">
       <h2>NFT Preview</h2>
       <p><strong>A glimpse of Hambubter collectibles. Expected to launch soon.</strong></p>
@@ -118,7 +99,6 @@
       <p class="cta-large">Bake smart, earn smarter—that's the Hambubter [$HBUB] way!</p>
     </section>
 
-    <!-- ======================== 섹션: Rarity Guide ======================== -->
     <section class="section" id="rarity">
       <h2>NFT Rarity Guide</h2>
       <p><strong>Discover rarity tiers. Full guide coming soon.</strong></p>
@@ -165,7 +145,6 @@
       <p class="cta-large">Ready to bake the crispiest Hambubter [$HBUB] of them all?</p>
     </section>
 
-    <!-- ======================== 섹션: Philosophy ======================== -->
     <section class="section" id="philosophy">
       <h2>World Philosophy</h2>
       <p><strong>Hambubter [$HBUB]</strong> is more than just a meme character.<br />
@@ -188,7 +167,6 @@
       <strong>HBUB is a next-gen meme coin born from a serious ecosystem with high-calorie potential for growth.</strong></p>
     </section>
 
-    <!-- ======================== 섹션: Tokenomics ======================== -->
     <section class="section" id="tokenomics">
       <h2>Tokenomics</h2>
       <p><strong>The Hambubter [$HBUB]</strong> tokenomics are meticulously crafted to support long-term growth and ecosystem stability.</p>
@@ -199,13 +177,13 @@
 
       <h3>Tokenomics Overview</h3>
       <ul class="tokenomics-list">
-        <li><strong>Token Name:</strong> hambubter</li>
-        <li><strong>Symbol:</strong> HBUB</li>
-        <li><strong>Total Supply:</strong> 100,000,000,000</li>
-        <li><strong>Chain:</strong> Solana</li>
-        <li><strong>Token Standard:</strong> SPL / Metaplex v2</li>
-        <li><strong>Primary Sale:</strong> Not happened</li>
-        <li><strong>Mutable:</strong> No (Immutable)</li>
+        <li><span>Token Name:</span> hambubter</li>
+        <li><span>Symbol:</span> HBUB</li>
+        <li><span>Total Supply:</span> 100,000,000,000</li>
+        <li><span>Chain:</span> Solana</li>
+        <li><span>Token Standard:</span> SPL / Metaplex v2</li>
+        <li><span>Primary Sale:</span> Not happened</li>
+        <li><span>Mutable:</span> No (Immutable)</li>
       </ul>
       <p>This means the HBUB token has been <strong>officially minted and locked</strong> on Solana, and its metadata is stored immutably on IPFS for transparency.</p>
 
@@ -224,7 +202,6 @@
       </ul>
     </section>
 
-    <!-- ======================== 섹션: Community ======================== -->
     <section class="section" id="community">
       <h2>Join the Community</h2>
       <p><strong>Come join the baking fun with Hambubter [$HBUB]!</strong></p>
@@ -234,7 +211,6 @@
       <p><strong>Get involved now!</strong> New baking events, exclusive NFT drops, and diverse reward programs await you. <strong>With Hambubter [$HBUB], let’s Spread, Bake, and Earn—the journey continues with you.</strong></p>
     </section>
 
-    <!-- ======================== 섹션: Team ======================== -->
     <section class="section" id="team">
       <h2>[$HBUB] Team</h2>
       <p><strong>Hambubter[$HBUB]</strong> is more than just a meme coin; it is an innovative crypto asset project uniquely blending meme culture with practicality. This project is managed by a passionate team with deep expertise in their respective fields, all dedicated to the growth and advancement of the <strong>Hambubter[$HBUB]</strong> ecosystem.</p>
@@ -244,7 +220,6 @@
       <p>Together, these experts work to establish <strong>Hambubter[$HBUB]</strong> as a project that transcends memes, combining innovation and practicality.</p>
     </section>
 
-    <!-- ======================== 섹션: Hambubter Tribe ======================== -->
     <section class="section" id="tribe-members">
       <h2>Hambubter Tribe</h2>
       <div class="tribe-profile">
@@ -290,13 +265,12 @@
         </article>
       </div>
 
-      <!-- 대화(Dialogue) 버튼 -->
       <div class="dialogue-wrapper">
         <button id="dialogueBtn" class="btn btn-dialogue">Tribe Dialogue (Click)</button>
         <div class="dialogue-container">
           <!-- 모든 .dialogue-row는 초기 display: none; -->
           <div class="dialogue-row left bubble-Kobi">
-            <img src="images/Kobi.png" alt="Kobi" class="character-image" />
+            <img src="https://hbubcoin.com/images/Kobi.png" alt="Kobi" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Kobi]</span><br />
               Today was a deeply touching day filled with buttery goodness.  
@@ -304,7 +278,7 @@
             </div>
           </div>
           <div class="dialogue-row right bubble-alex">
-            <img src="images/alex.png" alt="Alex" class="character-image" />
+            <img src="https://hbubcoin.com/images/alex.png" alt="Alex" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Alex]</span><br />
               Everyone, get your lines ready!  
@@ -313,14 +287,14 @@
             </div>
           </div>
           <div class="dialogue-row left bubble-Brakk">
-            <img src="images/Brakk.png" alt="Brakk" class="character-image" />
+            <img src="https://hbubcoin.com/images/Brakk.png" alt="Brakk" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Brakk]</span><br />
               I am Brakk, guardian of the border and keeper of the gate. None shall pass unless they conquer my quiz of destiny!
             </div>
           </div>
           <div class="dialogue-row right bubble-Mina">
-            <img src="images/Mina.png" alt="Mina" class="character-image" />
+            <img src="https://hbubcoin.com/images/Mina.png" alt="Mina" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Mina]</span><br />
               Even the deepest buttery feelings inside the heart  
@@ -329,7 +303,7 @@
             </div>
           </div>
           <div class="dialogue-row left bubble-Celine">
-            <img src="images/Celine.png" alt="Celine" class="character-image" />
+            <img src="https://hbubcoin.com/images/Celine.png" alt="Celine" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Celine]</span><br />
               Ancient butter magic,  
@@ -338,7 +312,7 @@
             </div>
           </div>
           <div class="dialogue-row right bubble-Jack">
-            <img src="images/Jack.png" alt="Jack" class="character-image" />
+            <img src="https://hbubcoin.com/images/Jack.png" alt="Jack" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Jack]</span><br />
               Let's set sail across endless seas  
@@ -346,7 +320,7 @@
             </div>
           </div>
           <div class="dialogue-row left bubble-Taro">
-            <img src="images/Taro.png" alt="Taro" class="character-image" />
+            <img src="https://hbubcoin.com/images/Taro.png" alt="Taro" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Taro]</span><br />
               The hunt went smoothly.  
@@ -354,7 +328,7 @@
             </div>
           </div>
           <div class="dialogue-row right bubble-Selemie">
-            <img src="images/Selemie.png" alt="Selemie" class="character-image" />
+            <img src="https://hbubcoin.com/images/Selemie.png" alt="Selemie" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Selemie]</span><br />
               The buttery breeze gently embraces us once again today.  
@@ -362,7 +336,7 @@
             </div>
           </div>
           <div class="dialogue-row left bubble-Ammu">
-            <img src="images/Ammu.png" alt="Ammu" class="character-image" />
+            <img src="https://hbubcoin.com/images/Ammu.png" alt="Ammu" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[Ammu]</span><br />
               I love the smell of butter so much,  
@@ -371,7 +345,7 @@
             </div>
           </div>
           <div class="dialogue-row right bubble-HBUBFlag">
-            <img src="images/HBUBFlag.png" alt="HBUBfolk" class="character-image" />
+            <img src="https://hbubcoin.com/images/HBUBFlag.png" alt="HBUBfolk" class="character-image" />
             <div class="bubble-content">
               <span class="character-name">[HBUBfolk]</span><br />
               Doge. Pepe. Catfolk. Your homeland is crumbling. Come to HBUB—we welcome all meme refugees!  
@@ -379,7 +353,7 @@
               Escape the chaos. Embrace the meme haven. HBUB awaits you.  
               <strong>
                 <a href="https://twitter.com/Hambubter_coin" target="_blank" rel="noopener" aria-label="Hambubter Twitter">
-                  <img src="images/twitter-icon.png" alt="Twitter Icon" class="icon-small" />
+                  <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter Icon" class="icon-small" />
                 </a>
               </strong>
             </div>
@@ -388,7 +362,6 @@
       </div>
     </section>
 
-    <!-- ======================== 섹션: Official Links ======================== -->
     <section class="section" id="official">
       <h3>Official Channels</h3>
       <div class="official-links">
@@ -401,7 +374,6 @@
       </div>
     </section>
 
-    <!-- ======================== 섹션: Donate ======================== -->
     <section class="section" id="donate">
       <h3>Donate to Support</h3>
       <p>If you like the Hambubter [$HBUB], consider donating Solana (SOL) to support our project!</p>
@@ -412,7 +384,6 @@
     </section>
   </main>
 
-  <!-- ======================== 푸터 ======================== -->
   <footer role="contentinfo" class="site-footer">
     <div class="footer-content">
       <span>❤️Project: HAMBUBTER ($HBUB Meme Coin)</span>
@@ -425,7 +396,6 @@
     </div>
   </footer>
 
-  <!-- 외부 JS 파일 (하단 로드) -->
-  <script src="js/main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
