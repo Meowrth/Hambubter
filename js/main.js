@@ -1,7 +1,7 @@
 // == js/main.js ==
 
 // 1) DOM 요소 선택
-console.log("▶ main.js가 정상적으로 로드되었습니다.");  // 디버그용 로그
+console.log("▶ main.js가 정상적으로 로드되었습니다.");
 
 const menuToggle   = document.getElementById("menu-toggle");
 const menuLinks    = document.getElementById("menu-links");
@@ -10,6 +10,10 @@ const solAddress   = document.getElementById("sol-address");
 const dialogueBtn  = document.getElementById("dialogueBtn");
 const dialogues    = document.querySelectorAll(".dialogue-row");
 const header       = document.querySelector('.site-header');
+const heroSection  = document.getElementById('hero');
+const parallaxImg  = document.getElementById('parallax-img');
+const heroText     = document.getElementById('hero-text');
+const btnScrollAbout = document.getElementById("btn-scroll-about");
 
 // 2) 메뉴 토글 (모바일)
 menuToggle.addEventListener("click", () => {
@@ -51,7 +55,7 @@ window.scrollToTop = function() {
 
 // 4) 지정된 섹션(id)으로 부드럽게 스크롤
 window.scrollToSection = function(id) {
-  console.log("▶ scrollToSection 호출됨, id =", id);  // 디버그용 로그
+  console.log("▶ scrollToSection 호출됨, id =", id);
   const target = document.getElementById(id);
   if (!target) {
     console.warn("⚠ 해당 id(" + id + ") 섹션을 찾을 수 없습니다:", id);
@@ -60,20 +64,15 @@ window.scrollToSection = function(id) {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
-// === 대체 방식: 버튼에 id를 붙이고 JS에서 이벤트 연결하기 ===
-// index.html 버튼 대신 아래처럼 id="btn-scroll-about"를 주면,
-// addEventListener 방식으로 호출할 수 있습니다. (기존 inline onclick 은 제거하세요.)
-// 예시:
-const btnScrollAbout = document.getElementById("btn-scroll-about");
+// 5) “더 알아보기” 버튼에 이벤트 연결 (인라인 onclick 대신)
 if (btnScrollAbout) {
   btnScrollAbout.addEventListener("click", () => {
     console.log("▶ btn-scroll-about 클릭됨");
     scrollToSection("about");
   });
 }
-// ===========================================================
 
-// 5) Solana 주소 복사
+// 6) Solana 주소 복사
 if (copyBtn && solAddress) {
   copyBtn.addEventListener("click", () => {
     const address = solAddress.innerText.trim();
@@ -83,7 +82,7 @@ if (copyBtn && solAddress) {
   });
 }
 
-// 6) Toast 알림 표시 함수
+// 7) Toast 알림 표시 함수
 function showToast(message) {
   const toast = document.createElement('div');
   toast.className = 'toast';
@@ -96,7 +95,7 @@ function showToast(message) {
   }, 2000);
 }
 
-// 7) Tribe 대사(다이얼로그) 로직
+// 8) Tribe 대사(다이얼로그) 로직
 let currentDialogue = 0;
 dialogues.forEach((d) => (d.style.display = "none"));
 
@@ -115,13 +114,36 @@ if (dialogueBtn) {
   dialogueBtn.addEventListener("click", showNextDialogue);
 }
 
-// 8) 스크롤 시 헤더 배경 변경
+// 9) 스크롤 시 헤더 배경 변경
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
 });
 
-// 9) 카운트다운 타이머
+// 10) 패럴럭스 효과 & 텍스트 흐림 여부 결정
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const heroHeight = heroSection.offsetHeight;
+
+  // (1) 패럴럭스: 이미지가 스크롤의 절반 속도로 움직이도록 설정
+  //     top = scrollY * 0.5 (원본 위치에서 -을 하면 위로 밀림)
+  parallaxImg.style.transform = `translate(-50%, ${scrollY * 0.5}px)`;
+
+  // (2) 텍스트 흐림/선명 효과
+  //     스크롤이 heroHeight의 절반 이하인 동안 흐릿하게, 
+  //     절반 이상 넘어가면 또렷하게 보여줌
+  if (scrollY < heroHeight / 2) {
+    // 이미지 위에 텍스트가 걸쳐 있을 때 → 흐리게
+    heroText.style.filter = 'blur(3px)';
+    heroText.style.opacity = '0.6';
+  } else {
+    // 텍스트가 이미지 영역 벗어났을 때 → 선명하게
+    heroText.style.filter = 'none';
+    heroText.style.opacity = '1';
+  }
+});
+
+// 11) 카운트다운 타이머
 function startCountdown(deadline) {
   const timerEl = document.getElementById('countdown');
   function updateTimer() {
