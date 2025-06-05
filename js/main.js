@@ -1,4 +1,4 @@
-// ======================== DOM 요소 선택 ========================
+// ---------------------- DOM 요소 선택 ----------------------
 const menuToggle = document.getElementById("menu-toggle");
 const menuLinks = document.getElementById("menu-links");
 const copyBtn = document.getElementById("copy-btn");
@@ -7,7 +7,7 @@ const dialogueBtn = document.getElementById("dialogueBtn");
 const dialogues = document.querySelectorAll(".dialogue-row");
 const header = document.querySelector('.site-header');
 
-// ======================== 메뉴 토글 (모바일) ========================
+// ---------------------- 메뉴 토글 (모바일) ----------------------
 menuToggle.addEventListener("click", () => {
   const expanded = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!expanded));
@@ -40,19 +40,19 @@ function checkViewport() {
 window.addEventListener("load", checkViewport);
 window.addEventListener("resize", checkViewport);
 
-// ======================== Scroll to Top ========================
-function scrollToTop() {
+// ---------------------- Scroll to Top ----------------------
+window.scrollToTop = function() {
   window.scrollTo({ top: 0, behavior: "smooth" });
-}
+};
 
-// ======================== 섹션으로 스크롤 ========================
-function scrollToSection(id) {
+// ---------------------- 섹션으로 스크롤 ----------------------
+window.scrollToSection = function(id) {
   const target = document.getElementById(id);
   if (!target) return;
   target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+};
 
-// ======================== 솔라나 주소 복사 ========================
+// ---------------------- 솔라나 주소 복사 ----------------------
 if (copyBtn && solAddress) {
   copyBtn.addEventListener("click", () => {
     const address = solAddress.innerText.trim();
@@ -62,7 +62,7 @@ if (copyBtn && solAddress) {
   });
 }
 
-// ======================== 간단한 Toast 알림 ========================
+// ---------------------- 간단한 Toast 알림 ----------------------
 function showToast(message) {
   const toast = document.createElement('div');
   toast.className = 'toast';
@@ -75,7 +75,7 @@ function showToast(message) {
   }, 2000);
 }
 
-// ======================== Tribe Dialogue 로직 ========================
+// ---------------------- Tribe Dialogue 로직 ----------------------
 let currentDialogue = 0;
 dialogues.forEach((d) => (d.style.display = "none"));
 
@@ -95,13 +95,13 @@ if (dialogueBtn) {
   dialogueBtn.addEventListener("click", showNextDialogue);
 }
 
-// ======================== 스크롤 시 헤더 배경 변경 ========================
+// ---------------------- 스크롤 시 헤더 배경 변경 ----------------------
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
 });
 
-// ======================== 카운트다운 타이머 ========================
+// ---------------------- 카운트다운 타이머 ----------------------
 function startCountdown(deadline) {
   const timerEl = document.getElementById('countdown');
   function updateTimer() {
