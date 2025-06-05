@@ -152,13 +152,14 @@ body {
   z-index: 2;
 }
 
-/* hbub3.png 전용 스타일 */
+/* 추가된 hbub3.png 로고 스타일 */
 .hero-logo {
-  max-width: 200px;         /* 최대 너비 제한 */
-  display: block;           /* 블록 요소로 중앙 정렬 가능 */
-  margin: 0 auto 1rem;      /* 아래쪽 마진 1rem */
-  transition: transform 0.3s ease; 
+  position: relative;
   z-index: 3;
+  max-width: 200px;
+  display: block;
+  margin: 20px auto 1rem; /* 상단 여백 20px, 아래 1rem */
+  transition: transform 0.3s ease;
 }
 .hero-logo:hover {
   transform: scale(1.05);
