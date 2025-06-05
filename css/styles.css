@@ -13,12 +13,13 @@ html, body {
   overflow-x: hidden;
 }
 
+/* 고정 헤더(높이 약 80px) 때문에 본문 상단에 패딩 추가 */
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #fffaf5;
   color: #2e2e2e;
   line-height: 1.6;
-  padding-top: 80px; /* 고정 헤더 여백 */
+  padding-top: 80px;
 }
 
 :root {
@@ -98,7 +99,7 @@ body {
   }
   .menu-links {
     position: absolute;
-    top: 58px; /* 헤더 높이에 딱 맞춘다 */
+    top: 58px; /* 헤더 높이에 맞춰 위치 조정 */
     left: 0;
     right: 0;
     flex-direction: column;
