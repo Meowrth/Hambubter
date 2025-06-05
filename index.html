@@ -34,6 +34,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
+  <!-- AOS(Animate On Scroll) CSS (반드시 head 안에 위치) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <!-- 분리된 CSS 파일 -->
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -66,24 +69,26 @@
   <!-- ======================== 고정 버튼 ======================== -->
   <div class="fixed-btn-wrapper">
     <button class="btn btn-whitepaper" onclick="window.location.href='whitepaper/index.html'">Whitepaper</button>
-    <button class="btn btn-top" onclick="scrollToTop()">Top</button>
+    <button class="btn btn-top" onclick="scrollToTop()" aria-label="맨 위로 스크롤">Top</button>
   </div>
 
   <!-- ======================== 히어로 섹션 ======================== -->
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
 
-    <!-- ↑↑ 추가한 이미지: hbub3.png (최상단 중앙 로고) -->
+    <!-- 최상단 중앙 로고 -->
     <img src="images/hbub3.png" alt="HBUB 로고" class="hero-logo" />
 
-    <!-- ↓↓ 배경용 햄스터 이미지 -->
+    <!-- 배경용 햄스터 이미지 -->
     <img src="images/hamster.png" alt="Buttery Hamster" class="hero-img" />
 
     <div class="hero-content">
       <h1 class="hero-title"><span class="typing-text">“Hungry? Meet Hambubter!”</span></h1>
       <p class="hero-subtitle">The cutest & most powerful Solana meme coin is here 🐹🧈🍞</p>
       <!-- id="about" 섹션으로 스크롤 -->
-      <button class="btn btn-primary" onclick="scrollToSection('about')">더 알아보기 ↓</button>
+      <button id="btn-scroll-about" class="btn btn-primary">
+        더 알아보기 ↓
+      </button>
       <div id="countdown" class="countdown-timer"></div>
     </div>
   </section>
@@ -286,7 +291,7 @@
       </div>
 
       <div class="dialogue-wrapper">
-        <button id="dialogueBtn" class="btn btn-primary">Tribe Dialogue (Click)</button>
+        <button id="dialogueBtn" class="btn btn-primary" aria-label="Tribe 대화 보기">Tribe Dialogue (Click)</button>
         <div class="dialogue-container">
           <!-- 모든 .dialogue-row는 초기 display: none; -->
           <div class="dialogue-row left bubble-Kobi">
@@ -422,8 +427,7 @@
   <!-- 분리된 JS 파일 -->
   <script src="js/main.js"></script>
 
-  <!-- AOS(Animate On Scroll) 라이브러리 (선택사항) -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- AOS(Animate On Scroll) JS (body 끝에 위치) -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
