@@ -49,6 +49,7 @@ window.scrollToTop = function() {
 window.scrollToSection = function(id) {
   const target = document.getElementById(id);
   if (!target) return;
+  // 브라우저가 scroll-margin-top 을 인식하도록 'smooth' + 'start'
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
