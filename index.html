@@ -1,1340 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ======================== 기본 메타 태그 ======================== -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Hambubter(HBUB) Solana Meme Coin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO용 단일 meta description/keywords -->
   <meta name="description" content="Hambubter [HBUB] is a fast-rising Solana meme coin inspired by Dogecoin, BONK, and FLOKI. Join the buttery hamster's journey to meme greatness with NFT rewards, community fun, and crypto innovation." />
-  <meta name="keywords" content="Hambubter, HBUB, Solana meme coin, Dogecoin, WIF, BONK, FLOKI, BRETT, BOME, Memeland, Cat in a Dog's World, MEW, crypto, hamster coin, NFT, meme token" />
+  <meta name="keywords" content="Hambubter, HBUB, Solana meme coin, Dogecoin, BONK, FLOKI, NFT, meme token, crypto, hamster coin" />
   <meta name="author" content="Hambubter Team" />
-  <meta name="description" content="Hambubter [HBUB]는 도지코인, BONK, FLOKI에서 영감을 받은 솔라나 밈 코인입니다. NFT 보상과 커뮤니티 이벤트로 함께 성장해요." />
-  <meta name="keywords" content="햄버터, HBUB, 솔라나 밈코인, 도지코인, NFT, 암호화폐" />
-  <meta property="og:description" content="BONK, WIF, FLOKI에서 영감을 받은 햄버터는 솔라나 블록체인 위의 토스트 사랑 햄스터 밈 코인입니다." />
-  <meta name="twitter:description" content="BONK, WIF, FLOKI에서 영감을 받은 햄버터, 솔라나 토스트 사랑 햄스터 밈 코인. $HBUB와 함께 밈의 달로 가요." />
-  <meta name="description" content="Hambubter [HBUB] 是一款受 Dogecoin、BONK 和 FLOKI 启发的 Solana 山寨币。加入这只黄油仓鼠的旅程，享受 NFT 奖励、社区乐趣和加密创新。" />
-  <meta name="keywords" content="Hambubter, HBUB, Solana 山寨币, Dogecoin, BONK, FLOKI, NFT, 加密货币, 仓鼠币" />
-  <meta property="og:description" content="受 BONK、WIF、FLOKI 启发，Hambubter 带来黄油仓鼠能量，登陆 Solana 区块链。准备好持有了吗？" />
-  <meta name="twitter:description" content="受 BONK、WIF 和 FLOKI 启发，Hambubter 是 Solana 上爱吃吐司的仓鼠山寨币。加入 $HBUB，一起飞向月球！" />
-  <meta name="description" content="Hambubter [HBUB] คือเหรียญมีม Solana ที่ได้รับแรงบันดาลใจจาก Dogecoin, BONK และ FLOKI มาร่วมเดินทางกับเจ้าหนูแฮมสเตอร์เนย ท้าทายสู่ความยิ่งใหญ่พร้อมรางวัล NFT และความสนุกในชุมชน" />
-  <meta name="keywords" content="Hambubter, HBUB, เหรียญมีม Solana, Dogecoin, BONK, FLOKI, NFT, เหรียญแฮมสเตอร์, สกุลเงินดิจิทัล" />
-  <meta property="og:description" content="ได้รับแรงบันดาลใจจาก BONK, WIF, FLOKI Hambubter นำพลังความน่ารักของหนูแฮมสเตอร์เนยสู่บล็อกเชน Solana พร้อมท้าทายให้คุณพร้อมถือเหรียญ" />
-  <meta name="twitter:description" content="แรงบันดาลใจจาก BONK, WIF และ FLOKI — Hambubter คือเหรียญมีมแฮมสเตอร์ที่รักขนมปังบน Solana เข้าร่วม $HBUB และพุ่งสู่ดวงจันทร์ด้วยกัน" />
-  <meta name="description" content="Hambubter [HBUB] — это мем-монета Solana, вдохновлённая Dogecoin, BONK и FLOKI. Присоединяйтесь к путешествию масляного хомяка с NFT-наградами, сообществом и криптоинновациями." />
-  <meta name="keywords" content="Hambubter, HBUB, мем-монета Solana, Dogecoin, BONK, FLOKI, NFT, криптовалюта, хомячок, мем-токен" />
-  <meta property="og:description" content="Вдохновлённая BONK, WIF и FLOKI, Hambubter приносит энергию масляного хомяка на блокчейн Solana. Готовы держать монету?" />
-  <meta name="twitter:description" content="Вдохновлённая BONK, WIF и FLOKI — Hambubter — это мем-монета хомяка, который любит тосты на Solana. Присоединяйтесь к $HBUB и летите на луну!" />
+
+  <!-- ========== Open Graph (페이스북/카카오 등 공유) ========== -->
   <meta property="og:title" content="HBUB Power! Meme Power! Your Power!" />
-  <meta property="og:description" content="Inspired by BONK, WIF, FLOKI, BRETT, BOME & Memeland’s Meme Coin, Hambubter brings buttery hamster energy to the Solana blockchain. Are you hungry enough to HODL?" />
+  <meta property="og:description" content="Inspired by BONK, WIF, FLOKI — Hambubter brings buttery hamster energy to the Solana blockchain. Are you hungry enough to HODL?" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hbubcoin.com/" />
   <meta property="og:image" content="https://hbubcoin.com/images/ico.png" />
   <meta property="og:image:alt" content="HBUB Power! Meme Power! Your Power!" />
+
+  <!-- ========== Twitter Card ========== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Hambubter_coin" />
   <meta name="twitter:title" content="HBUB Power! Meme Power! Your Power!" />
   <meta name="twitter:description" content="Inspired by BONK, WIF, and FLOKI — Hambubter is the toast-loving hamster meme coin on Solana. Join $HBUB and meme your way to the moon." />
   <meta name="twitter:image" content="https://hbubcoin.com/images/ico.png" />
-  <meta name="naver-site-verification" content="5a7e6b3c7952c7e223c8fc7fcba4c4f7b020b1fc" />
-  <meta name="naver-site-verification" content="4c85cc16e867081983f6b17a8e2ffdd0ecdbd299" />
-  <link rel="icon" href="https://hbubcoin.com/images/ico.png" type="image/png">
-  <link rel="apple-touch-icon" href="https://hbubcoin.com/images/ico.png">
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Hambubter",
-  "image": "https://raw.githubusercontent.com/Meowrth/Hambubter/main/images/Hbub1.png",
-  "url": "https://www.hbubcoin.com/",
-  "description": "Hambubter [$HBUB] is a meme coin on Solana inspired by Dogecoin, BONK, WIF, FLOKI, BRETT, and other legendary meme tokens. Powered by hunger, driven by hamsters.",
-  "keywords": [
-    "Hambubter", "HBUB", "meme coin", "Solana", "crypto", "hamster", "Dogecoin", "Shiba Inu", "BONK", "WIF", "FLOKI", "BRETT", "BOME", "MEW", "meme token", "blockchain", "NFT"
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Hambubter Team",
-    "url": "https://www.hbubcoin.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.hbubcoin.com/images/og-image.png"
-    },
-    "sameAs": [
-      "https://twitter.com/Hambubter_coin",
-      "https://t.me/HambubterCommunity"
-    ]
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.hbubcoin.com/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.hbubcoin.com/product/hambubter",
-    "priceCurrency": "USD",
-    "price": "0.01",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition",
-    "priceValidUntil": "2025-12-31",
-    "seller": {
-      "@type": "Organization",
-      "name": "Hambubter Team",
-      "url": "https://www.hbubcoin.com/"
-    }
-  }
-}
-</script>
 
+  <!-- 팔리오 대체 언어 페이지가 있다면 hreflang 설정 -->
+  <!--
+  <link rel="alternate" href="https://hbubcoin.com/index.html" hreflang="en" />
+  <link rel="alternate" href="https://hbubcoin.com/index_ko.html" hreflang="ko" />
+  <link rel="alternate" href="https://hbubcoin.com/index_zh.html" hreflang="zh" />
+  …  
+  -->
+
+  <!-- 파비콘 / 애플 터치 아이콘 -->
+  <link rel="icon" href="/images/ico.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/ico.png" />
+
+  <!-- 구글 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- 외부 CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <title>Hambubter(HBUB) Solana Meme Coin</title>
 </head>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Nunito", "Arial", sans-serif;
-      background: #fff8ef;
-      padding: 80px 20px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #444;
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Fredoka One', cursive;
-      color: #5e3200;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #222;
-      z-index: 1000;
-    }
-
- nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-nav .menu-open {
-  display: flex !important;
-  flex-direction: column;
-  background-color: #222;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  padding: 10px 0;
-}
-
-.hero {
-      background: linear-gradient(to right, #f9d29d, #ffd7b5);
-      text-align: center;
-      padding: 100px 20px 80px;
-      font-family: 'Segoe UI', sans-serif;
-      color: #222;
-      width: 100%;
-      max-width: 900px;
-      margin-bottom: 60px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-.highlight, .section {
-  width: 100%;
-  margin: 1rem auto;
-}
-
-.highlight {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  max-width: 600px;
-  color: #ff944d;
-  font-weight: 700;
-}
-
-.section {
-  padding: 3rem 2rem;
-  max-width: 800px;
-  background-color: #fffdf6;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-@media (max-width: 480px) {
-  .highlight {
-    padding: 1rem;
-  }
-
-  .section {
-    padding: 1.5rem 1rem;
-  }
-}
-
-    .btn {
-      background-color: #ffad60;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      color: white;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 20px;
-      margin: 1rem 0.5rem;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background-color: #fbdc8e;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .highlight {
-      color: #ff944d;
-      font-weight: 700;
-    }
-
-  .fixed-whitepaper-btn {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background-color: #ffb347;
-    border: none;
-    padding: 0.75rem 1.2rem;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
-    .fixed-whitepaper-btn {
-      font-size: 0.9rem;
-      padding: 0.6rem 1rem;
-      top: 0.75rem;
-      right: 0.75rem;
-    }
-  }
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-}
-  @media (max-width: 480px) {
-    .fixed-whitepaper-btn {
-      font-size: 0.8rem;
-      padding: 0.5rem 0.9rem;
-      top: 0.5rem;
-      right: 0.5rem;
-    }
-  }
-.fixed-btn-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.fixed-btn-wrapper .btn {
-  width: 120px;
-  height: 40px;
-  background-color: #222;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.fixed-btn-wrapper .btn:hover {
-  background-color: #555;
-}
-.fixed-btn-wrapper button {
-  width: 120px;
-  height: 40px;
-  background-color: #222;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.fixed-btn-wrapper button:hover {
-  background-color: #555;
-}
-
-.fixed-top-btn {
-  background-color: #007BFF;
-}
-
-.fixed-top-btn:hover {
-  background-color: #0056b3;
-}
-
-.fixed-btn-wrapper button {
-  width: 120px;
-  height: 40px;
-}
-[id]::before {
-  content: "";
-  display: block;
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
-}
-    section {
-      max-width: 900px;
-      width: 100%;
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      font-size: 28px;
-      color: #3a2c00;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .tribe-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .member-card {
-      flex: 1 1 250px;
-      background: #fff5dc;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    }
-
-  .dialogue-container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-.dialogue-row {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.dialogue-row:nth-child(1) { animation-delay: 0.2s; }
-.dialogue-row:nth-child(2) { animation-delay: 0.4s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-  .dialogue-row.right {
-    flex-direction: row-reverse;
-    text-align: right;
-  }
-
-  .character-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ffd700;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-
-  .bubble-content {
-    padding: 1rem;
-    background: #fff9e6;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-width: 70%;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1rem;
-  }
-
-  .character-name {
-    font-weight: bold;
-    color: #d48806;
-    font-family: 'Fredoka One', cursive;
-  }
-
-    .bubble-Kobi { background-color: #fff4cc; border-color: #fbb03b; color: #6b4d00; }
-    .bubble-Min { background-color: #e5fff9; border-color: #5bb4a1; color: #216b5b; }
-    .bubble-alex { background-color: #dce3f7; border-color: #334d80; color: #1a2a4d; }
-    .bubble-Brakk { background-color: #e8f0ff; border-color: #3a5f9b; color: #1a2e4f; }
-    .bubble-Jack { background-color: #ffe5e5; border-color: #d82c2c; color: #6b0a0a; }
-    .bubble-Celine { background-color: #f2e5ff; border-color: #8e44ad; color: #4a1d75; }
-    .bubble-Taro { background-color: #ffe8d0; border-color: #c25c00; color: #6b3c00; }
-    .bubble-Selemie { background-color: #ffeaf0; border-color: #e67ea1; color: #a0415a; }
-    .bubble-Ammu { background-color: #fff0d6; border-color: #d9b15e; color: #7a5a20; }
-    .bubble-HBUBFlag { background-color: #dce3f7; border-color: #334d80; color: #1a2a4d; }
-
-    @media (max-width: 600px) {
-      .character-image { width: 70px; height: 70px; }
-      .bubble-content { font-size: 14px; max-width: 80%; }
-      .character-name { font-size: 16px; }
-    }
-
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nft-card {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .floating-button {
-    width: 60px;
-    height: 60px;
-    font-size: 18px;
-  }
-
-  .section-title {
-    font-size: 24px;
-    text-align: center;
-  }
-}
-.fixed-whitepaper-btn {
-  display: none;
-}
- .official-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 10px;
-  }
-
-  .official-item {
-    flex: 1 1 150px;
-  }
-
-  .official-item.full-width {
-    flex: 1 1 100%;
-  }
-
-  .official-item a {
-    display: block;
-    padding: 12px 16px;
-    background: #ffb6d9;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .official-item a:hover {
-    background: #ff94c2;
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 600px) {
-    .official-item {
-      flex: 1 1 100%;
-    }
-  }
-
-  .sol-donation-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    background: #ffe6f0;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    margin-top: 10px;
-  }
-
-  #sol-address {
-    user-select: all;
-    word-break: break-all;
-    flex: 1 1 auto;
-    font-family: monospace;
-    background: #fff;
-    padding: 8px 10px;
-    border-radius: 6px;
-    font-size: 14px;
-  }
-
-  #copy-btn {
-    padding: 8px 16px;
-    background-color: #ff8fc2;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  #copy-btn:hover {
-    background-color: #ff70b2;
-  }
-
-</style>
-</head>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <body>
-  <header style="position: fixed; top: 0; left: 0; width: 100%; background-color: #222; z-index: 1000;">
-    <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0; align-items: center;" aria-label="Main navigation">
-      <button id="menu-toggle" 
-              style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
-        &#9776;
+  <!-- ======================== 헤더 & 내비게이션 ======================== -->
+  <header role="banner" class="site-header">
+    <nav role="navigation" aria-label="Main navigation" class="navbar">
+      <!-- 로고 (필요 시 추가) -->
+      <!-- <a href="/" class="logo"><img src="images/logo.png" alt="Hambubter Logo" /></a> -->
+
+      <!-- 햄버거 메뉴 토글 버튼 -->
+      <button id="menu-toggle" class="menu-toggle" aria-controls="menu-links" aria-expanded="false" aria-label="Toggle menu">
+        ☰
       </button>
 
-   <div id="menu-links" class="collapsed-menu">
-     <a href="#about">Hambubter?</a>
-     <a href="#philosophy">Philosophy</a>
-     <a href="#tokenomics">Tokenomics</a>
-     <a href="#community">Community</a>
-     <a href="#team">Team</a>
-     <a href="https://hbubcoin.com/whitepaper/index.html">Whitepaper</a>
-     <a href="https://solscan.io/token/Hb3rPuZv3ykmVpEwgBxt1wwHrwZHY8Z8NTndtBHFxTuB">Explore Solana</a>
-     <a href="https://hbubcoin.com/event/index.html">Airdrop Event</a>
-   </div>
+      <!-- 메뉴 링크 -->
+      <ul id="menu-links" class="menu-links collapsed">
+        <li><a href="#about">Hambubter?</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="https://hbubcoin.com/whitepaper/index.html" target="_blank" rel="noopener">Whitepaper</a></li>
+        <li><a href="https://solscan.io/token/Hb3rPuZv3ykmVpEwgBxt1wwHrwZHY8Z8NTndtBHFxTuB" target="_blank" rel="noopener">Explore Solana</a></li>
+        <li><a href="https://hbubcoin.com/event/index.html" target="_blank" rel="noopener">Airdrop Event</a></li>
+      </ul>
     </nav>
   </header>
-<script>
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  const menu = document.getElementById("menu-links");
-  const toggle = document.getElementById("menu-toggle");
 
-  menu.classList.toggle("menu-open");
-  menu.classList.remove("collapsed-menu");
-
-    toggle.innerHTML = menu.classList.contains("menu-open") ? "&times;" : "&#9776;";
-});
-
-document.addEventListener("click", function (event) {
-  const menu = document.getElementById("menu-links");
-  const toggle = document.getElementById("menu-toggle");
-
-  if (
-    window.innerWidth < 768 &&
-    !menu.contains(event.target) &&
-    !toggle.contains(event.target)
-  ) {
-    menu.classList.remove("menu-open");
-    toggle.innerHTML = "&#9776;";
-  }
-});
-
-function checkMobileView() {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu-links");
-
-  if (window.innerWidth < 768) {
-    toggle.style.display = "block";
-    menu.classList.add("collapsed-menu");
-    menu.classList.remove("menu-open");
-  } else {
-    toggle.style.display = "none";
-    menu.classList.remove("collapsed-menu");
-    menu.classList.remove("menu-open");
-  }
-}
-
-window.addEventListener("resize", checkMobileView);
-window.addEventListener("load", checkMobileView);
-</script>
-<style>
-
-    #menu-links a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-  }
-
-    #menu-links {
-    display: flex;
-    gap: 20px;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-  }
-  
-@media (max-width: 768px) {
-  #menu-toggle {
-    display: block !important;
-  }
-
-  #menu-links {
-    flex-direction: column;
-    background-color: #222;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-  }
-
-  #menu-links.menu-open {
-    max-height: 500px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  #menu-links.collapsed-menu {
-    display: none !important;
-  }
-}
-
-  body {
-      margin-top: 20px;
-    }
-</style>
-
-<section>
+  <!-- ======================== 고정 버튼들 ======================== -->
   <div class="fixed-btn-wrapper">
-    <button class="btn fixed-whitepaper-btn" onclick="location.href='whitepaper.html'" style="display:none;">Whitepaper</button>
-    <button class="fixed-top-btn" onclick="scrollToTop()">Top</button>
+    <button class="btn btn-whitepaper" onclick="window.location.href='whitepaper.html'">Whitepaper</button>
+    <button class="btn btn-top" onclick="scrollToTop()" aria-label="Scroll to top">Top</button>
   </div>
-</section>
-  <script>
-    // Scroll to Top button functionality
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 
-<script>
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
-
-<style>
-  .fixed-btn-wrapper {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-  }
-
-  .btn {
-    padding: 10px 16px;
-    font-size: 14px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-
-  .fixed-whitepaper-btn {
-    background-color: #ffc107;
-    color: #000;
-  }
-
-  .fixed-top-btn {
-    background-color: #444;
-    color: #fff;
-  }
-
-.table-wrapper {
-  overflow-x: auto;
-  margin-top: 1.5rem;
-}
-
-.responsive-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px; 
-}
-
-.responsive-table th,
-.responsive-table td {
-  padding: 1rem;
-  border: 1px solid #e0c38c;
-  text-align: left;
-}
-
-.responsive-table td:first-child {
-  font-weight: bold;
-}
-
-</style>
-<section style="text-align: center; padding: 1.5rem; background-color: #fff8fb; border-radius: 16px;">
-  <h1 style="font-size: 1.8em; color: #ff69b4; margin-bottom: 0.5rem;">Hambubter Solana Meme Coin HBUB</h1>
-  <p style="font-size: 1em; font-weight: bold; color: #333; margin: 0.3rem 0;">
-    "The unstoppable appetite of Hambubter [$HBUB]!"
-  </p>
-  <p style="font-size: 0.95em; color: #555; margin: 0.3rem 0;">
-    A cute and crazy meme revolution born from <strong>hamster</strong>, <strong>butter</strong>, and <strong>bread</strong>! 🐹🧈🍞
-  </p>
-
-  <div style="margin-top: 1.5rem;">
-    <h2 style="font-size: 1.5em; color: #ff69b4; margin-bottom: 0.5rem;">HBUB Power! Meme Power! Your Power! 🔥</h2>
-    <p style="font-size: 0.95em; color: #333; margin: 0;">
-      The cutest and most powerful meme coin is waiting for 
-      <strong style="color: #ff4500;">your power</strong>.<br>
-      Join the <strong style="color: #6a5acd;">HBUB world</strong> where fun and community collide!
-    </p>
-  </div>
-</section>
-
-<button id="menu-toggle" 
-        aria-controls="menu-links" 
-        aria-expanded="false"
-        style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;">
-  &#9776;
-</button>
-
-<section class="section" id="about">
-  <h2>What is Hambubter?</h2>
-  <p><strong>Hambubter [$HBUB]</strong> is a one of a kind meme coin born from the fusion of three irresistible forces: Hamster, Butter, and Bun.</p>
-  <p>This greedy yet adorable hamster clutches butter in one paw and bread in the other, shouting to the world  <strong>"Bake it! Then earn it!"</strong></p>
-  <p><strong>The Hambubter [$HBUB]</strong> species is far from your average hamster.</p>
-  <p>Driven by insatiable hunger and profit desire, they interpret every blockchain activity as a unique form of <strong>“Baking.”</strong></p>
-  <p>For them, swapping is <strong>“spreading butter and baking it,”</strong> while adding liquidity means <strong>“kneading the dough and stacking the buns.”</strong></p>
-  <p><strong>Hambubter [$HBUB]</strong> goes beyond laughs it cleverly reinterprets complex blockchain and DeFi concepts through a fun and accessible lens, creating a deeply immersive universe for users.</p>
-  <p>From the charming character design and solid tokenomics to the ever evolving NFT baking collections and community events <strong>Hambubter [$HBUB]</strong> isn't just a meme, it's a dynamic Web3 playground where participation, profits, humor, and storytelling collide.</p>
-  <p>Now it's your turn to stack your buns, spread your butter, and join the Hambubter tribe to <strong>“Bake, Laugh, and Earn.”</strong></p>
-  <p style="font-size: 2rem; font-weight: 900; color: #5e3200; text-align: center;">
-    <strong>Welcome to the ❤️ HAMBUBTER</strong>
-  </p>
-</section>
-
-<section class="section" id="upcoming">
-  <h2>NFT Preview</h2>
-  <p><strong>A glimpse of Hambubter collectibles. Expected to launch soon.</strong></p>
-  <p><strong>Hambubter bakes buns and that, itself, is an art form!</strong></p>
-  <p>
-    The upcoming <strong>Hambubter [$HBUB] NFT series</strong> is more than just digital images. 
-    Each NFT varies in rarity based on delicious attributes like 
-    <em>butter amount, bread type, baking level, and toppings</em>, 
-    and they even come with <strong>savory and crispy utility functions</strong>.
-  </p>
-  <p>
-    These NFTs are the core of the "Baking Economy" within the Hambubter [$HBUB] universe. 
-    Beyond collecting, they offer <strong>real benefits</strong> such as token rewards, exclusive event access, 
-    and community ranking perks.
-  </p>
-  <p>
-    Some legendary NFTs are even coated with <strong>Golden Butter</strong>, unlocking transaction fee discounts, 
-    airdrop priority access, and more.
-  </p>
-  <p>
-    Every NFT is a digital masterpiece <em>baked by Hambubter’s finest artisans</em>. 
-    From toasty textures to buttery aromas (digitally rendered!), this unique design experience 
-    offers <strong>satisfaction for both collectors and investors</strong>.
-  </p>
-  <p style="font-size: 1.25rem; font-weight: bold; color: #5e3200; text-align: center;">
-    Bake smart, earn smarter that's the Hambubter [$HBUB] way!
-  </p>
-</section>
-<section class="section" id="rarity">
-  <h2>NFT Rarity Guide</h2>
-  <p><strong>Discover rarity tiers. Full guide coming soon.</strong></p>
-  <p>The rarity of each NFT is determined by the level of baking, type of butter, and topping combinations.</p>
-  <p>Check out the delicious rarity chart below, baked to perfection by the Hambubter [$HBUB] artisans!</p>
-<div class="table-wrapper">
-  <table class="responsive-table">
-    <thead>
-      <tr style="background-color: #fbdc8e;">
-        <th style="padding: 1rem; border: 1px solid #e0c38c;">Tier</th>
-        <th style="padding: 1rem; border: 1px solid #e0c38c;">Name</th>
-        <th style="padding: 1rem; border: 1px solid #e0c38c;">Features</th>
-        <th style="padding: 1rem; border: 1px solid #e0c38c;">Drop Rate</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Legendary</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Golden Crust</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Golden butter + Immortal toppings / Airdrop priority</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">1%</td>
-      </tr>
-      <tr>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Epic</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Burnt Edge</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Crispy crust + Rare toppings / Swap fee discount</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">5%</td>
-      </tr>
-      <tr>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Rare</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Honey Butter</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Sweet butter combo / Special baking animation</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">15%</td>
-      </tr>
-      <tr>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Common</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Toasty Bun</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">Standard bread + Basic butter</td>
-        <td style="padding: 1rem; border: 1px solid #e0c38c;">79%</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  <p style="text-align: center; margin-top: 1.5rem; font-weight: bold; color: #5e3200;">
-    Ready to bake the crispiest Hambubter [$HBUB] of them all?
-  </p>
-</section>
-
-<section class="section" id="philosophy">
-  <h2>World Philosophy</h2>
-  <p><strong>Hambubter [$HBUB]</strong> is more than just a meme character.<br />
-  He is a <strong>greedy little hamster who always craves bread and butter</strong> and a reflection of us investors, chasing infinite possibilities.</p>
-
-  <p>He may look round and cute, but his world is structured and logical.<br />
-  A hunger for <strong>real profits</strong> as fierce as his appetite,<br />
-  a <strong>value preserving structure</strong> as stable as rich butter,<br />
-  and a <strong>community driven ecosystem</strong> that bakes and shares daily these are what make <strong>Hambubter</strong> more than just a meme, but a <strong>practical crypto asset.</strong></p>
-
-  <blockquote><strong>“Spread it. Toast it. Earn it!”</strong></blockquote>
-
-  <p>This slogan isn’t just a joke it’s the core philosophy of the <strong>Hambubter [$HBUB]</strong> ecosystem.</p>
-
-  <ul>
-    <li><strong>Two slices of bread represent liquidity</strong> a solid market anyone can buy and sell in freely.</li>
-    <li><strong>The butter symbolizes stored value</strong> a deflation-resistant supply model with real-world utility.</li>
-    <li><strong>Hambubter [$HBUB]</strong> is the perfect blend a fusion of community, economy, memes, and practicality.</li>
-  </ul>
-
-  <p><strong>Hambubter [$HBUB]</strong> goes beyond fun and laughter.<br />
-  It achieves a harmony of memes and tokenomics through mechanisms like <strong>automatic burns</strong> to reduce supply,<br />
-  and a <strong>reward structure that brings real benefits to participants</strong>.</p>
-
-  <p>Don’t be fooled by the cuteness.<br />
-  <strong>HBUB is a next gen meme coin born from a serious ecosystem with high calorie potential for growth.</strong></p>
-</section>
-
-<section class="section" id="tokenomics">
-  <h2>Tokenomics</h2>
-  <p>
-    <strong>The Hambubter [$HBUB]</strong> tokenomics are meticulously crafted to support long term growth and ecosystem stability.
-  </p>
-  <p>
-    The token name is <strong>Hambubter</strong>, and the symbol is <strong>HBUB</strong> representing a creative fusion of hamster, butter, and bun.  
-    With a total supply of <strong>100,000,000,000 HBUB</strong>, the token ensures ample liquidity and scalability.
-  </p>
-  <p>
-    Built on <strong>Solana</strong>, the blockchain was chosen for its lightning fast transactions and minimal fees, delivering an optimal user experience.
-  </p>
-  <p>
-    Key mechanics include an <strong>auto-burn mechanism</strong>, a <strong>community reward system</strong>, and <strong>liquidity enhancement strategies</strong>,  
-    all designed to promote sustainable growth and price stability.
-  </p>
-  <p>
-    Hambubter [$HBUB] strikes a balance between fun and functionality powered by a strong community and innovative tokenomics, it is poised to secure a unique place in the future crypto market.
-  </p>
-
-  <h3 id="tokenomics">Tokenomics Overview</h3>
-  <ul style="list-style: none; padding: 0;">
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Token Name:</strong></span> hambubter
-    </li>
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Symbol:</strong></span> HBUB
-    </li>
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Total Supply:</strong></span> 100,000,000,000
-    </li>
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Chain:</strong></span> Solana
-    </li>
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Token Standard:</strong></span> SPL / Metaplex v2
-    </li>
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Primary Sale:</strong></span> Not happened
-    </li>
-    <li style="display: flex; position: relative; padding-left: 15px;">
-      <span style="position: absolute; left: 0;">•</span>
-      <span style="width: 130px;"><strong>Mutable:</strong></span> No (Immutable)
-    </li>
-  </ul>
-
-  <p>
-    This means the HBUB token has been <strong>officially minted and locked</strong> on Solana,
-    and its metadata is stored immutably on IPFS for transparency.
-  </p>
-
-  <h3 style="color:#007bff; margin-top:1.5rem;">DEX Listing Planned</h3>
-  <ul style="list-style-type: disc; padding-left: 1.5rem; line-height: 1.6;">
-    <li>Token listing planned on major decentralized exchanges (DEX)</li>
-    <li>Providing liquidity pools to activate the market</li>
-    <li>Building and engaging the initial community</li>
-  </ul>
-
-  <h3 style="color:#dc3545; margin-top:1.5rem;">CEX Listing Planned</h3>
-  <ul style="list-style-type: disc; padding-left: 1.5rem; line-height: 1.6;">
-    <li>Preparing collaboration with centralized exchanges (CEX)</li>
-    <li>Proceeding with listing reviews and procedures</li>
-    <li>Expanding user base through improved accessibility and liquidity</li>
-  </ul>
-</section>
-<section class="section" id="community">
-  <h2>Join the Community</h2>
-  <p><strong>Come join the baking fun with Hambubter [$HBUB]!</strong></p>
-  
-  <p>Hambubter is more than just a meme coin.<br />
-  It's a collective creation shaped by our passion, creativity, and collaboration.<br />
-  The community is the beating heart of <strong>Hambubter [$HBUB]</strong>, where real value is baked, buttered, and shared together.</p>
-
-  <p>Beyond simple “participation,” you become a co-creator in the future of this meme coin.<br />
-  With the power of the community, we can build stronger liquidity, a more resilient ecosystem, and a rewarding incentive system.</p>
-
-  <p>We invite you to join the <strong>Hambubter [$HBUB]</strong> community where the more you contribute, the more fun and rewards you’ll enjoy.<br />
-  Just like a cute hamster spreading butter, your enthusiasm adds flavor and value to everything we build together.</p>
-
-  <p><strong>Get involved now!</strong><br />
-  New baking events, exclusive NFT drops, and diverse reward programs await you.<br />
-  <strong>With Hambubter [$HBUB], let’s Spread, Bake, and Earn the journey continues with you.</strong></p>
-</section>
-<section class="section" id="team">
-  <h2>[$HBUB] Team</h2>
-  <p>
-    <strong>Hambubter[$HBUB]</strong> is more than just a meme coin; it is an innovative crypto asset project uniquely blending meme culture with practicality. 
-    This project is managed by a passionate team with deep expertise in their respective fields, 
-    all dedicated to the growth and advancement of the <strong>Hambubter[$HBUB]</strong> ecosystem.
-  </p>
-  <p>
-    Our team excels in design, development, community management, marketing, and tokenomics design. 
-    Through this diverse expertise, we build a distinctive worldview and differentiated utility for <strong>Hambubter[$HBUB]</strong>, 
-    creating a robust ecosystem trusted and loved by both users and investors.
-  </p>
-  <p>
-    We prioritize technical excellence and community centered operations to pursue sustainable growth and innovation simultaneously. 
-    Each team member goes beyond their role to collaborate closely, striving to make <strong>Hambubter[$HBUB]</strong> the new standard for meme coins.
-  </p>
-  <p>
-    Beneath the name of meme coin lies a serious philosophy, systematic strategy, and warm community spirit all harmonized within <strong>Hambubter[$HBUB]</strong> 
-    Our team will continue relentless research and development to ensure this project creates even greater value in the future.
-  </p>
-  <p>
-    Together, these experts work to establish <strong>Hambubter[$HBUB]</strong> as a project that transcends memes, combining innovation and practicality.
-  </p>
-
-</section>
-<body>
-<section class="section" id="tribe-members">
-  <h2>Hambubter Tribe</h2>
-  <p>
-    <strong>Chief Kobi</strong><br />
-    The wise and calm leader of the Hambubter tribe. Kobi has guided the hamsters through many storms with patience and clever strategies. Known for his deep knowledge of the ancient hamster scrolls and a knack for bringing harmony, Kobi is the tribe’s heart and compass.
-  </p>
-  <p>
-    <strong>General Alex</strong><br />
-    Bold and fearless, General Alex commands the Hambubter warriors with unmatched bravery. With a battle scar above his eye and a booming voice, he inspires the tribe to stand strong against any threat. Alex never backs down and believes every challenge is an opportunity to grow stronger.
-  </p>
-  <p>
-    <strong>Captain Brakk</strong><br />
-    The serious but lovable gatekeeper of Hambubter. Standing tall at the sacred gate, Brakk is famous for his legendary Quiz of the Crumbs—a riddle challenge that tests anyone who wishes to enter. With sharp eyes and a suspicious nose for fake buns and sneaky spreads, no impostor slips past him. Despite his stern duty, Brakk has a soft spot for the youngest tribe members.
-  </p>
-  <p>
-    <strong>Doctor Mina</strong><br />
-    The tribe’s healer and guardian of health. Mina’s gentle paws and warm smile soothe every injury and worry. She spends her days mixing herbal remedies and offering wise advice to keep the tribe strong. Mina believes in the power of kindness and often treats the hamsters to stories that lift their spirits.
-  </p>
-  <p>
-    <strong>Wizard Celine</strong><br />
-    A mysterious and magical figure, Celine channels the ancient butter magic that flows through Hambubter. Draped in robes that shimmer like melted butter, she casts protective spells and unlocks secrets hidden in the tribe’s past. Celine is often found studying the stars or concocting mystical potions in her cozy burrow.
-  </p>
-  <p>
-    <strong>Pirate Jack</strong><br />
-    The adventurous spirit of the tribe, Jack dreams of vast oceans and hidden treasures. With a jaunty hat and a cheeky grin, he sets sail on daring voyages beyond the familiar lands. Jack’s stories of distant islands and daring escapades ignite the imaginations of all Hambubters, reminding them that courage and curiosity go hand in hand.
-  </p>
-  <p>
-    <strong>And,</strong><br />
-    At the core of the Hambubter tribe’s warmth and togetherness is the loving Taro family: Taro, Selemie, and little Ammu. Though not famed warriors or mighty wizards, their bond and kindness are the glue that holds the tribe’s spirit alive.<br />
-    Taro is the cheerful elder brother whose laughter can brighten even the darkest days. Always ready with a helping paw or a playful joke, he’s the heartwarming spark that brings smiles to every corner of Hambubter.<br />
-    Selemie, the gentle sister, has a calm and soothing presence. Her soft voice and caring nature comfort those around her, whether nursing a scraped paw or simply lending an ear to a worried friend. Selemie’s empathy makes her the tribe’s quiet guardian of peace.<br />
-    And then there’s Ammu, the little bundle of endless curiosity and joy. With wide, sparkling eyes and tiny paws eager to explore, Ammu embodies the tribe’s hopeful future. Every day is an adventure filled with wonder, as Ammu learns and grows surrounded by love.<br />
-    Together, the Taro family nurtures the Hambubter tribe with laughter, care, and boundless warmth reminding everyone that sometimes, the greatest strength lies in the simple power of family.
-  </p>
-</section>
-
-<body>
-<section class="section" id="Introductions">
-  <h2>Tribe Characters</h2>
-<div class="tribe-grid">
-
-<div class="member-card">
-<h3><strong>1.Chief Kobi</strong><br/></h3>
-The wise and respected leader of the Hambubter tribe, Kobi embodies the spirit of buttery harmony and strength. With a calm yet powerful presence, Kobi guides the tribe through challenges and inspires everyone to uphold their buttery traditions.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>2.General Alex</strong><br/></h3>
-A fierce and loyal warrior, General Alex commands the tribe’s defenses with unwavering courage. Known for rallying the troops with his fiery speeches, Alex embodies the tribe’s relentless spirit and determination to protect their buttery homeland.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>3.Captain Brakk</strong><br/></h3>
-Stoic, sharp eyed, and utterly butter suspicious Captain Brakk stands guard at the only entrance to the sacred land of HAMBUBTER.
-No one passes without facing his legendary Quiz of the Crumbs. He’s seen too many fake buns and sneaky spreads trying to slip through.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>4.Doctor Mina</strong><br/></h3>
-The tribe’s gentle healer, Mina nurtures both body and mind. With her deep knowledge of herbal remedies and care, she ensures the tribe remains healthy and strong, reminding everyone that true power comes from well being.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>5.Wizard Celine</strong><br/></h3>
-A mysterious mage wielding ancient butter magic, Celine is the tribe’s source of mystical power. Her spells are said to unlock hidden strength and blessings, guiding the tribe with magical wisdom in times of need.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>6.Pirate Jack</strong><br/></h3>
-The adventurous soul of the tribe, Pirate Jack sails across endless seas in search of buttery treasures beyond imagination. His boldness and love for exploration inspire the tribe to dream big and embrace the unknown.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>7.Chief’s Son Taro</strong><br/></h3>
-A hardworking hunter, Taro’s skill and dedication bring food and resources for the tribe. Though sometimes wishing for more butter, his steady presence and loyalty are vital to the tribe’s daily life.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>8.Chief’s Daughter Selemie</strong><br/></h3>
-Selemie brings warmth and kindness to the Hambubter tribe. She is known for her gentle nature and ability to lift spirits, reminding everyone of the simple joys found in their buttery home.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>9.Chief’s Grandson Ammu</strong><br/></h3>
-The youngest member of the tribe, Ammu is full of curiosity and endless energy. With an innocent love for butter’s scent and flavor, Ammu’s laughter and playfulness bring joy to all.
-  </p>
-</div>
-<div class="member-card">
-<h3><strong>10.Global Mobility</strong><br/></h3>
-People of the world, seeking entry into the great tribe of HAMBUBTER!
-Can you hear it? The echoes of HBUB! HBUB! HBUB! HBUB!
-Oooo! Oooo! Oooo! Oooo!"
-  </p>
-</div>
-    </div>
-  </div>
-</section>
-<style>
-  .dialogue-row {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .dialogue-row.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-<body>
-<section class="section">
-  <div class="dialogue-container">
-
-    <div class="dialogue-row left" style="display: none;">
-      <img src="https://hbubcoin.com/images/Kobi.png" alt="Kobi" class="character-image" />
-      <div class="bubble-content bubble-Kobi left">
-        <span class="character-name">[Kobi]</span><br/>
-        Today was a deeply touching day filled with buttery goodness.  
-        I hope our tribe never forgets this power as we move forward.
+  <!-- ======================== 히어로 섹션 ======================== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Hambubter Solana Meme Coin HBUB</h1>
+      <p class="subtitle">“The unstoppable appetite of Hambubter [$HBUB]!”</p>
+      <p>A cute and crazy meme revolution born from <strong>hamster</strong>, <strong>butter</strong>, and <strong>bread</strong>! 🐹🧈🍞</p>
+      <div class="hero-cta">
+        <h2>HBUB Power! Meme Power! Your Power! 🔥</h2>
+        <p>The cutest and most powerful meme coin is waiting for <strong>your power</strong>.  
+        Join the <strong>HBUB world</strong> where fun and community collide!</p>
       </div>
     </div>
+  </section>
 
-    <div class="dialogue-row right" style="display: none;">
-      <img src="https://hbubcoin.com/images/alex.png" alt="Alex" class="character-image" />
-      <div class="bubble-content bubble-alex right">
-        <span class="character-name">[Alex]</span><br/>
-        Everyone, get your lines ready!  
-        Our buttery spirit will never back down!  
-        Hold strong and claim victory till the end!
+  <!-- ======================== 섹션: About ======================== -->
+  <main role="main">
+    <section class="section" id="about">
+      <h2>What is Hambubter?</h2>
+      <p><strong>Hambubter [$HBUB]</strong> is a one of a kind meme coin born from the fusion of three irresistible forces: Hamster, Butter, and Bun.</p>
+      <p>This greedy yet adorable hamster clutches butter in one paw and bread in the other, shouting to the world <strong>“Bake it! Then earn it!”</strong></p>
+      <p><strong>Hambubter [$HBUB]</strong> species is far from your average hamster. Driven by insatiable hunger and profit desire, they interpret every blockchain activity as a unique form of <strong>“Baking.”</strong></p>
+      <p>For them, swapping is <strong>“spreading butter and baking it,”</strong> while adding liquidity means <strong>“kneading the dough and stacking the buns.”</strong></p>
+      <p><strong>Hambubter [$HBUB]</strong> goes beyond laughs—it cleverly reinterprets complex blockchain and DeFi concepts through a fun and accessible lens, creating a deeply immersive universe for users.</p>
+      <p>From the charming character design and solid tokenomics to the ever-evolving NFT baking collections and community events, <strong>Hambubter [$HBUB]</strong> isn't just a meme, it's a dynamic Web3 playground where participation, profits, humor, and storytelling collide.</p>
+      <p>Now it's your turn to stack your buns, spread your butter, and join the Hambubter tribe to <strong>“Bake, Laugh, and Earn.”</strong></p>
+      <p class="welcome"><strong>Welcome to the ❤️ HAMBUBTER</strong></p>
+    </section>
+
+    <!-- ======================== 섹션: NFT Preview ======================== -->
+    <section class="section" id="upcoming">
+      <h2>NFT Preview</h2>
+      <p><strong>A glimpse of Hambubter collectibles. Expected to launch soon.</strong></p>
+      <p><strong>Hambubter bakes buns and that, itself, is an art form!</strong></p>
+      <p>The upcoming <strong>Hambubter [$HBUB] NFT series</strong> is more than just digital images. Each NFT varies in rarity based on delicious attributes like <em>butter amount, bread type, baking level, and toppings</em>, and they even come with <strong>savory and crispy utility functions</strong>.</p>
+      <p>These NFTs are the core of the "Baking Economy" within the Hambubter [$HBUB] universe. Beyond collecting, they offer <strong>real benefits</strong> such as token rewards, exclusive event access, and community ranking perks.</p>
+      <p>Some legendary NFTs are even coated with <strong>Golden Butter</strong>, unlocking transaction fee discounts, airdrop priority access, and more.</p>
+      <p>Every NFT is a digital masterpiece <em>baked by Hambubter’s finest artisans</em>. From toasty textures to buttery aromas (digitally rendered!), this unique design experience offers <strong>satisfaction for both collectors and investors</strong>.</p>
+      <p class="cta-large">Bake smart, earn smarter—that's the Hambubter [$HBUB] way!</p>
+    </section>
+
+    <!-- ======================== 섹션: Rarity Guide ======================== -->
+    <section class="section" id="rarity">
+      <h2>NFT Rarity Guide</h2>
+      <p><strong>Discover rarity tiers. Full guide coming soon.</strong></p>
+      <p>The rarity of each NFT is determined by the level of baking, type of butter, and topping combinations.</p>
+      <p>Check out the delicious rarity chart below, baked to perfection by the Hambubter [$HBUB] artisans!</p>
+      <div class="table-wrapper">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Name</th>
+              <th>Features</th>
+              <th>Drop Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Legendary</td>
+              <td>Golden Crust</td>
+              <td>Golden butter + Immortal toppings / Airdrop priority</td>
+              <td>1%</td>
+            </tr>
+            <tr>
+              <td>Epic</td>
+              <td>Burnt Edge</td>
+              <td>Crispy crust + Rare toppings / Swap fee discount</td>
+              <td>5%</td>
+            </tr>
+            <tr>
+              <td>Rare</td>
+              <td>Honey Butter</td>
+              <td>Sweet butter combo / Special baking animation</td>
+              <td>15%</td>
+            </tr>
+            <tr>
+              <td>Common</td>
+              <td>Toasty Bun</td>
+              <td>Standard bread + Basic butter</td>
+              <td>79%</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
+      <p class="cta-large">Ready to bake the crispiest Hambubter [$HBUB] of them all?</p>
+    </section>
 
-    <div class="dialogue-row left" style="display: none;">
-      <img src="https://hbubcoin.com/images/Brakk.png" alt="Brakk" class="character-image" />
-      <div class="bubble-content bubble-Brakk left">
-        <span class="character-name">[Brakk]</span><br/>
-        I am Brakk, guardian of the border and keeper of the gate. None shall pass unless they conquer my quiz of destiny!
+    <!-- ======================== 섹션: Philosophy ======================== -->
+    <section class="section" id="philosophy">
+      <h2>World Philosophy</h2>
+      <p><strong>Hambubter [$HBUB]</strong> is more than just a meme character.<br />
+      He is a <strong>greedy little hamster who always craves bread and butter</strong> and a reflection of us investors, chasing infinite possibilities.</p>
+      <p>He may look round and cute, but his world is structured and logical.<br />
+      A hunger for <strong>real profits</strong> as fierce as his appetite,<br />
+      a <strong>value preserving structure</strong> as stable as rich butter,<br />
+      and a <strong>community driven ecosystem</strong> that bakes and shares daily—these are what make <strong>Hambubter</strong> more than just a meme, but a <strong>practical crypto asset.</strong></p>
+      <blockquote><strong>“Spread it. Toast it. Earn it!”</strong></blockquote>
+      <p>This slogan isn’t just a joke—it’s the core philosophy of the <strong>Hambubter [$HBUB]</strong> ecosystem.</p>
+      <ul class="philosophy-list">
+        <li><strong>Two slices of bread represent liquidity</strong>: a solid market anyone can buy and sell in freely.</li>
+        <li><strong>The butter symbolizes stored value</strong>: a deflation-resistant supply model with real-world utility.</li>
+        <li><strong>Hambubter [$HBUB]</strong> is the perfect blend: a fusion of community, economy, memes, and practicality.</li>
+      </ul>
+      <p><strong>Hambubter [$HBUB]</strong> goes beyond fun and laughter.<br />
+      It achieves a harmony of memes and tokenomics through mechanisms like <strong>automatic burns</strong> to reduce supply,<br />
+      and a <strong>reward structure that brings real benefits to participants</strong>.</p>
+      <p>Don’t be fooled by the cuteness.<br />
+      <strong>HBUB is a next-gen meme coin born from a serious ecosystem with high-calorie potential for growth.</strong></p>
+    </section>
+
+    <!-- ======================== 섹션: Tokenomics ======================== -->
+    <section class="section" id="tokenomics">
+      <h2>Tokenomics</h2>
+      <p><strong>The Hambubter [$HBUB]</strong> tokenomics are meticulously crafted to support long-term growth and ecosystem stability.</p>
+      <p>The token name is <strong>Hambubter</strong>, and the symbol is <strong>HBUB</strong> representing a creative fusion of hamster, butter, and bun. With a total supply of <strong>100,000,000,000 HBUB</strong>, the token ensures ample liquidity and scalability.</p>
+      <p>Built on <strong>Solana</strong>, the blockchain was chosen for its lightning-fast transactions and minimal fees, delivering an optimal user experience.</p>
+      <p>Key mechanics include an <strong>auto-burn mechanism</strong>, a <strong>community reward system</strong>, and <strong>liquidity enhancement strategies</strong>, all designed to promote sustainable growth and price stability.</p>
+      <p>Hambubter [$HBUB] strikes a balance between fun and functionality—powered by a strong community and innovative tokenomics, it is poised to secure a unique place in the future crypto market.</p>
+
+      <h3>Tokenomics Overview</h3>
+      <ul class="tokenomics-list">
+        <li><strong>Token Name:</strong> hambubter</li>
+        <li><strong>Symbol:</strong> HBUB</li>
+        <li><strong>Total Supply:</strong> 100,000,000,000</li>
+        <li><strong>Chain:</strong> Solana</li>
+        <li><strong>Token Standard:</strong> SPL / Metaplex v2</li>
+        <li><strong>Primary Sale:</strong> Not happened</li>
+        <li><strong>Mutable:</strong> No (Immutable)</li>
+      </ul>
+      <p>This means the HBUB token has been <strong>officially minted and locked</strong> on Solana, and its metadata is stored immutably on IPFS for transparency.</p>
+
+      <h3 class="planned dex">DEX Listing Planned</h3>
+      <ul class="listing-list">
+        <li>Token listing planned on major decentralized exchanges (DEX)</li>
+        <li>Providing liquidity pools to activate the market</li>
+        <li>Building and engaging the initial community</li>
+      </ul>
+
+      <h3 class="planned cex">CEX Listing Planned</h3>
+      <ul class="listing-list">
+        <li>Preparing collaboration with centralized exchanges (CEX)</li>
+        <li>Proceeding with listing reviews and procedures</li>
+        <li>Expanding user base through improved accessibility and liquidity</li>
+      </ul>
+    </section>
+
+    <!-- ======================== 섹션: Community ======================== -->
+    <section class="section" id="community">
+      <h2>Join the Community</h2>
+      <p><strong>Come join the baking fun with Hambubter [$HBUB]!</strong></p>
+      <p>Hambubter is more than just a meme coin. It's a collective creation shaped by our passion, creativity, and collaboration. The community is the beating heart of <strong>Hambubter [$HBUB]</strong>, where real value is baked, buttered, and shared together.</p>
+      <p>Beyond simple “participation,” you become a co-creator in the future of this meme coin. With the power of the community, we can build stronger liquidity, a more resilient ecosystem, and a rewarding incentive system.</p>
+      <p>We invite you to join the <strong>Hambubter [$HBUB]</strong> community where the more you contribute, the more fun and rewards you’ll enjoy. Just like a cute hamster spreading butter, your enthusiasm adds flavor and value to everything we build together.</p>
+      <p><strong>Get involved now!</strong> New baking events, exclusive NFT drops, and diverse reward programs await you. <strong>With Hambubter [$HBUB], let’s Spread, Bake, and Earn—the journey continues with you.</strong></p>
+    </section>
+
+    <!-- ======================== 섹션: Team ======================== -->
+    <section class="section" id="team">
+      <h2>[$HBUB] Team</h2>
+      <p><strong>Hambubter[$HBUB]</strong> is more than just a meme coin; it is an innovative crypto asset project uniquely blending meme culture with practicality. This project is managed by a passionate team with deep expertise in their respective fields, all dedicated to the growth and advancement of the <strong>Hambubter[$HBUB]</strong> ecosystem.</p>
+      <p>Our team excels in design, development, community management, marketing, and tokenomics design. Through this diverse expertise, we build a distinctive worldview and differentiated utility for <strong>Hambubter[$HBUB]</strong>, creating a robust ecosystem trusted and loved by both users and investors.</p>
+      <p>We prioritize technical excellence and community-centered operations to pursue sustainable growth and innovation simultaneously. Each team member goes beyond their role to collaborate closely, striving to make <strong>Hambubter[$HBUB]</strong> the new standard for meme coins.</p>
+      <p>Beneath the name of a meme coin lies a serious philosophy, systematic strategy, and warm community spirit all harmonized within <strong>Hambubter[$HBUB]</strong>. Our team will continue relentless research and development to ensure this project creates even greater value in the future.</p>
+      <p>Together, these experts work to establish <strong>Hambubter[$HBUB]</strong> as a project that transcends memes, combining innovation and practicality.</p>
+    </section>
+
+    <!-- ======================== 섹션: Hambubter Tribe ======================== -->
+    <section class="section" id="tribe-members">
+      <h2>Hambubter Tribe</h2>
+      <div class="tribe-profile">
+        <article class="tribe-card">
+          <h3>1. Chief Kobi</h3>
+          <p>The wise and respected leader of the Hambubter tribe, Kobi embodies buttery harmony and strength. With a calm yet powerful presence, Kobi guides the tribe through challenges and inspires everyone to uphold their buttery traditions.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>2. General Alex</h3>
+          <p>A fierce and loyal warrior, General Alex commands the tribe’s defenses with unwavering courage. Known for rallying the troops with his fiery speeches, Alex embodies the tribe’s relentless spirit and determination to protect their buttery homeland.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>3. Captain Brakk</h3>
+          <p>Stoic, sharp-eyed, and utterly butter-suspicious, Captain Brakk stands guard at the only entrance to the sacred land of HAMBUBTER. No one passes without facing his legendary Quiz of the Crumbs. Despite his stern duty, he has a soft spot for the youngest tribe members.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>4. Doctor Mina</h3>
+          <p>The tribe’s gentle healer, Mina nurtures both body and mind. With her deep knowledge of herbal remedies and care, she ensures the tribe remains healthy and strong, reminding everyone that true power comes from well-being.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>5. Wizard Celine</h3>
+          <p>A mysterious mage wielding ancient butter magic, Celine is the tribe’s source of mystical power. Her spells unlock hidden strength and blessings, guiding the tribe with magical wisdom in times of need.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>6. Pirate Jack</h3>
+          <p>The adventurous soul of the tribe, Pirate Jack sails across endless seas in search of buttery treasures beyond imagination. His boldness and love for exploration inspire the tribe to dream big and embrace the unknown.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>7. Chief’s Son Taro</h3>
+          <p>A hardworking hunter, Taro’s skill and dedication bring food and resources for the tribe. Though sometimes wishing for more butter, his steady presence and loyalty are vital to the tribe’s daily life.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>8. Chief’s Daughter Selemie</h3>
+          <p>Selemie brings warmth and kindness to the Hambubter tribe. She is known for her gentle nature and ability to lift spirits, reminding everyone of the simple joys found in their buttery home.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>9. Chief’s Grandson Ammu</h3>
+          <p>The youngest member of the tribe, Ammu is full of curiosity and endless energy. With wide, sparkling eyes and tiny paws eager to explore, Ammu’s laughter and playfulness bring joy to all.</p>
+        </article>
+        <article class="tribe-card">
+          <h3>10. Global Mobility</h3>
+          <p>People of the world, seeking entry into the great tribe of HAMBUBTER! Can you hear it? The echoes of HBUB! HBUB! HBUB! HBUB!… Oooo! Oooo! Oooo! Oooo!</p>
+        </article>
       </div>
-    </div>
 
-    <div class="dialogue-row right" style="display: none;">
-      <img src="https://hbubcoin.com/images/Mina.png" alt="Mina" class="character-image" />
-      <div class="bubble-content bubble-Mina right">
-        <span class="character-name">[Mina]</span><br/>
-        Even the deepest buttery feelings inside the heart  
-        require careful healing.  
-        A healthy mind is the true source of strength.
+      <!-- 대화(Dialogue) 버튼 -->
+      <div class="dialogue-wrapper">
+        <button id="dialogueBtn" class="btn btn-dialogue">Tribe Dialogue (Click)</button>
+        <div class="dialogue-container">
+          <!-- 모든 .dialogue-row는 초기 display: none; -->
+          <div class="dialogue-row left bubble-Kobi">
+            <img src="images/Kobi.png" alt="Kobi" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Kobi]</span><br />
+              Today was a deeply touching day filled with buttery goodness.  
+              I hope our tribe never forgets this power as we move forward.
+            </div>
+          </div>
+          <div class="dialogue-row right bubble-alex">
+            <img src="images/alex.png" alt="Alex" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Alex]</span><br />
+              Everyone, get your lines ready!  
+              Our buttery spirit will never back down!  
+              Hold strong and claim victory till the end!
+            </div>
+          </div>
+          <div class="dialogue-row left bubble-Brakk">
+            <img src="images/Brakk.png" alt="Brakk" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Brakk]</span><br />
+              I am Brakk, guardian of the border and keeper of the gate. None shall pass unless they conquer my quiz of destiny!
+            </div>
+          </div>
+          <div class="dialogue-row right bubble-Mina">
+            <img src="images/Mina.png" alt="Mina" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Mina]</span><br />
+              Even the deepest buttery feelings inside the heart  
+              require careful healing.  
+              A healthy mind is the true source of strength.
+            </div>
+          </div>
+          <div class="dialogue-row left bubble-Celine">
+            <img src="images/Celine.png" alt="Celine" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Celine]</span><br />
+              Ancient butter magic,  
+              break free from your deep seal,  
+              and unleash your power upon this world!
+            </div>
+          </div>
+          <div class="dialogue-row right bubble-Jack">
+            <img src="images/Jack.png" alt="Jack" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Jack]</span><br />
+              Let's set sail across endless seas  
+              in search of butter more precious than treasure!
+            </div>
+          </div>
+          <div class="dialogue-row left bubble-Taro">
+            <img src="images/Taro.png" alt="Taro" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Taro]</span><br />
+              The hunt went smoothly.  
+              But if only we had butter, it would have been perfect...
+            </div>
+          </div>
+          <div class="dialogue-row right bubble-Selemie">
+            <img src="images/Selemie.png" alt="Selemie" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Selemie]</span><br />
+              The buttery breeze gently embraces us once again today.  
+              Days like this truly bring happiness.
+            </div>
+          </div>
+          <div class="dialogue-row left bubble-Ammu">
+            <img src="images/Ammu.png" alt="Ammu" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[Ammu]</span><br />
+              I love the smell of butter so much,  
+              I can't help but sniff it all the time!  
+              It's just irresistible~!
+            </div>
+          </div>
+          <div class="dialogue-row right bubble-HBUBFlag">
+            <img src="images/HBUBFlag.png" alt="HBUBfolk" class="character-image" />
+            <div class="bubble-content">
+              <span class="character-name">[HBUBfolk]</span><br />
+              Doge. Pepe. Catfolk. Your homeland is crumbling. Come to HBUB—we welcome all meme refugees!  
+              In HBUB, your memes are not just appreciated; they're celebrated. Join a community where your creativity thrives, and your meme legacy lives on.  
+              Escape the chaos. Embrace the meme haven. HBUB awaits you.  
+              <strong>
+                <a href="https://twitter.com/Hambubter_coin" target="_blank" rel="noopener" aria-label="Hambubter Twitter">
+                  <img src="images/twitter-icon.png" alt="Twitter Icon" class="icon-small" />
+                </a>
+              </strong>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="dialogue-row left" style="display: none;">
-      <img src="https://hbubcoin.com/images/Celine.png" alt="Celine" class="character-image" />
-      <div class="bubble-content bubble-Celine left">
-        <span class="character-name">[Celine]</span><br/>
-        Ancient butter magic,  
-        break free from your deep seal,  
-        and unleash your power upon this world!
+    <!-- ======================== 섹션: Official Links ======================== -->
+    <section class="section" id="official">
+      <h3>Official Channels</h3>
+      <div class="official-links">
+        <div class="official-item"><a href="https://hbubcoin.com" target="_blank" rel="noopener">HOMEPAGE</a></div>
+        <div class="official-item"><a href="https://github.com/Meowrth/hambubter" target="_blank" rel="noopener">GitHub</a></div>
+        <div class="official-item"><a href="https://twitter.com/Hambubter_coin" target="_blank" rel="noopener">Twitter</a></div>
+        <div class="official-item full-width"><a href="mailto:help@hbubcoin.com">E-mail</a></div>
+        <div class="official-item full-width"><a href="https://discord.gg/32HWdufF" target="_blank" rel="noopener">Join our Discord</a></div>
+        <div class="official-item full-width"><a href="https://raydium.io/launchpad/?search=hambubter" target="_blank" rel="noopener">Launch Hambubter on Raydium</a></div>
       </div>
-    </div>
+    </section>
 
-    <div class="dialogue-row right" style="display: none;">
-      <img src="https://hbubcoin.com/images/Jack.png" alt="Jack" class="character-image" />
-      <div class="bubble-content bubble-Jack right">
-        <span class="character-name">[Jack]</span><br/>
-        Let's set sail across endless seas  
-        in search of butter more precious than treasure!
+    <!-- ======================== 섹션: Donate ======================== -->
+    <section class="section" id="donate">
+      <h3>Donate to Support</h3>
+      <p>If you like the Hambubter [$HBUB], consider donating Solana (SOL) to support our project!</p>
+      <div class="sol-donation-box">
+        <code id="sol-address"><strong>DPQp7jFMpBaEAgH7pgvZMkd2WKwW2tenyDpxLjPXqAxT</strong></code>
+        <button id="copy-btn" class="btn btn-copy" type="button">Copy</button>
       </div>
+    </section>
+  </main>
+
+  <!-- ======================== 푸터 ======================== -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-content">
+      <span>❤️Project: HAMBUBTER ($HBUB Meme Coin)</span>
+      <span>|</span>
+      <span>Operator: 김근호</span>
+      <span>|</span>
+      <span>Email: help@hbubcoin.com</span>
+      <span>|</span>
+      <span>© 2025 HAMBUBTER. All rights reserved. ❤️</span>
     </div>
+  </footer>
 
-    <div class="dialogue-row left" style="display: none;">
-      <img src="https://hbubcoin.com/images/Taro.png" alt="Taro" class="character-image" />
-      <div class="bubble-content bubble-Taro left">
-        <span class="character-name">[Taro]</span><br/>
-        The hunt went smoothly.  
-        But if only we had butter, it would have been perfect...
-      </div>
-    </div>
-
-    <div class="dialogue-row right" style="display: none;">
-      <img src="https://hbubcoin.com/images/Selemie.png" alt="Selemie" class="character-image" />
-      <div class="bubble-content bubble-Selemie right">
-        <span class="character-name">[Selemie]</span><br/>
-        The buttery breeze gently embraces us once again today.  
-        Days like this truly bring happiness.
-      </div>
-    </div>
-
-    <div class="dialogue-row left" style="display: none;">
-      <img src="https://hbubcoin.com/images/Ammu.png" alt="Ammu" class="character-image" />
-      <div class="bubble-content bubble-Ammu left">
-        <span class="character-name">[Ammu]</span><br/>
-        I love the smell of butter so much,  
-        I can't help but sniff it all the time!  
-        It's just irresistible~!
-      </div>
-    </div>
-
-<div class="dialogue-row right" style="display: none;">
-  <img src="https://hbubcoin.com/images/HBUBFlag.png" alt="Kobi" class="character-image" />
-  <div class="bubble-content bubble-HBUBFlag right">
-    <span class="character-name">[HBUBfolk]</span><br/>
-    Doge. Pepe. Catfolk. Your homeland is crumbling. Come to HBUB we welcome all meme refugees!
-    In HBUB, your memes are not just appreciated; they're celebrated. Join a community where your creativity thrives, and your meme legacy lives on.
-    Escape the chaos. Embrace the meme haven. HBUB awaits you.
-    <strong>
-      <a href="https://twitter.com/Hambubter_coin" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
-        <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter Icon" style="width: 17px; height: 17px;" />
-      </a>
-    </strong>
-  </div>
-</div>
-  </div>
-  <div class="official-item full-width">
- <div style="text-align: center; margin: 2rem auto;">
- <button
-  onclick="showNextDialogue()"
-  id="dialogueBtn"
-  style="
-    background: linear-gradient(145deg, #f8bbd0, #ff8fc2);
-    color: white;
-    font-family: 'Fredoka One', cursive;
-    padding: 14px 28px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  "
-  onmouseover="
-    this.style.transform='scale(1.05)';
-    this.style.boxShadow='0 6px 12px rgba(0,0,0,0.25)';
-    this.style.background='linear-gradient(145deg, #f8bbd0, #ff5fa5)';
-  "
-  onmouseout="
-    this.style.transform='scale(1)';
-    this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';
-    this.style.background='linear-gradient(145deg, #f8bbd0, #ff8fc2)';
-  "
->
-  Tribe Dialogue (Click)
-</button>
-  </div>
-</section>
-
-<script>
-function showNextDialogue() {
-  const dialogues = document.querySelectorAll(".dialogue-row");
-  const dialogue = dialogues[currentDialogue];
-
-  if (currentDialogue < dialogues.length) {
-    dialogue.style.display = "flex";
-    setTimeout(() => {
-      dialogue.classList.add("show");
-    }, 50);
-
-    const btn = document.getElementById("dialogueBtn");
-    btn.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-
-    currentDialogue++;
-  } else {
-    location.reload();
-  }
-}
-
-  let currentDialogue = 0;
-  const dialogues = document.querySelectorAll(".dialogue-row");
-
-  dialogues.forEach(d => d.style.display = "none");
-
-  function showNextDialogue() {
-    if (currentDialogue < dialogues.length) {
-      const dialogue = dialogues[currentDialogue];
-      dialogue.style.display = "flex";
-
-      setTimeout(() => {
-        dialogue.classList.add("show");
-      }, 50); 
-
-      dialogue.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-
-      currentDialogue++;
-    } else {
-      location.reload();
-    }
-  }
-</script>
-
+  <!-- 외부 JS 파일 (하단 로드) -->
+  <script src="js/main.js"></script>
 </body>
-<section class="section" id="official">
-<h3>Official Channels</h3>
-<div class="official-links">
-  <div class="official-item">
-    <strong><a href="https://hbubcoin.com" target="_blank" rel="noopener noreferrer">HOMEPAGE</a></strong>
-  </div>
-  <div class="official-item">
-    <strong><a href="https://github.com/Meowrth/hambubter" target="_blank" rel="noopener noreferrer">GitHub</a></strong>
-  </div>
-  <div class="official-item">
-    <strong><a href="https://twitter.com/Hambubter_coin" target="_blank" rel="noopener noreferrer">Twitter</a></strong>
-  </div>
-  <div class="official-item full-width">
-    <strong><a href="mailto:help@hbubcoin.com">E-mail</a></strong>
-  </div>
-  <div class="official-item full-width">
-    <strong><a href="https://discord.gg/32HWdufF" target="_blank" rel="noopener noreferrer">Join our Discord</a></strong>
-  </div>
-  <div class="official-item full-width">
-    <strong><a href="https://raydium.io/launchpad/?search=hambubter" target="_blank" rel="noopener noreferrer">Launch Hambubter on Raydium</a></strong>
-  </div>
-</div>
-</section>
-<section class="section" id="donate">
-  <h3>Donate to Support</h3>
-<p><strong>If you like the HamBUBter [$HBUB], consider donating Solana (SOL) to support our project!</strong></p>
-<div class="sol-donation-box">
-  <code id="sol-address"><strong>DPQp7jFMpBaEAgH7pgvZMkd2WKwW2tenyDpxLjPXqAxT</strong></code>
-  <button id="copy-btn" type="button">Copy</button>
-</div>
-</section>
-<script>
-  document.getElementById("copy-btn").addEventListener("click", function () {
-    const address = document.getElementById("sol-address").innerText.trim();
-    navigator.clipboard.writeText(address).then(() => {
-      alert("Address copied!");
-    });
-  });
-
-let current = 0;
-const dialogues = document.querySelectorAll('.dialogue-row');
-dialogues.forEach(d => d.style.display = 'none');
-
-function showNextDialogue() {
-  if (current < dialogues.length) {
-    dialogues[current].style.display = 'flex';
-    current++;
-  }
-}
-</script>
-</section>
-  </body>
-<footer style="font-size: 11px; color: gray; text-align: center; padding: 10px;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
-    <span>❤️Project: HAMBUBTER ($HBUB Meme Coin)</span>
-    <span>|</span>
-    <span>Operator: 김근호</span>
-    <span>|</span>
-    <span>Email: help@hbubcoin.com</span>
-    <span>|</span>
-    <span>© 2025 HAMBUBTER. All rights reserved. ❤️</span>
-  </div>
-</footer>
 </html>
