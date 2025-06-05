@@ -152,8 +152,9 @@ body {
 .hero-img {
   position: absolute;
   bottom: 0;
-  right: 10%;
-  max-width: 300px;
+  right: 5%;
+  width: 40vw;              /* 화면 너비의 40%로 설정 */
+  max-width: 600px;          /* 최대 500px 너비를 넘지 않도록 */
   z-index: 1;
   pointer-events: none;
 }
@@ -512,9 +513,11 @@ body {
 
 /* ======================== 반응형(Responsive) ======================== */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .hero-img {
+    width: 50vw;
+    max-width: 500px;
   }
+}
 
   .menu-links {
     flex-direction: column;
