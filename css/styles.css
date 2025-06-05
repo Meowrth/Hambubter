@@ -1,4 +1,3 @@
-/* ======================== 공통 변수 및 리셋 ======================== */
 :root {
   --color-section-bg: #fffdf6;
   --color-primary: #ffad60;
@@ -23,7 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ======================== 헤더 ======================== */
 .site-header {
   position: fixed;
   top: 0;
@@ -86,7 +84,6 @@ body {
   text-decoration: underline;
 }
 
-/* ======================== 고정 버튼 ======================== */
 .fixed-btn-wrapper {
   position: fixed;
   bottom: 20px;
@@ -116,7 +113,6 @@ body {
   color: #fff;
 }
 
-/* ======================== 히어로 섹션 ======================== */
 .hero {
   position: relative;
   width: 100%;
@@ -139,26 +135,26 @@ body {
   z-index: 1;
 }
 
-/* =================== 햄스터 이미지 (패럴럭스) =================== */
 .hero-img {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60vw;           /* 화면 너비의 60% 만큼 */
-  max-width: 800px;      /* 최대 800px 너비 */
+  width: 60vw;
+  max-width: 800px;
   z-index: 1;
   pointer-events: none;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, filter 0.3s ease;
+  filter: blur(0px);
 }
 
-/* ======================== 히어로 텍스트 ======================== */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
   padding: 20px;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  filter: none;
+  opacity: 1;
 }
 
 .hero-title {
@@ -182,7 +178,6 @@ body {
   white-space: nowrap;
 }
 
-/* ======================== 버튼 스타일 ======================== */
 .btn {
   background-color: var(--color-primary);
   border: none;
@@ -210,17 +205,14 @@ body {
   background-color: #7a4500;
 }
 
-/* ======================== 섹션 기본 스타일 ======================== */
 .section {
   width: 100%;
   padding: 4rem 2rem;
   max-width: 900px;
-  margin: 60px auto; /* 헤더 높이(약 60~80px) 여백 확보 */
+  margin: 60px auto;
   background-color: var(--color-section-bg);
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-
-  /* ★ 헤더 높이에 맞춘 scroll-margin-top */
   scroll-margin-top: 80px;
 }
 
@@ -236,7 +228,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* ======================== CTA (큰 텍스트) ======================== */
 .cta-large {
   font-size: 1.25rem;
   font-weight: bold;
@@ -245,7 +236,6 @@ body {
   margin-top: 2rem;
 }
 
-/* ======================== NFT Rarity 표 ======================== */
 .table-wrapper {
   overflow-x: auto;
   margin-top: 1.5rem;
@@ -272,7 +262,6 @@ body {
   font-weight: bold;
 }
 
-/* ======================== Philosophy 리스트 ======================== */
 .philosophy-list {
   list-style: none;
   padding-left: 0;
@@ -292,7 +281,6 @@ body {
   color: var(--color-accent);
 }
 
-/* ======================== Tokenomics 리스트 ======================== */
 .tokenomics-list {
   list-style: none;
   padding-left: 0;
@@ -318,7 +306,6 @@ body {
   font-weight: 600;
 }
 
-/* ======================== Listing (DEX/CEX) ======================== */
 .listing-list {
   list-style-type: disc;
   padding-left: 1.5rem;
@@ -326,7 +313,6 @@ body {
   line-height: 1.6;
 }
 
-/* ======================== Hambubter Tribe 카드 ======================== */
 .tribe-profile {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -347,7 +333,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* ======================== 다이얼로그 스타일 ======================== */
 .dialogue-wrapper {
   margin-top: 2rem;
   text-align: center;
@@ -363,7 +348,7 @@ body {
 }
 
 .dialogue-row {
-  display: none; /* 초기 숨김 */
+  display: none;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -406,9 +391,7 @@ body {
 
 .bubble-Kobi { background-color: #fff4cc; border: 1px solid #fbb03b; color: #6b4d00; }
 .bubble-alex { background-color: #dce3f7; border: 1px solid #334d80; color: #1a2a4d; }
-/* ...각 캐릭터별 버블 스타일... */
 
-/* ======================== Official Links ======================== */
 .official-links {
   display: flex;
   flex-wrap: wrap;
@@ -442,7 +425,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ======================== Donate 박스 ======================== */
 .sol-donation-box {
   display: flex;
   align-items: center;
@@ -480,7 +462,6 @@ body {
   background-color: #ff70b2;
 }
 
-/* ======================== Countdown Timer ======================== */
 .countdown-timer {
   margin-top: 1rem;
   font-size: 1.1rem;
@@ -488,7 +469,6 @@ body {
   color: var(--color-accent);
 }
 
-/* ======================== Toast 알림 ======================== */
 .toast {
   position: fixed;
   bottom: 30px;
@@ -507,7 +487,6 @@ body {
   opacity: 1;
 }
 
-/* ======================== 반응형(Responsive) ======================== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -536,7 +515,7 @@ body {
   }
 
   .hero-img {
-    width: 80vw;      /* 태블릿 이하에서 더 크게 보이도록 */
+    width: 80vw;
     max-width: 600px;
   }
 
@@ -556,7 +535,7 @@ body {
   }
 
   .hero-img {
-    width: 90vw;      /* 모바일에서 거의 화면 가득 */
+    width: 90vw;
     max-width: 400px;
   }
 }
