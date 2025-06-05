@@ -1,7 +1,8 @@
 // == js/main.js ==
-console.log("▶ main.js가 정상적으로 로드되었습니다.");
 
 // 1) DOM 요소 선택
+console.log("▶ main.js가 정상적으로 로드되었습니다.");  // 디버그용 로그
+
 const menuToggle   = document.getElementById("menu-toggle");
 const menuLinks    = document.getElementById("menu-links");
 const copyBtn      = document.getElementById("copy-btn");
@@ -53,11 +54,24 @@ window.scrollToSection = function(id) {
   console.log("▶ scrollToSection 호출됨, id =", id);  // 디버그용 로그
   const target = document.getElementById(id);
   if (!target) {
-    console.warn("⚠ 해당 id(" + id + ") 섹션을 찾을 수 없습니다.");
+    console.warn("⚠ 해당 id(" + id + ") 섹션을 찾을 수 없습니다:", id);
     return;
   }
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 };
+
+// === 대체 방식: 버튼에 id를 붙이고 JS에서 이벤트 연결하기 ===
+// index.html 버튼 대신 아래처럼 id="btn-scroll-about"를 주면,
+// addEventListener 방식으로 호출할 수 있습니다. (기존 inline onclick 은 제거하세요.)
+// 예시:
+const btnScrollAbout = document.getElementById("btn-scroll-about");
+if (btnScrollAbout) {
+  btnScrollAbout.addEventListener("click", () => {
+    console.log("▶ btn-scroll-about 클릭됨");
+    scrollToSection("about");
+  });
+}
+// ===========================================================
 
 // 5) Solana 주소 복사
 if (copyBtn && solAddress) {
