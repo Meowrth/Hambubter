@@ -1,4 +1,5 @@
 // == js/main.js ==
+console.log("▶ main.js가 정상적으로 로드되었습니다.");
 
 // 1) DOM 요소 선택
 const menuToggle   = document.getElementById("menu-toggle");
