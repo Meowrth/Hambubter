@@ -1,12 +1,25 @@
+// main.js
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 1) Strip any “#…” fragment off the URL bar immediately
   if (window.location.hash) {
-    history.replaceState(null, '', window.location.href.split('#')[0]);
-}
-  
+    const cleanURL = window.location.href.split('#')[0];
+    history.replaceState(null, '', cleanURL);
+  }
+
+  // 2) Scroll-to-top button
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 3) Menu toggle
   const toggle = document.getElementById('menu-toggle');
   const menu   = document.getElementById('menu-links');
-  toggle.addEventListener('click', function () {
+  toggle.addEventListener('click', function() {
     menu.classList.toggle('menu-open');
     menu.classList.toggle('collapsed-menu');
     this.setAttribute('aria-expanded', menu.classList.contains('menu-open'));
@@ -23,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 4) Dialogue progression
   let currentDialogue = 0;
   const dialogues = document.querySelectorAll('.dialogue-row');
   function showNextDialogue() {
@@ -44,14 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+  document.getElementById('dialogueBtn').addEventListener('click', showNextDialogue);
 
-document.getElementById("dialogueBtn").addEventListener("click", showNextDialogue);
-
-document.getElementById("copy-btn").addEventListener("click", function () {
-  const address = document.getElementById("sol-address").innerText.trim();
-  navigator.clipboard.writeText(address).then(() => {
-    alert("Address copied!");
+  // 5) Copy-to-clipboard
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    const address = document.getElementById('sol-address').innerText.trim();
+    navigator.clipboard.writeText(address).then(() => {
+      alert('Address copied!');
+    });
   });
-});
 
-});
+  // 6) Chart download (if you have a global `chart` instance)
+  const downloadBtn = document.getElementById('downloadChart');
+  if (downloadBtn && typeof chart !== 'undefined') {
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = chart.toBase64Image();
+      link.download = 'hbub_distribution.png';
+      link.click();
+    });
+  }
+}); 
