@@ -74,6 +74,8 @@ nav a:hover {
   #menu-links.menu-open {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem; 
+    align-items: center;
   }
 }
 
