@@ -1,10 +1,8 @@
-// main.js
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1) Strip any “#…” fragment off the URL bar immediately
   if (window.location.hash) {
     const cleanURL = window.location.href.split('#')[0];
-    history.replaceState(null, '', cleanURL);
+    history.replaceState(null, '', window.location.pathname + window.location.search);
   }
 
   // 2) Scroll-to-top button
