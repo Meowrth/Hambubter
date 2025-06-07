@@ -1,5 +1,3 @@
-// main.js
-
 document.addEventListener('DOMContentLoaded', () => {
   
   if (window.location.hash) {
