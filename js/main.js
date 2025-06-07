@@ -1,4 +1,7 @@
-
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.href.split('#')[0]);
+});
 document.getElementById("menu-toggle").addEventListener("click", function () {
   const menu = document.getElementById("menu-links");
   menu.classList.toggle("menu-open");
