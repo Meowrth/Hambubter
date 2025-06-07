@@ -99,10 +99,23 @@
       </div>
     </nav>
   </header>
-  <section id="whitepaper-section" class="section" style="display:none;">
-    <h2>Whitepaper</h2>
-    <div id="whitepaper-content">Loading...</div>
-  </section>
+<section id="whitepaper-section" style="display:none; padding:2rem; background:#fff;">
+  <h2>Whitepaper</h2>
+  <iframe
+    src="whitepaper/index.html"
+    style="width:100%; height:80vh; border:none;"
+    title="Hambubter Whitepaper">
+  </iframe>
+</section>
+
+<script>
+  document.getElementById('whitepaper-link').addEventListener('click', e => {
+    e.preventDefault();
+    const sec = document.getElementById('whitepaper-section');
+    sec.style.display = 'block';
+    sec.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
   
   <!-- HERO WITH IMAGE -->
   <section class="hero-with-image">
