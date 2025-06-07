@@ -25,6 +25,20 @@
   <meta name="twitter:description" content="Join Hambubter’s hamster+butter+bun world on Solana for NFT rewards and community events. HODL and grow with us!" />
   <meta name="twitter:image" content="https://hbubcoin.com/images/og-image.png" />
 
+  <!-- SEO Site Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://hbubcoin.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://hbubcoin.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -34,17 +48,8 @@
     "image": "https://hbubcoin.com/images/og-image.png",
     "description": "A Solana-based hamster+butter+bun themed meme coin. Offers NFTs and community events.",
     "sku": "HBUB-001",
-    "brand": {
-      "@type": "Brand",
-      "name": "Hambubter Team"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "0.01",
-      "availability": "https://schema.org/InStock",
-      "url": "https://hbubcoin.com/product/hambubter"
-    }
+    "brand": {{"@type": "Brand","name": "Hambubter Team"}},
+    "offers": {"@type": "Offer","priceCurrency": "USD","price": "0.01","availability": "https://schema.org/InStock","url": "https://hbubcoin.com/product/hambubter"}
   }
   </script>
   <script type="application/ld+json">
@@ -52,24 +57,9 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://hbubcoin.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "About",
-        "item": "https://hbubcoin.com/#about"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Tokenomics",
-        "item": "https://hbubcoin.com/#tokenomics"
-      }
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://hbubcoin.com/"},
+      {"@type": "ListItem","position": 2,"name": "About","item": "https://hbubcoin.com/#about"},
+      {"@type": "ListItem","position": 3,"name": "Tokenomics","item": "https://hbubcoin.com/#tokenomics"}
     ]
   }
   </script>
