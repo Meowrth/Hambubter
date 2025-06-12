@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function showNextDialogue() {
     if (currentDialogue > 0) {
       const prev = dialogues[currentDialogue - 1];
-      prev.classList.replace('visible','hidden');
+      prev.classList.add('hidden');          
       prev.setAttribute('aria-hidden','true');
     }
     if (currentDialogue < dialogues.length) {
