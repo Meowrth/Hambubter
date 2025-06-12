@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4) Dialogue progression
   let currentDialogue = 0;
   const dialogues = document.querySelectorAll('.dialogue-row');
+  const dialogueBtn = document.getElementById('dialogueBtn');
+
   function showNextDialogue() {
     if (currentDialogue > 0) {
       const prev = dialogues[currentDialogue - 1];
