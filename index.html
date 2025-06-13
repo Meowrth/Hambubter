@@ -184,9 +184,12 @@ header img:not(.header-logo) {
 @keyframes header-fadein {
     0% { opacity:0; transform:translateY(-50px);}
     100% { opacity:1; transform:translateY(0);}
-
-@keyframes fadein-nav {from{opacity:0;} to{opacity:1;}}
 }
+@keyframes fadein-nav {
+    from { opacity:0; }
+    to { opacity:1; }
+}
+
 
 nav a {
     display: inline-block;
