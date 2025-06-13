@@ -643,6 +643,7 @@ window.addEventListener('scroll', function(){
     if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
 });
 // Smooth scroll for nav + header offset
+// Smooth scroll for nav + header offset!
 document.querySelectorAll('nav a').forEach(function(link){
     link.addEventListener('click', function(e){
         const href = link.getAttribute('href');
@@ -650,12 +651,14 @@ document.querySelectorAll('nav a').forEach(function(link){
             e.preventDefault();
             const target = document.querySelector(href);
             const header = document.querySelector('header');
-            const offset = header.offsetHeight + 8;
+            const offset = header.offsetHeight + 10; // header 높이 + 여유
             const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
     });
 });
+
+
 </script>
 </body>
 </html>
