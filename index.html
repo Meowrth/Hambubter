@@ -101,13 +101,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.7rem;                   /* 로고-텍스트 간격 조금 넓힘 */
+    gap: 1.7rem;
     max-width: 980px;
     margin: 0 auto 0.6rem auto;
 }
 
 .header-logo {
-    width: 110px;                  /* 기존보다 큼 */
+    width: 110px;
     height: 110px;
     border-radius: 2.2rem;
     box-shadow: 0 1.5px 14px #ffcf4d51;
@@ -176,7 +176,7 @@ nav {
     }
 }
 
-/* 불필요한 header img 중복 스타일 제거 */
+/* 필요하면 유지, 불필요하면 삭제해도 무방 */
 header img:not(.header-logo) {
     display: none;
 }
@@ -189,7 +189,6 @@ header img:not(.header-logo) {
     from { opacity:0; }
     to { opacity:1; }
 }
-
 
 nav a {
     display: inline-block;
