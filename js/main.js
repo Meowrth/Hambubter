@@ -21,25 +21,37 @@ document.addEventListener('DOMContentLoaded', () => {
     this.setAttribute('aria-expanded', menu.classList.contains('menu-open'));
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu-links');
-  if(toggle && menu) {
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      menu.classList.toggle('menu-open');
-    });
-    // 메뉴 바깥 클릭하면 닫기
-    document.addEventListener('click', function(e) {
-      if (
-        window.innerWidth < 768 &&
-        !menu.contains(e.target) &&
-        !toggle.contains(e.target)
-      ) {
+
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    menu.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', menu.classList.contains('menu-open'));
+  });
+
+  // 메뉴 바깥 클릭시 닫기
+  document.addEventListener('click', function(e) {
+    if (
+      window.innerWidth < 769 &&
+      !menu.contains(e.target) &&
+      !toggle.contains(e.target)
+    ) {
+      menu.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // 메뉴 링크 클릭하면 닫기
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth < 769) {
         menu.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
-  }
+  });
 });
 
   // Whitepaper 인라인 뷰
