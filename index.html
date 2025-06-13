@@ -624,34 +624,38 @@ a, button, .faq-q, .sns-btn, .airdrop-btn { -webkit-tap-highlight-color: #ffcf4d
 
 <!-- FAQ JS, Nav Active Highlight, Smooth Scroll -->
 <script>
-    // FAQ open/close animation
-    document.querySelectorAll('.faq-q').forEach(function(q){
-        q.addEventListener('click', function(){
-            let a = q.nextElementSibling;
-            a.style.display = (a.style.display === "block") ? "none" : "block";
-        });
+// FAQ open/close animation
+document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+        let a = q.nextElementSibling;
+        a.style.display = (a.style.display === "block") ? "none" : "block";
     });
-    // Navigation active highlight
-    window.addEventListener('scroll', function(){
-        const sections = ['about', 'tokenomics', 'roadmap', 'community', 'faq'];
-        let last = null;
-        for(const id of sections) {
-            const el = document.getElementById(id);
-            if (el && window.scrollY+120 >= el.offsetTop) last = id;
+});
+// Navigation active highlight
+window.addEventListener('scroll', function(){
+    const sections = ['about', 'tokenomics', 'roadmap', 'community', 'faq'];
+    let last = null;
+    for(const id of sections) {
+        const el = document.getElementById(id);
+        if (el && window.scrollY+120 >= el.offsetTop) last = id;
+    }
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
+});
+// Smooth scroll for nav + header offset
+document.querySelectorAll('nav a').forEach(function(link){
+    link.addEventListener('click', function(e){
+        const href = link.getAttribute('href');
+        if(href.startsWith('#')){
+            e.preventDefault();
+            const target = document.querySelector(href);
+            const header = document.querySelector('header');
+            const offset = header.offsetHeight + 8;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
-        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-        if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
     });
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(function(link){
-        link.addEventListener('click', function(e){
-            const href = link.getAttribute('href');
-            if(href.startsWith('#')){
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({behavior:'smooth'});
-            }
-        });
-    });
+});
 </script>
 </body>
 </html>
