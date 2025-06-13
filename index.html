@@ -123,6 +123,44 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    gap: 0.10em;         /* 줄 간격 자연스럽게 */
+}
+
+.header-line1 {
+    font-family: var(--title-font);
+    font-size: 2.1rem;
+    color: var(--primary);
+    font-weight: 700;
+    line-height: 1.21;
+    letter-spacing: 1.1px;
+    margin-bottom: 0.16em;
+    text-shadow: 1px 2px 10px #fff5c8, 0 2px 2px #ffecd4;
+}
+.header-line2 {
+    font-size: 1.12rem;
+    color: #72521f;
+    font-family: var(--main-font);
+    font-weight: 500;
+    margin-bottom: 0.09em;
+    line-height: 1.20;
+}
+.header-line3 {
+    font-size: 1.08rem;
+    color: #c48620;
+    font-family: var(--main-font);
+    font-weight: 500;
+    line-height: 1.17;
+    letter-spacing: 1.4px;
+}
+
+@media (max-width: 700px) {
+    .header-text {
+        align-items: center;
+        text-align: center;
+    }
+    .header-line1 { font-size: 1.05rem; }
+    .header-line2 { font-size: 0.92rem; }
+    .header-line3 { font-size: 0.85rem; }
 }
 
 h1 {
