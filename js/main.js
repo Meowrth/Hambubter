@@ -20,14 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.classList.toggle('collapsed-menu');
     this.setAttribute('aria-expanded', menu.classList.contains('menu-open'));
   });
-  // 메뉴 바깥 클릭시 닫기
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth < 800 && !menu.contains(e.target) && !toggle.contains(e.target)) {
-      menu.classList.add('collapsed-menu');
-      menu.classList.remove('menu-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu-links');
+  if(toggle && menu) {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      menu.classList.toggle('menu-open');
+    });
+    // 메뉴 바깥 클릭하면 닫기
+    document.addEventListener('click', function(e) {
+      if (
+        window.innerWidth < 768 &&
+        !menu.contains(e.target) &&
+        !toggle.contains(e.target)
+      ) {
+        menu.classList.remove('menu-open');
+      }
+    });
+  }
+});
 
   // Whitepaper 인라인 뷰
   document.getElementById('whitepaper-link').addEventListener('click', e => {
