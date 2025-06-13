@@ -170,28 +170,41 @@ header {
 .header-line3::before { content: "🍞"; margin-right: 0.28em; font-size: 1.12em; }
 .header-line3::after  { content: "✨";  margin-left: 0.25em; font-size: 1.12em; }
 
-/* 모바일 최적화 (한번만) */
 @media (max-width: 700px) {
-    header { padding: 0.7rem 0.5rem 0.2rem 0.5rem; }
-    .header-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.38rem;
-        margin-bottom: 0.2rem;
-    }
-    .header-logo { width: 54px; height: 54px; margin-bottom: 0.05em; }
-    .header-text { text-align: center; align-items: center; }
-    .header-line1 { font-size: 1.08rem; }
-    .header-line2 { font-size: 0.92rem; }
-    .header-line3 { font-size: 0.78rem; }
-    nav a {
-        font-size: 0.98rem;
-        padding: 0.43em 0.7em;
-        border-radius: 0.85em;
-        min-width: 33px;
-        min-height: 33px;
-        margin: 0.09em 0;
-    }
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .header-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.2em;
+  }
+  .header-line1 {
+    font-size: 1rem;
+    line-height: 1.1;
+    margin-bottom: 0.1em;
+  }
+  .header-line2 {
+    font-size: 0.84rem;
+    padding: 0.1em 0.6em;
+    border-radius: 1em;
+  }
+  .header-line3 {
+    font-size: 0.7rem;
+    padding: 0.05em 0.6em;
+  }
+  header {
+    padding: 0.5em 0.4em 0.4em 0.4em;
+  }
+  nav {
+    margin-top: 0.5em;
+  }
+  section {
+    scroll-margin-top: 60px;
+  }
 }
 
 /* 불필요한 h1, .subtitle 등은 삭제 가능 (혹은 미사용으로) */
