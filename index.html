@@ -10,6 +10,286 @@
     <meta property="og:image" content="https://hbubcoin.com/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+:root {
+    --main-bg: #fff7e2;
+    --section1: #fff9f1;
+    --section2: #ffe7be;
+    --section3: #fff9ec;
+    --accent: #ffcf4d;
+    --main-font: 'Gothic A1', 'Jua', sans-serif;
+    --title-font: 'Jua', sans-serif;
+    --primary: #ff9434;
+    --primary-grad: linear-gradient(90deg, #ffcf4d 0%, #ff9434 100%);
+    --secondary: #3e1c06;
+    --card: #fffbe7;
+    --shadow: 0 6px 32px #ffda7766, 0 1.5px 6px #ff943422;
+}
+html { scroll-behavior: smooth; }
+body {
+    background: var(--main-bg);
+    margin: 0;
+    font-family: var(--main-font);
+    color: var(--secondary);
+    font-size: 1.15rem;
+    line-height: 1.85;
+}
+header {
+    background: var(--primary-grad);
+    text-align: center;
+    padding: 2.4rem 1rem 1.4rem 1rem;
+    box-shadow: 0 2px 16px #ff943433;
+    border-radius: 0 0 3rem 3rem;
+    animation: header-fadein 1.2s;
+}
+@keyframes header-fadein {
+    0% { opacity:0; transform:translateY(-50px);}
+    100% { opacity:1; transform:translateY(0);}
+}
+header img {
+    width: 90px; border-radius: 2rem; margin-bottom: .5rem;
+    box-shadow: 0 1.5px 14px #ffcf4d51;
+    background: #fffde7;
+}
+h1 {
+    font-family: var(--title-font);
+    font-size: 2.6rem;
+    margin: 0.18em 0 0 0;
+    color: var(--primary);
+    letter-spacing: 1.5px;
+    text-shadow: 1px 2px 10px #fff5c8, 0 2px 2px #ffecd4;
+    font-weight: 700;
+}
+.subtitle {
+    font-size: 1.23rem;
+    color: #72521f;
+    margin: .8em 0 1.2em 0;
+    font-family: var(--main-font);
+}
+nav {
+    margin-bottom: .7em;
+    text-align: center;
+    animation: fadein-nav .9s .1s backwards;
+}
+@keyframes fadein-nav {from{opacity:0;} to{opacity:1;}}
+nav a {
+    display: inline-block;
+    color: var(--secondary);
+    font-weight: 700;
+    padding: .48em 1.35em;
+    margin: 0 .1em;
+    text-decoration: none;
+    font-size: 1.07rem;
+    border-radius: 1.5em;
+    background: #fffbe7;
+    transition: background .15s, color .15s;
+}
+nav a:hover, nav a.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* MAIN SECTION STYLE */
+section {
+    max-width: 1200px;
+    margin: 2.5em auto 2em auto;
+    border-radius: 2.1rem;
+    padding: 2.6em 2.3em 2.6em 2.3em;
+    box-shadow: var(--shadow);
+    background: #fff;
+    position: relative;
+    animation: section-fadein .8s;
+}
+@keyframes section-fadein { from{opacity:0;transform:translateY(70px);} to{opacity:1;transform:translateY(0);}}
+.section-title {
+    font-family: var(--title-font);
+    font-size: 2.08rem;
+    color: var(--primary);
+    font-weight:700;
+    margin-bottom: .85em;
+    letter-spacing:.5px;
+    background: -webkit-linear-gradient(90deg,#ff9434 40%,#ffcf4d 90%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.section-divider {
+    max-width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--primary-grad);
+    margin: 2.5em auto 2.5em auto;
+    opacity: 0.65;
+}
+
+/* About Grid */
+#about { background: var(--section1);}
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8em;
+    margin-bottom: 1.7em;
+}
+@media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+}
+.about-card {
+    background: var(--card);
+    border-radius: 1.35em;
+    box-shadow: 0 3px 18px #ffcf4d18;
+    padding: 1.3em 1.3em 1.1em 1.3em;
+    font-size: 1.11rem;
+    transition: transform .13s;
+    border: 1.5px solid #ffe6ab55;
+}
+.about-card:hover { transform: translateY(-3px) scale(1.02);}
+.about-card b { color: var(--primary);}
+.about-icons { font-size:2.2em; margin-bottom:.3em; }
+.sub-title {
+    font-size: 1.23rem; margin-top:1.7em; margin-bottom:.65em; color: #d88a2e; font-weight:600; letter-spacing:.1px;
+}
+#tokenomics { background: var(--section2);}
+.tokenomics-info { display: flex; flex-wrap: wrap; gap: 1.2em; margin-bottom: 1.4em; justify-content:center;}
+.tokenomics-info .info-block {
+    flex: 1 1 165px;
+    background: #fffef9;
+    border-radius: 1.08em;
+    padding: 1.1em 1em .7em 1em;
+    box-shadow: 0 1px 7px #ffd9862e;
+    min-width: 135px;
+    text-align: center;
+    border: 1.5px solid #ffcf4d55;
+    font-size:1.08rem;
+}
+.tokenomics-info .ib-title {
+    font-size: 1.09rem; color: #e98c11; margin-bottom: .16em; font-weight: 700;
+}
+.tokenomics-table {
+    width: 100%; border-collapse: collapse; margin: 1.3em 0 .6em 0;
+    background: #fff;
+    border-radius: .8em;
+    overflow: hidden;
+    box-shadow: 0 2px 10px #ffd98627;
+    font-size: 1.08rem;
+}
+.tokenomics-table th, .tokenomics-table td {
+    border: 1px solid #ffe6ab;
+    padding: .73em 1em;
+    text-align: center;
+}
+.tokenomics-table th {
+    background: #ffe9be; color: #ae721a; font-size: 1.11rem; font-weight:700;
+}
+.tokenomics-tip {
+    font-size: 1.05em;
+    color:#b07d38;
+    margin-top:1.25em;
+    background:#fff7de;
+    border-radius:1em;
+    padding:1em 1.1em .6em 1.1em;
+}
+#roadmap { background: var(--section3);}
+.roadmap-step {
+    margin: 1.17em 0 2.2em 0;
+    background: #fff7e6;
+    border-radius: 1.22em;
+    padding: 1.22em 1.2em 1.1em 1.2em;
+    box-shadow: 0 1px 6px #ffcf4d22;
+    border: 1.5px solid #ffe6ab4d;
+    transition:box-shadow .18s;
+}
+.roadmap-step:hover { box-shadow: 0 8px 28px #ffd98644;}
+.roadmap-q {
+    color: #b07d38;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin-bottom: .35em;
+    font-family: var(--title-font);
+}
+.roadmap-list { margin: 0.07em 0 0 0; padding-left: 1.15em;}
+#community, #faq { background: #fffbe7;}
+.section-link { color:#ff9434; text-decoration:underline; font-weight:600;}
+.footer {
+    text-align: center; padding: 2.7em 1em 1em 1em; color: #b07d38;
+    font-size: 1em; letter-spacing: .1px;
+    margin-top:2.5em;
+}
+.about-card, .roadmap-step, .info-block {animation:fadeinup .8s;}
+@keyframes fadeinup {from{opacity:0;transform:translateY(35px);}to{opacity:1;transform:translateY(0);}}
+.sns-btn-row {
+    display: flex;
+    gap: 1.2em;
+    justify-content: center;
+    margin: 1.3em 0 1.7em 0;
+    flex-wrap: wrap;
+}
+.sns-btn {
+    display: flex;
+    align-items: center;
+    font-size: 1.13rem;
+    font-weight: 700;
+    padding: 0.82em 2.3em;
+    border-radius: 2.2em;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 1px 14px #ffcf4d33;
+    transition: background .13s, transform .13s, box-shadow .13s;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+}
+.sns-btn.discord { background: #5765F2; }
+.sns-btn.discord:hover { background: #4b57c7; }
+.sns-btn.twitter { background: #222; }
+.sns-btn.twitter:hover { background: #3e3e3e; }
+.sns-btn.telegram { background: #27A6E5; }
+.sns-btn.telegram:hover { background: #158abf; }
+.sns-btn:hover {
+    background: #ffb84d;
+    color: #3e1c06;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px #ffcf4d41;
+}
+.airdrop-center {
+    text-align: center;
+    margin: 1.7em 0;
+}
+.airdrop-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    padding: .97em 2em;
+    border-radius: 2em;
+    text-decoration: none;
+    font-size: 1.13rem;
+    box-shadow: 0 1px 12px #ffcf4d50;
+    transition: background .13s, color .13s, box-shadow .13s;
+}
+.airdrop-btn:hover {
+    background: #ffb84d;
+    color: #3e1c06;
+    box-shadow: 0 4px 18px #ffcf4d41;
+}
+@media (max-width: 980px){
+    section { padding: 1.2em .7em 1.7em .7em;}
+    .about-grid {grid-template-columns: 1fr 1fr;}
+}
+@media (max-width: 700px) {
+    h1 { font-size: 2.08rem;}
+    .section-title { font-size: 1.14rem;}
+    .about-grid { grid-template-columns: 1fr;}
+    .tokenomics-info { flex-direction: column; }
+    .tokenomics-info .info-block { min-width: 100px; font-size:.99rem;}
+    .tokenomics-table th, .tokenomics-table td { font-size: .95rem; padding: .53em .27em;}
+    section {padding: 1em .2em 1.1em .2em; border-radius: 1.1rem;}
+    .sns-btn-row { flex-direction: column; gap: 0.8em;}
+    .sns-btn { justify-content: center; width: 100%; max-width: 350px; margin: 0 auto;}
+}
+    </style>
 </head>
 <body>
     <header>
