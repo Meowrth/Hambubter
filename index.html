@@ -266,6 +266,35 @@ nav {
 header img:not(.header-logo) {
     display: none;
 }
+@media (max-width: 700px) {
+    header {
+        padding: 0.4rem 0.3rem 0.2rem 0.3rem;
+    }
+    .header-inner {
+        gap: 0.25rem;
+        margin-bottom: 0.1rem;
+    }
+    .header-logo {
+        width: 54px;
+        height: 54px;
+        margin-bottom: 0;
+    }
+    h1 {
+        font-size: 1rem;
+        margin-bottom: 0.09em;
+    }
+    .subtitle {
+        font-size: 0.8rem;
+        margin: 0.22em 0 0.3em 0;
+    }
+    nav a {
+        font-size: 0.91rem;
+        padding: 0.45em 1em;
+        min-width: 32px;
+        min-height: 32px;
+        border-radius: 0.77em;
+    }
+}
 
 @keyframes header-fadein {
     0% { opacity:0; transform:translateY(-50px);}
@@ -562,16 +591,22 @@ a, button, .faq-q, .sns-btn, .airdrop-btn { -webkit-tap-highlight-color: #ffcf4d
     </style>
 </head>
 <body>
+<script>
+document.getElementById("menu-btn").onclick = function() {
+    document.getElementById("mobile-nav").classList.toggle("active");
+}
+</script>
+
 <header>
   <div class="header-inner">
     <img src="https://hbubcoin.com/images/hbub3.png" alt="HBUB logo" class="header-logo">
     <div class="header-text">
       <div class="header-line1">HBUB Hambubter Meme Coin</div>
       <div class="header-line2">Pre-listing! Community-driven FUN Meme Coin</div>
-      <div class="header-line3">· Universe · Roadmap · Tokenomics</div>
     </div>
+    <button class="menu-btn" id="menu-btn">☰</button>
   </div>
-  <nav aria-label="Main navigation">
+  <nav class="mobile-nav" id="mobile-nav">
     <a href="#about">About</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#roadmap">Roadmap</a>
@@ -579,7 +614,6 @@ a, button, .faq-q, .sns-btn, .airdrop-btn { -webkit-tap-highlight-color: #ffcf4d
     <a href="#faq">FAQ</a>
   </nav>
 </header>
-
 
 <section id="about">
     <div class="section-title">🍞 What is HBUB?</div>
