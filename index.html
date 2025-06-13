@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>HBUB | Official Hambubter Meme Coin</title>
-
     <!-- SEO/Meta/Schema etc. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Hambubter (HBUB) is a Solana-based hamster+butter+bun meme coin. Experience NFT rewards, community voting, and the most playful token economy. 햄스터+버터+빵 테마의 밈코인, NFT, 커뮤니티 이벤트, 투명한 토큰이코노미.">
@@ -89,7 +88,6 @@ body {
     word-break: keep-all;
     -webkit-tap-highlight-color: rgba(255,148,52,.08);
 }
-
 header {
     background: var(--primary-grad);
     text-align: center;
@@ -166,6 +164,10 @@ section {
     background: #fff;
     position: relative;
     animation: section-fadein .8s;
+    scroll-margin-top: 115px;
+}
+@media (max-width: 700px) {
+    section { scroll-margin-top: 75px; }
 }
 @keyframes section-fadein { from{opacity:0;transform:translateY(70px);} to{opacity:1;transform:translateY(0);}}
 
@@ -355,7 +357,7 @@ section {
 
 img, video { max-width: 100%; height: auto; display: block; }
 
-/* FAQ */
+/* FAQ (접근성/아코디언) */
 .faq-item { margin-bottom: 1em;}
 .faq-q {
     font-weight: bold;
@@ -369,6 +371,10 @@ img, video { max-width: 100%; height: auto; display: block; }
     user-select: none;
     font-size: 1.07em;
     word-break: keep-all;
+    border: none;
+    width: 100%;
+    text-align: left;
+    display: block;
 }
 .faq-q:active, .faq-q:focus { background: #ffe4b7;}
 .faq-a {
@@ -473,164 +479,172 @@ a, button, .faq-q, .sns-btn, .airdrop-btn { -webkit-tap-highlight-color: #ffcf4d
 </section>
 <div class="section-divider"></div>
 
-
-    <!-- [Tokenomics] -->
-    <section id="tokenomics">
-        <div class="section-title">📊 Tokenomics & Distribution</div>
-        <div class="tokenomics-info">
-            <div class="info-block">
-                <div class="ib-title">Name</div>
-                Hambubter
-            </div>
-            <div class="info-block">
-                <div class="ib-title">Symbol</div>
-                HBUB
-            </div>
-            <div class="info-block">
-                <div class="ib-title">Total Supply</div>
-                100,000,000,000
-            </div>
-            <div class="info-block">
-                <div class="ib-title">Network</div>
-                Solana (example)
-            </div>
+<!-- [Tokenomics] -->
+<section id="tokenomics">
+    <div class="section-title">📊 Tokenomics & Distribution</div>
+    <div class="tokenomics-info">
+        <div class="info-block">
+            <div class="ib-title">Name</div>
+            Hambubter
         </div>
-        <table class="tokenomics-table">
-            <tr>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Share</th>
-                <th>Lockup / Details</th>
-            </tr>
-            <tr>
-                <td>Community / Airdrop</td>
-                <td>50,000,000,000</td>
-                <td>50%</td>
-                <td>Pre-listing distribution, event participants, mostly unlocked</td>
-            </tr>
-            <tr>
-                <td>Team & Development</td>
-                <td>20,000,000,000</td>
-                <td>20%</td>
-                <td>6-month lockup, gradual vesting after listing, KYC disclosed</td>
-            </tr>
-            <tr>
-                <td>Marketing & Events</td>
-                <td>15,000,000,000</td>
-                <td>15%</td>
-                <td>Community missions, meme contests, bounties</td>
-            </tr>
-            <tr>
-                <td>Liquidity (at listing)</td>
-                <td>15,000,000,000</td>
-                <td>15%</td>
-                <td>Initial LP and CEX/DEX listing</td>
-            </tr>
-        </table>
-        <div class="tokenomics-tip">
-            <ul>
-                <li><b>HBUB cannot be traded or sold before official exchange listing.</b></li>
-                <li>All allocations, lockups, and wallets are 100% transparent.</li>
-                <li>Only active contributors get airdrop/event allocations.</li>
-            </ul>
+        <div class="info-block">
+            <div class="ib-title">Symbol</div>
+            HBUB
         </div>
-    </section>
-    <div class="section-divider"></div>
-
-    <!-- [Roadmap: Vision, Team transparency, DAO] -->
-    <section id="roadmap">
-        <div class="section-title">🗺️ HBUB Roadmap</div>
-        <div class="roadmap-step">
-            <div class="roadmap-q">2024 Q4 ~ 2025 Q1 | Project Launch & Lore Reveal</div>
-            <ul class="roadmap-list">
-                <li>HBUB official universe and memes launched</li>
-                <li>Website open, Discord, Twitter(X), Telegram launched</li>
-                <li>First airdrop, first contributors/early investors onboarded</li>
-                <li>Core team and devs introduced publicly, open wallet disclosure</li>
-                <li>Token smart contract development</li>
-            </ul>
+        <div class="info-block">
+            <div class="ib-title">Total Supply</div>
+            100,000,000,000
         </div>
-        <div class="roadmap-step">
-            <div class="roadmap-q">2025 Q2 | Community Growth & Full Transparency</div>
-            <ul class="roadmap-list">
-                <li>Meme contest, second airdrop, community missions</li>
-                <li>Team KYC and investor list disclosed</li>
-                <li>Listing preparation, partner collaborations</li>
-                <li>Smart contract audit, testnet launch</li>
-                <li>Regular progress reports, all operations on-chain</li>
-            </ul>
+        <div class="info-block">
+            <div class="ib-title">Network</div>
+            Solana (example)
         </div>
-        <div class="roadmap-step">
-            <div class="roadmap-q">2025 Q3 ~ Q4 | Listing & DAO Transition</div>
-            <ul class="roadmap-list">
-                <li>Major CEX/DEX listing, liquidity pool opened</li>
-                <li>DAO transition: Community governance live</li>
-                <li>Open voting for roadmap, allocation, and proposals</li>
-                <li>Release of HBUB Dapps/tools for the ecosystem</li>
-                <li>Long-term: Global expansion, new partners, continuous event rewards</li>
-            </ul>
-        </div>
-    </section>
-    <div class="section-divider"></div>
-
-    <!-- [Community & Airdrop: 버튼 가로배열!] -->
-    <section id="community">
-        <div class="section-title">🤝 Join the Community & Airdrop</div>
-        <div class="sns-btn-row">
-            <a class="sns-btn discord" href="https://discord.gg/XXXX" target="_blank">Discord</a>
-            <a class="sns-btn twitter" href="https://twitter.com/XXXX" target="_blank">Twitter (X)</a>
-            <a class="sns-btn telegram" href="https://t.me/XXXX" target="_blank">Telegram (Coming Soon)</a>
-        </div>
-        <div class="airdrop-center">
-            <a class="airdrop-btn" href="https://forms.gle/XXXXX" target="_blank">Apply for Airdrop (Google Form)</a>
-        </div>
-        <div style="color:#b07d38; font-size:1.07em; text-align:center;">Early community participation gets you airdrop priority!</div>
-    </section>
-    <div class="section-divider"></div>
-
-    <!-- [FAQ] -->
-    <section id="faq">
-        <div class="section-title">❓ Frequently Asked Questions (FAQ)</div>
-        <div class="faq-item">
-            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Can I buy HBUB now?</div>
-            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">HBUB is not yet listed on any exchange. For now, tokens can only be earned via airdrop and community events. Listing info will be posted in our roadmap and channels.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. What’s the vision of HBUB?</div>
-            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">To build a meme coin universe that is fun, open, and community-governed. Our goal is to become a true Web3 DAO meme project.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Are there any NFT plans?</div>
-            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">No NFT plans yet. If the community votes for it, we will add NFT features in the future.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. When and where will HBUB be listed?</div>
-            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">We aim for exchange listing in late 2025. All news and confirmed partners will be shared via official channels transparently.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Who are the team and investors? Is HBUB KYC'd?</div>
-            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">The team and all early investors will be introduced publicly before listing. KYC and wallet transparency are our core principles.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Where can I see smart contract code and development status?</div>
-            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">You can check all updates and code on our official GitHub (e.g., <a href="https://github.com/hbubcoin" target="_blank">github.com/hbubcoin</a>).</div>
-        </div>
-    </section>
-
-    <div class="footer">
-        <b>HBUB Hambubter Meme Coin</b> &copy; 2025<br>
-        <span style="font-size:.98em;">Pre-listing, community-powered Web3 project | fun@hbubcoin.com</span>
     </div>
+    <table class="tokenomics-table">
+        <tr>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Share</th>
+            <th>Lockup / Details</th>
+        </tr>
+        <tr>
+            <td>Community / Airdrop</td>
+            <td>50,000,000,000</td>
+            <td>50%</td>
+            <td>Pre-listing distribution, event participants, mostly unlocked</td>
+        </tr>
+        <tr>
+            <td>Team & Development</td>
+            <td>20,000,000,000</td>
+            <td>20%</td>
+            <td>6-month lockup, gradual vesting after listing, KYC disclosed</td>
+        </tr>
+        <tr>
+            <td>Marketing & Events</td>
+            <td>15,000,000,000</td>
+            <td>15%</td>
+            <td>Community missions, meme contests, bounties</td>
+        </tr>
+        <tr>
+            <td>Liquidity (at listing)</td>
+            <td>15,000,000,000</td>
+            <td>15%</td>
+            <td>Initial LP and CEX/DEX listing</td>
+        </tr>
+    </table>
+    <div class="tokenomics-tip">
+        <ul>
+            <li><b>HBUB cannot be traded or sold before official exchange listing.</b></li>
+            <li>All allocations, lockups, and wallets are 100% transparent.</li>
+            <li>Only active contributors get airdrop/event allocations.</li>
+        </ul>
+    </div>
+</section>
+<div class="section-divider"></div>
 
-<!-- FAQ JS, Nav Active Highlight, Smooth Scroll -->
+<!-- [Roadmap: Vision, Team transparency, DAO] -->
+<section id="roadmap">
+    <div class="section-title">🗺️ HBUB Roadmap</div>
+    <div class="roadmap-step">
+        <div class="roadmap-q">2024 Q4 ~ 2025 Q1 | Project Launch & Lore Reveal</div>
+        <ul class="roadmap-list">
+            <li>HBUB official universe and memes launched</li>
+            <li>Website open, Discord, Twitter(X), Telegram launched</li>
+            <li>First airdrop, first contributors/early investors onboarded</li>
+            <li>Core team and devs introduced publicly, open wallet disclosure</li>
+            <li>Token smart contract development</li>
+        </ul>
+    </div>
+    <div class="roadmap-step">
+        <div class="roadmap-q">2025 Q2 | Community Growth & Full Transparency</div>
+        <ul class="roadmap-list">
+            <li>Meme contest, second airdrop, community missions</li>
+            <li>Team KYC and investor list disclosed</li>
+            <li>Listing preparation, partner collaborations</li>
+            <li>Smart contract audit, testnet launch</li>
+            <li>Regular progress reports, all operations on-chain</li>
+        </ul>
+    </div>
+    <div class="roadmap-step">
+        <div class="roadmap-q">2025 Q3 ~ Q4 | Listing & DAO Transition</div>
+        <ul class="roadmap-list">
+            <li>Major CEX/DEX listing, liquidity pool opened</li>
+            <li>DAO transition: Community governance live</li>
+            <li>Open voting for roadmap, allocation, and proposals</li>
+            <li>Release of HBUB Dapps/tools for the ecosystem</li>
+            <li>Long-term: Global expansion, new partners, continuous event rewards</li>
+        </ul>
+    </div>
+</section>
+<div class="section-divider"></div>
+
+<!-- [Community & Airdrop: 버튼 가로배열!] -->
+<section id="community">
+    <div class="section-title">🤝 Join the Community & Airdrop</div>
+    <div class="sns-btn-row">
+        <a class="sns-btn discord" href="https://discord.gg/XXXX" target="_blank">Discord</a>
+        <a class="sns-btn twitter" href="https://twitter.com/XXXX" target="_blank">Twitter (X)</a>
+        <a class="sns-btn telegram" href="https://t.me/XXXX" target="_blank">Telegram (Coming Soon)</a>
+    </div>
+    <div class="airdrop-center">
+        <a class="airdrop-btn" href="https://forms.gle/XXXXX" target="_blank">Apply for Airdrop (Google Form)</a>
+    </div>
+    <div style="color:#b07d38; font-size:1.07em; text-align:center;">Early community participation gets you airdrop priority!</div>
+</section>
+<div class="section-divider"></div>
+
+<!-- [FAQ] -->
+<section id="faq">
+    <div class="section-title">❓ Frequently Asked Questions (FAQ)</div>
+    <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Q. Can I buy HBUB now?</button>
+        <div class="faq-a">HBUB is not yet listed on any exchange. For now, tokens can only be earned via airdrop and community events. Listing info will be posted in our roadmap and channels.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Q. What’s the vision of HBUB?</button>
+        <div class="faq-a">To build a meme coin universe that is fun, open, and community-governed. Our goal is to become a true Web3 DAO meme project.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Q. Are there any NFT plans?</button>
+        <div class="faq-a">No NFT plans yet. If the community votes for it, we will add NFT features in the future.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Q. When and where will HBUB be listed?</button>
+        <div class="faq-a">We aim for exchange listing in late 2025. All news and confirmed partners will be shared via official channels transparently.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Q. Who are the team and investors? Is HBUB KYC'd?</button>
+        <div class="faq-a">The team and all early investors will be introduced publicly before listing. KYC and wallet transparency are our core principles.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Q. Where can I see smart contract code and development status?</button>
+        <div class="faq-a">You can check all updates and code on our official GitHub (e.g., <a href="https://github.com/hbubcoin" target="_blank">github.com/hbubcoin</a>).</div>
+    </div>
+</section>
+
+<div class="footer">
+    <b>HBUB Hambubter Meme Coin</b> &copy; 2025<br>
+    <span style="font-size:.98em;">Pre-listing, community-powered Web3 project | fun@hbubcoin.com</span>
+</div>
+
 <script>
-// FAQ open/close animation
-document.querySelectorAll('.faq-q').forEach(function(q){
-    q.addEventListener('click', function(){
-        let a = q.nextElementSibling;
-        a.style.display = (a.style.display === "block") ? "none" : "block";
+// FAQ open/close, a11y, only one open at a time
+document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+        let open = btn.getAttribute('aria-expanded') === "true";
+        // Close all
+        document.querySelectorAll('.faq-q').forEach(b=>{
+            b.setAttribute('aria-expanded', 'false');
+            b.nextElementSibling.style.display = 'none';
+        });
+        // Toggle current
+        if (!open) {
+            btn.setAttribute('aria-expanded', 'true');
+            btn.nextElementSibling.style.display = 'block';
+        }
     });
 });
+
 // Navigation active highlight
 window.addEventListener('scroll', function(){
     const sections = ['about', 'tokenomics', 'roadmap', 'community', 'faq'];
@@ -642,23 +656,20 @@ window.addEventListener('scroll', function(){
     document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
     if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
 });
-// Smooth scroll for nav + header offset
-// Smooth scroll for nav + header offset!
+
+// Smooth scroll for nav + header offset (여전히 동작)
 document.querySelectorAll('nav a').forEach(function(link){
     link.addEventListener('click', function(e){
         const href = link.getAttribute('href');
         if(href.startsWith('#')){
             e.preventDefault();
             const target = document.querySelector(href);
-            const header = document.querySelector('header');
-            const offset = header.offsetHeight + 10; // header 높이 + 여유
-            const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+            if(!target) return;
+            const top = target.getBoundingClientRect().top + window.scrollY - 12;
+            window.scrollTo({ top, behavior: 'smooth' });
         }
     });
 });
-
-
 </script>
 </body>
 </html>
