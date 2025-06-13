@@ -305,7 +305,7 @@ section {
         </nav>
     </header>
 
-    <!-- [About] -->
+    <!-- About Section -->
     <section id="about">
         <div class="section-title">🍞 What is HBUB?</div>
         <div class="about-grid">
@@ -351,7 +351,7 @@ section {
     </section>
     <div class="section-divider"></div>
 
-    <!-- [Tokenomics] -->
+    <!-- Tokenomics Section -->
     <section id="tokenomics">
         <div class="section-title">📊 Tokenomics & Distribution</div>
         <div class="tokenomics-info">
@@ -414,7 +414,7 @@ section {
     </section>
     <div class="section-divider"></div>
 
-    <!-- [Roadmap] -->
+    <!-- Roadmap Section -->
     <section id="roadmap">
         <div class="section-title">🗺️ HBUB Roadmap</div>
         <div class="roadmap-step">
@@ -450,7 +450,7 @@ section {
     </section>
     <div class="section-divider"></div>
 
-    <!-- [Community & Airdrop] -->
+    <!-- Community Section -->
     <section id="community">
         <div class="section-title">🤝 Join the Community & Airdrop</div>
         <div class="sns-btn-row">
@@ -465,7 +465,7 @@ section {
     </section>
     <div class="section-divider"></div>
 
-    <!-- [FAQ] -->
+    <!-- FAQ Section -->
     <section id="faq">
         <div class="section-title">❓ Frequently Asked Questions (FAQ)</div>
         <div class="faq-item">
@@ -499,6 +499,42 @@ section {
         <span style="font-size:.98em;">Pre-listing, community-powered Web3 project | fun@hbubcoin.com</span>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+    // FAQ open/close animation
+    document.querySelectorAll('.faq-q').forEach(function(q){
+        q.addEventListener('click', function(){
+            let a = q.nextElementSibling;
+            let expanded = q.getAttribute("aria-expanded") === "true";
+            if(expanded) {
+                q.setAttribute("aria-expanded", "false");
+                a.setAttribute("hidden", "");
+            } else {
+                q.setAttribute("aria-expanded", "true");
+                a.removeAttribute("hidden");
+            }
+        });
+    });
+    // Navigation active highlight
+    window.addEventListener('scroll', function(){
+        const sections = ['about', 'tokenomics', 'roadmap', 'community', 'faq'];
+        let last = null;
+        for(const id of sections) {
+            const el = document.getElementById(id);
+            if (el && window.scrollY+120 >= el.offsetTop) last = id;
+        }
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
+    });
+    // Smooth scroll for nav
+    document.querySelectorAll('nav a').forEach(function(link){
+        link.addEventListener('click', function(e){
+            const href = link.getAttribute('href');
+            if(href.startsWith('#')){
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({behavior:'smooth'});
+            }
+        });
+    });
+    </script>
 </body>
 </html>
