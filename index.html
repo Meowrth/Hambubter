@@ -97,63 +97,34 @@ header {
     animation: header-fadein 1.2s;
 }
 
-/* 한 줄 정렬을 위한 flex 컨테이너 */
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
-    max-width: 860px;
-    margin: 0 auto 0.5rem auto;
+    gap: 1.7rem;                   /* 로고-텍스트 간격 조금 넓힘 */
+    max-width: 980px;
+    margin: 0 auto 0.6rem auto;
 }
 
-/* 로고(이미지) 스타일 */
 .header-logo {
-    width: 82px;
-    height: 82px;
-    border-radius: 2rem;
+    width: 110px;                  /* 기존보다 큼 */
+    height: 110px;
+    border-radius: 2.2rem;
     box-shadow: 0 1.5px 14px #ffcf4d51;
     background: #fffde7;
     object-fit: contain;
     display: block;
+    margin-bottom: 0;
 }
 
-/* 텍스트(타이틀+서브타이틀) */
 .header-text {
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 }
 
-@media (max-width: 700px) {
-    .header-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
-    }
-    .header-logo {
-        width: 58px;
-        height: 58px;
-    }
-    .header-text {
-        text-align: center;
-        align-items: center;
-    }
-}
-
-@keyframes header-fadein {
-    0% { opacity:0; transform:translateY(-50px);}
-    100% { opacity:1; transform:translateY(0);}
-}
-header img {
-    width: 90px;
-    max-width: 38vw;
-    border-radius: 2rem;
-    margin-bottom: .5rem;
-    box-shadow: 0 1.5px 14px #ffcf4d51;
-    background: #fffde7;
-}
 h1 {
     font-family: var(--title-font);
     font-size: 2.6rem;
@@ -171,6 +142,7 @@ h1 {
     font-family: var(--main-font);
     word-break: keep-all;
 }
+
 nav {
     margin-bottom: .7em;
     text-align: center;
@@ -180,7 +152,42 @@ nav {
     flex-wrap: wrap;
     gap: .25em;
 }
+
+@media (max-width: 700px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+    }
+    .header-logo {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 0.1em;
+    }
+    .header-text {
+        text-align: center;
+        align-items: center;
+    }
+    h1 {
+        font-size: 1.35rem;
+    }
+    .subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+/* 불필요한 header img 중복 스타일 제거 */
+header img:not(.header-logo) {
+    display: none;
+}
+
+@keyframes header-fadein {
+    0% { opacity:0; transform:translateY(-50px);}
+    100% { opacity:1; transform:translateY(0);}
+
 @keyframes fadein-nav {from{opacity:0;} to{opacity:1;}}
+}
+
 nav a {
     display: inline-block;
     color: var(--secondary);
@@ -472,7 +479,9 @@ a, button, .faq-q, .sns-btn, .airdrop-btn { -webkit-tap-highlight-color: #ffcf4d
     <img src="https://hbubcoin.com/images/hbub3.png" alt="HBUB logo" class="header-logo">
     <div class="header-text">
       <h1>HBUB Hambubter Meme Coin</h1>
-      <div class="subtitle">Pre-listing! <b>Community-driven FUN Meme Coin</b> · Universe · Roadmap · Tokenomics</div>
+      <div class="subtitle">
+        Pre-listing! <b>Community-driven FUN Meme Coin</b> · Universe · Roadmap · Tokenomics
+      </div>
     </div>
   </div>
   <nav aria-label="Main navigation">
@@ -483,6 +492,7 @@ a, button, .faq-q, .sns-btn, .airdrop-btn { -webkit-tap-highlight-color: #ffcf4d
     <a href="#faq">FAQ</a>
   </nav>
 </header>
+
 
 <section id="about">
     <div class="section-title">🍞 What is HBUB?</div>
