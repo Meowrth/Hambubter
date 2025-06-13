@@ -727,11 +727,14 @@ document.querySelectorAll('nav a').forEach(function(link){
             e.preventDefault();
             const target = document.querySelector(href);
             if(!target) return;
-            const top = target.getBoundingClientRect().top + window.scrollY - 12;
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
             window.scrollTo({ top, behavior: 'smooth' });
         }
     });
 });
+
 </script>
 </body>
 </html>
