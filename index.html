@@ -91,11 +91,13 @@ body {
 header {
     background: var(--primary-grad);
     text-align: center;
-    padding: 2.4rem 1rem 1.4rem 1rem;
+    /* padding: 2.4rem 1rem 1.4rem 1rem; */ /* 기존 */
+    padding: 1.2rem 1rem 0.8rem 1rem;       /* 상단, 하단 여백 줄이기 */
     box-shadow: 0 2px 16px #ff943433;
-    border-radius: 0 0 3rem 3rem;
+    border-radius: 0 0 2rem 2rem;           /* 라운드도 약간 줄이면 더 슬림하게 */
     animation: header-fadein 1.2s;
 }
+
 @keyframes header-fadein {
     0% { opacity:0; transform:translateY(-50px);}
     100% { opacity:1; transform:translateY(0);}
