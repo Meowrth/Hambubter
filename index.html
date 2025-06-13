@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title>HBUB | Official Hambubter Meme Coin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Pre-listing! Community-driven HBUB meme coin. Lore, roadmap, tokenomics, airdrop, team and more.">
     <meta property="og:title" content="HBUB | Official Hambubter Meme Coin">
     <meta property="og:description" content="Pre-listing! Community-driven HBUB meme coin. Lore, roadmap, tokenomics, airdrop, team and more.">
     <meta property="og:image" content="https://hbubcoin.com/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
 :root {
     --main-bg: #fff7e2;
@@ -89,9 +87,12 @@ nav a:hover, nav a.active {
     color: #fff;
 }
 
-/* MAIN SECTION STYLE */
+/* ===================== */
+/* 여기를 수정합니다!    */
+/* ===================== */
+
 section {
-    max-width: 1200px;
+    max-width: 1200px; /* 기존 950px -> 1200px (가로 4개 들어오게) */
     margin: 2.5em auto 2em auto;
     border-radius: 2.1rem;
     padding: 2.6em 2.3em 2.6em 2.3em;
@@ -121,11 +122,11 @@ section {
     opacity: 0.65;
 }
 
-/* About Grid */
+/* --- 소개(About) : 4개 고정 + 반응형 --- */
 #about { background: var(--section1);}
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 항상 4개 가로 */
     gap: 1.8em;
     margin-bottom: 1.7em;
 }
@@ -150,6 +151,8 @@ section {
 .sub-title {
     font-size: 1.23rem; margin-top:1.7em; margin-bottom:.65em; color: #d88a2e; font-weight:600; letter-spacing:.1px;
 }
+
+/* --- 이하 기존 스타일 동일 --- */
 #tokenomics { background: var(--section2);}
 .tokenomics-info { display: flex; flex-wrap: wrap; gap: 1.2em; margin-bottom: 1.4em; justify-content:center;}
 .tokenomics-info .info-block {
@@ -218,85 +221,197 @@ section {
 }
 .about-card, .roadmap-step, .info-block {animation:fadeinup .8s;}
 @keyframes fadeinup {from{opacity:0;transform:translateY(35px);}to{opacity:1;transform:translateY(0);}}
-.sns-btn-row {
-    display: flex;
-    gap: 1.2em;
-    justify-content: center;
-    margin: 1.3em 0 1.7em 0;
-    flex-wrap: wrap;
-}
-.sns-btn {
-    display: flex;
-    align-items: center;
-    font-size: 1.13rem;
-    font-weight: 700;
-    padding: 0.82em 2.3em;
-    border-radius: 2.2em;
-    background: var(--primary);
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 1px 14px #ffcf4d33;
-    transition: background .13s, transform .13s, box-shadow .13s;
-    letter-spacing: .02em;
-    border: none;
-    outline: none;
-}
-.sns-btn.discord { background: #5765F2; }
-.sns-btn.discord:hover { background: #4b57c7; }
-.sns-btn.twitter { background: #222; }
-.sns-btn.twitter:hover { background: #3e3e3e; }
-.sns-btn.telegram { background: #27A6E5; }
-.sns-btn.telegram:hover { background: #158abf; }
-.sns-btn:hover {
-    background: #ffb84d;
-    color: #3e1c06;
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 4px 18px #ffcf4d41;
-}
-.airdrop-center {
-    text-align: center;
-    margin: 1.7em 0;
-}
-.airdrop-btn {
-    display: inline-block;
-    background: var(--primary);
-    color: #fff;
-    font-weight: 700;
-    padding: .97em 2em;
-    border-radius: 2em;
-    text-decoration: none;
-    font-size: 1.13rem;
-    box-shadow: 0 1px 12px #ffcf4d50;
-    transition: background .13s, color .13s, box-shadow .13s;
-}
-.airdrop-btn:hover {
-    background: #ffb84d;
-    color: #3e1c06;
-    box-shadow: 0 4px 18px #ffcf4d41;
-}
-@media (max-width: 980px){
-    section { padding: 1.2em .7em 1.7em .7em;}
-    .about-grid {grid-template-columns: 1fr 1fr;}
-}
-@media (max-width: 700px) {
-    h1 { font-size: 2.08rem;}
-    .section-title { font-size: 1.14rem;}
-    .about-grid { grid-template-columns: 1fr;}
-    .tokenomics-info { flex-direction: column; }
-    .tokenomics-info .info-block { min-width: 100px; font-size:.99rem;}
-    .tokenomics-table th, .tokenomics-table td { font-size: .95rem; padding: .53em .27em;}
-    section {padding: 1em .2em 1.1em .2em; border-radius: 1.1rem;}
-    .sns-btn-row { flex-direction: column; gap: 0.8em;}
-    .sns-btn { justify-content: center; width: 100%; max-width: 350px; margin: 0 auto;}
-}
+/* ...이하 sns, 버튼, 미디어쿼리 등 기존 스타일 동일... */
+
+        .section-title {
+            font-family: var(--title-font);
+            font-size: 2.08rem;
+            color: var(--primary);
+            font-weight:700;
+            margin-bottom: .85em;
+            letter-spacing:.5px;
+            background: -webkit-linear-gradient(90deg,#ff9434 40%,#ffcf4d 90%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-divider {
+            max-width: 100px;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--primary-grad);
+            margin: 2.5em auto 2.5em auto;
+            opacity: 0.65;
+        }
+        #about { background: var(--section1);}
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 1.8em;
+            margin-bottom: 1.7em;
+        }
+        .about-card {
+            background: var(--card);
+            border-radius: 1.35em;
+            box-shadow: 0 3px 18px #ffcf4d18;
+            padding: 1.3em 1.3em 1.1em 1.3em;
+            font-size: 1.11rem;
+            transition: transform .13s;
+            border: 1.5px solid #ffe6ab55;
+        }
+        .about-card:hover { transform: translateY(-3px) scale(1.02);}
+        .about-card b { color: var(--primary);}
+        .about-icons { font-size:2.2em; margin-bottom:.3em; }
+        .sub-title {
+            font-size: 1.23rem; margin-top:1.7em; margin-bottom:.65em; color: #d88a2e; font-weight:600; letter-spacing:.1px;
+        }
+        #tokenomics { background: var(--section2);}
+        .tokenomics-info { display: flex; flex-wrap: wrap; gap: 1.2em; margin-bottom: 1.4em; justify-content:center;}
+        .tokenomics-info .info-block {
+            flex: 1 1 165px;
+            background: #fffef9;
+            border-radius: 1.08em;
+            padding: 1.1em 1em .7em 1em;
+            box-shadow: 0 1px 7px #ffd9862e;
+            min-width: 135px;
+            text-align: center;
+            border: 1.5px solid #ffcf4d55;
+            font-size:1.08rem;
+        }
+        .tokenomics-info .ib-title {
+            font-size: 1.09rem; color: #e98c11; margin-bottom: .16em; font-weight: 700;
+        }
+        .tokenomics-table {
+            width: 100%; border-collapse: collapse; margin: 1.3em 0 .6em 0;
+            background: #fff;
+            border-radius: .8em;
+            overflow: hidden;
+            box-shadow: 0 2px 10px #ffd98627;
+            font-size: 1.08rem;
+        }
+        .tokenomics-table th, .tokenomics-table td {
+            border: 1px solid #ffe6ab;
+            padding: .73em 1em;
+            text-align: center;
+        }
+        .tokenomics-table th {
+            background: #ffe9be; color: #ae721a; font-size: 1.11rem; font-weight:700;
+        }
+        .tokenomics-tip {
+            font-size: 1.05em;
+            color:#b07d38;
+            margin-top:1.25em;
+            background:#fff7de;
+            border-radius:1em;
+            padding:1em 1.1em .6em 1.1em;
+        }
+        #roadmap { background: var(--section3);}
+        .roadmap-step {
+            margin: 1.17em 0 2.2em 0;
+            background: #fff7e6;
+            border-radius: 1.22em;
+            padding: 1.22em 1.2em 1.1em 1.2em;
+            box-shadow: 0 1px 6px #ffcf4d22;
+            border: 1.5px solid #ffe6ab4d;
+            transition:box-shadow .18s;
+        }
+        .roadmap-step:hover { box-shadow: 0 8px 28px #ffd98644;}
+        .roadmap-q {
+            color: #b07d38;
+            font-size: 1.17em;
+            font-weight: bold;
+            margin-bottom: .35em;
+            font-family: var(--title-font);
+        }
+        .roadmap-list { margin: 0.07em 0 0 0; padding-left: 1.15em;}
+        #community, #faq { background: #fffbe7;}
+        .section-link { color:#ff9434; text-decoration:underline; font-weight:600;}
+        .footer {
+            text-align: center; padding: 2.7em 1em 1em 1em; color: #b07d38;
+            font-size: 1em; letter-spacing: .1px;
+            margin-top:2.5em;
+        }
+        .about-card, .roadmap-step, .info-block {animation:fadeinup .8s;}
+        @keyframes fadeinup {from{opacity:0;transform:translateY(35px);}to{opacity:1;transform:translateY(0);}}
+        /* --- SNS Button Row for Community Section --- */
+        .sns-btn-row {
+            display: flex;
+            gap: 1.2em;
+            justify-content: center;
+            margin: 1.3em 0 1.7em 0;
+            flex-wrap: wrap;
+        }
+        .sns-btn {
+            display: flex;
+            align-items: center;
+            font-size: 1.13rem;
+            font-weight: 700;
+            padding: 0.82em 2.3em;
+            border-radius: 2.2em;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 1px 14px #ffcf4d33;
+            transition: background .13s, transform .13s, box-shadow .13s;
+            letter-spacing: .02em;
+            border: none;
+            outline: none;
+        }
+        .sns-btn.discord { background: #5765F2; }
+        .sns-btn.discord:hover { background: #4b57c7; }
+        .sns-btn.twitter { background: #222; }
+        .sns-btn.twitter:hover { background: #3e3e3e; }
+        .sns-btn.telegram { background: #27A6E5; }
+        .sns-btn.telegram:hover { background: #158abf; }
+        .sns-btn:hover {
+            background: #ffb84d;
+            color: #3e1c06;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 4px 18px #ffcf4d41;
+        }
+        .airdrop-center {
+            text-align: center;
+            margin: 1.7em 0;
+        }
+        .airdrop-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+            padding: .97em 2em;
+            border-radius: 2em;
+            text-decoration: none;
+            font-size: 1.13rem;
+            box-shadow: 0 1px 12px #ffcf4d50;
+            transition: background .13s, color .13s, box-shadow .13s;
+        }
+        .airdrop-btn:hover {
+            background: #ffb84d;
+            color: #3e1c06;
+            box-shadow: 0 4px 18px #ffcf4d41;
+        }
+        @media (max-width: 980px){
+            section { padding: 1.2em .7em 1.7em .7em;}
+            .about-grid {grid-template-columns: 1fr 1fr;}
+        }
+        @media (max-width: 700px) {
+            h1 { font-size: 2.08rem;}
+            .section-title { font-size: 1.14rem;}
+            .about-grid { grid-template-columns: 1fr;}
+            .tokenomics-info { flex-direction: column; }
+            .tokenomics-info .info-block { min-width: 100px; font-size:.99rem;}
+            .tokenomics-table th, .tokenomics-table td { font-size: .95rem; padding: .53em .27em;}
+            section {padding: 1em .2em 1.1em .2em; border-radius: 1.1rem;}
+            .sns-btn-row { flex-direction: column; gap: 0.8em;}
+            .sns-btn { justify-content: center; width: 100%; max-width: 350px; margin: 0 auto;}
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://hbubcoin.com/images/hbub3.png" alt="HBUB logo" loading="lazy">
+        <img src="https://hbubcoin.com/images/hbub3.png" alt="HBUB logo">
         <h1>HBUB Hambubter Meme Coin</h1>
         <div class="subtitle">Pre-listing! <b>Community-driven FUN Meme Coin</b> · Universe · Roadmap · Tokenomics</div>
-        <nav aria-label="Main navigation">
+        <nav>
             <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
             <a href="#roadmap">Roadmap</a>
@@ -305,53 +420,54 @@ section {
         </nav>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-title">🍞 What is HBUB?</div>
-        <div class="about-grid">
-            <div class="about-card">
-                <div class="about-icons" aria-hidden="true">🌎</div>
-                <b>Lore</b><br>
-                HBUB is born from the quirky world of “Hamster + Butter + Bun” — a universe where cuteness, humor, and community run wild.<br>
-                Our mascot, the rolling Hambubter, is more than a meme: it’s a symbol of togetherness and grassroots power in Web3.
-            </div>
-            <div class="about-card">
-                <div class="about-icons" aria-hidden="true">💡</div>
-                <b>Vision</b><br>
-                HBUB aims to spark a global Web3 culture built on fun, inclusiveness, and real transparency.<br>
-                We connect <b>memes, decentralized investment, and genuine community</b> — putting all members at the heart of every decision.
-            </div>
-            <div class="about-card">
-                <div class="about-icons" aria-hidden="true">🤝</div>
-                <b>Early Contributors & Core Team</b>
-                <ul>
-                    <li>Our core team and early contributors are doxxed, passionate builders — devs, designers, meme creators, and community leads.</li>
-                    <li>Open KYC: Full transparency and identity disclosure before any major exchange listing.</li>
-                    <li>No pre-mining, no VC control, no secret allocations — 100% fair, 100% grassroots.</li>
-                </ul>
-            </div>
-            <div class="about-card">
-                <div class="about-icons" aria-hidden="true">✨</div>
-                <b>Why HBUB?</b>
-                <ul>
-                    <li><b>Majority of tokens</b> are distributed to real community contributors.</li>
-                    <li>Anyone can join, earn, and help shape HBUB’s future from day one.</li>
-                    <li>Step-by-step transition to a true DAO — real governance, on-chain votes, and global meme movement.</li>
-                </ul>
-            </div>
+    <!-- [About + Vision + Team/Investors] -->
+<section id="about">
+    <div class="section-title">🍞 What is HBUB?</div>
+    <div class="about-grid">
+        <div class="about-card">
+            <div class="about-icons">🌎</div>
+            <b>Lore</b><br>
+            HBUB is born from the quirky world of “Hamster + Butter + Bun” — a universe where cuteness, humor, and community run wild.<br>
+            Our mascot, the rolling Hambubter, is more than a meme: it’s a symbol of togetherness and grassroots power in Web3.
         </div>
-        <div class="sub-title">Who is behind HBUB?</div>
-        <p>
-            <b>HBUB</b> is developed and managed by a diverse global group of crypto developers, digital artists, meme makers, early investors, and genuine community builders.<br>
-            We believe in <b>radical transparency</b>: All smart contract code, team wallets, and operations are public.<br>
-            Our mission is to grow an open, fun, and enduring ecosystem — powered by YOU.<br>
-            Every roadmap step, event, and decision is shaped by community votes and open discussion.<br>
-            <b>Join us to build the world’s most playful, transparent, and community-owned meme coin!</b>
-        </p>
-    </section>
-    <div class="section-divider"></div>
+        <div class="about-card">
+            <div class="about-icons">💡</div>
+            <b>Vision</b><br>
+            HBUB aims to spark a global Web3 culture built on fun, inclusiveness, and real transparency.<br>
+            We connect <b>memes, decentralized investment, and genuine community</b> — putting all members at the heart of every decision.
+        </div>
+        <div class="about-card">
+            <div class="about-icons">🤝</div>
+            <b>Early Contributors & Core Team</b>
+            <ul>
+                <li>Our core team and early contributors are doxxed, passionate builders — devs, designers, meme creators, and community leads.</li>
+                <li>Open KYC: Full transparency and identity disclosure before any major exchange listing.</li>
+                <li>No pre-mining, no VC control, no secret allocations — 100% fair, 100% grassroots.</li>
+            </ul>
+        </div>
+        <div class="about-card">
+            <div class="about-icons">✨</div>
+            <b>Why HBUB?</b>
+            <ul>
+                <li><b>Majority of tokens</b> are distributed to real community contributors.</li>
+                <li>Anyone can join, earn, and help shape HBUB’s future from day one.</li>
+                <li>Step-by-step transition to a true DAO — real governance, on-chain votes, and global meme movement.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="sub-title">Who is behind HBUB?</div>
+    <p>
+        <b>HBUB</b> is developed and managed by a diverse global group of crypto developers, digital artists, meme makers, early investors, and genuine community builders.<br>
+        We believe in <b>radical transparency</b>: All smart contract code, team wallets, and operations are public.<br>
+        Our mission is to grow an open, fun, and enduring ecosystem — powered by YOU.<br>
+        Every roadmap step, event, and decision is shaped by community votes and open discussion.<br>
+        <b>Join us to build the world’s most playful, transparent, and community-owned meme coin!</b>
+    </p>
+</section>
+<div class="section-divider"></div>
 
-    <!-- Tokenomics Section -->
+
+    <!-- [Tokenomics] -->
     <section id="tokenomics">
         <div class="section-title">📊 Tokenomics & Distribution</div>
         <div class="tokenomics-info">
@@ -414,7 +530,7 @@ section {
     </section>
     <div class="section-divider"></div>
 
-    <!-- Roadmap Section -->
+    <!-- [Roadmap: Vision, Team transparency, DAO] -->
     <section id="roadmap">
         <div class="section-title">🗺️ HBUB Roadmap</div>
         <div class="roadmap-step">
@@ -450,91 +566,84 @@ section {
     </section>
     <div class="section-divider"></div>
 
-    <!-- Community Section -->
+    <!-- [Community & Airdrop: 버튼 가로배열!] -->
     <section id="community">
         <div class="section-title">🤝 Join the Community & Airdrop</div>
         <div class="sns-btn-row">
-            <a class="sns-btn discord" href="https://discord.gg/XXXX" target="_blank" rel="noopener">Discord</a>
-            <a class="sns-btn twitter" href="https://twitter.com/XXXX" target="_blank" rel="noopener">Twitter (X)</a>
-            <a class="sns-btn telegram" href="javascript:void(0)" tabindex="-1" aria-disabled="true" style="pointer-events:none;opacity:0.6;">Telegram (Coming Soon)</a>
+            <a class="sns-btn discord" href="https://discord.gg/XXXX" target="_blank">Discord</a>
+            <a class="sns-btn twitter" href="https://twitter.com/XXXX" target="_blank">Twitter (X)</a>
+            <a class="sns-btn telegram" href="https://t.me/XXXX" target="_blank">Telegram (Coming Soon)</a>
         </div>
         <div class="airdrop-center">
-            <a class="airdrop-btn" href="https://forms.gle/XXXXX" target="_blank" rel="noopener">Apply for Airdrop (Google Form)</a>
+            <a class="airdrop-btn" href="https://forms.gle/XXXXX" target="_blank">Apply for Airdrop (Google Form)</a>
         </div>
         <div style="color:#b07d38; font-size:1.07em; text-align:center;">Early community participation gets you airdrop priority!</div>
     </section>
     <div class="section-divider"></div>
 
-    <!-- FAQ Section -->
+    <!-- [FAQ] -->
     <section id="faq">
         <div class="section-title">❓ Frequently Asked Questions (FAQ)</div>
         <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Q. Can I buy HBUB now?</button>
-            <div class="faq-a" hidden>HBUB is not yet listed on any exchange. For now, tokens can only be earned via airdrop and community events. Listing info will be posted in our roadmap and channels.</div>
+            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Can I buy HBUB now?</div>
+            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">HBUB is not yet listed on any exchange. For now, tokens can only be earned via airdrop and community events. Listing info will be posted in our roadmap and channels.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Q. What’s the vision of HBUB?</button>
-            <div class="faq-a" hidden>To build a meme coin universe that is fun, open, and community-governed. Our goal is to become a true Web3 DAO meme project.</div>
+            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. What’s the vision of HBUB?</div>
+            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">To build a meme coin universe that is fun, open, and community-governed. Our goal is to become a true Web3 DAO meme project.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Q. Are there any NFT plans?</button>
-            <div class="faq-a" hidden>No NFT plans yet. If the community votes for it, we will add NFT features in the future.</div>
+            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Are there any NFT plans?</div>
+            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">No NFT plans yet. If the community votes for it, we will add NFT features in the future.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Q. When and where will HBUB be listed?</button>
-            <div class="faq-a" hidden>We aim for exchange listing in late 2025. All news and confirmed partners will be shared via official channels transparently.</div>
+            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. When and where will HBUB be listed?</div>
+            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">We aim for exchange listing in late 2025. All news and confirmed partners will be shared via official channels transparently.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Q. Who are the team and investors? Is HBUB KYC'd?</button>
-            <div class="faq-a" hidden>The team and all early investors will be introduced publicly before listing. KYC and wallet transparency are our core principles.</div>
+            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Who are the team and investors? Is HBUB KYC'd?</div>
+            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">The team and all early investors will be introduced publicly before listing. KYC and wallet transparency are our core principles.</div>
         </div>
         <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Q. Where can I see smart contract code and development status?</button>
-            <div class="faq-a" hidden>You can check all updates and code on our official GitHub (e.g., <a href="https://github.com/hbubcoin" target="_blank" rel="noopener">github.com/hbubcoin</a>).</div>
+            <div class="faq-q" style="font-weight:bold;cursor:pointer;">Q. Where can I see smart contract code and development status?</div>
+            <div class="faq-a" style="display:none; margin-left:1.2em; color:#6e431b; padding-top:.25em;">You can check all updates and code on our official GitHub (e.g., <a href="https://github.com/hbubcoin" target="_blank">github.com/hbubcoin</a>).</div>
         </div>
     </section>
 
-    <footer class="footer">
+    <div class="footer">
         <b>HBUB Hambubter Meme Coin</b> &copy; 2025<br>
         <span style="font-size:.98em;">Pre-listing, community-powered Web3 project | fun@hbubcoin.com</span>
-    </footer>
+    </div>
 
     <script>
-    // FAQ open/close animation
-    document.querySelectorAll('.faq-q').forEach(function(q){
-        q.addEventListener('click', function(){
-            let a = q.nextElementSibling;
-            let expanded = q.getAttribute("aria-expanded") === "true";
-            if(expanded) {
-                q.setAttribute("aria-expanded", "false");
-                a.setAttribute("hidden", "");
-            } else {
-                q.setAttribute("aria-expanded", "true");
-                a.removeAttribute("hidden");
-            }
+        // FAQ open/close animation
+        document.querySelectorAll('.faq-q').forEach(function(q){
+            q.addEventListener('click', function(){
+                let a = q.nextElementSibling;
+                a.style.display = (a.style.display === "block") ? "none" : "block";
+            });
         });
-    });
-    // Navigation active highlight
-    window.addEventListener('scroll', function(){
-        const sections = ['about', 'tokenomics', 'roadmap', 'community', 'faq'];
-        let last = null;
-        for(const id of sections) {
-            const el = document.getElementById(id);
-            if (el && window.scrollY+120 >= el.offsetTop) last = id;
-        }
-        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-        if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
-    });
-    // Smooth scroll for nav
-    document.querySelectorAll('nav a').forEach(function(link){
-        link.addEventListener('click', function(e){
-            const href = link.getAttribute('href');
-            if(href.startsWith('#')){
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({behavior:'smooth'});
+        // Navigation active highlight
+        window.addEventListener('scroll', function(){
+            const sections = ['about', 'tokenomics', 'roadmap', 'community', 'faq'];
+            let last = null;
+            for(const id of sections) {
+                const el = document.getElementById(id);
+                if (el && window.scrollY+120 >= el.offsetTop) last = id;
             }
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            if (last) document.querySelector(`nav a[href="#${last}"]`).classList.add('active');
         });
-    });
+        // Smooth scroll for nav
+        document.querySelectorAll('nav a').forEach(function(link){
+            link.addEventListener('click', function(e){
+                const href = link.getAttribute('href');
+                if(href.startsWith('#')){
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({behavior:'smooth'});
+                }
+            });
+        });
     </script>
 </body>
 </html>
