@@ -41,34 +41,60 @@
   <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Chart.js for Tokenomics Doughnut -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+
+  <!-- Compact Tokenomics styles (only what is new) -->
+  <style>
+    #tokenomics{padding:3rem 0;text-align:center}
+    #tokenomics canvas{width:240px;height:240px;margin:0 auto;display:block}
+    .tokenomics-flex{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem}
+    .tokenomics-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.75rem;text-align:left;width:100%;max-width:240px}
+    .info-block{padding:0.75rem;border:1px solid #444;border-radius:6px;font-size:0.85rem}
+    .ib-title{font-weight:600;margin-bottom:0.15rem;color:#ffe35b;font-size:0.85rem}
+    .tokenomics-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.8rem}
+    .tokenomics-table th,.tokenomics-table td{border:1px solid #444;padding:4px 6px;text-align:center}
+    .tokenomics-table th{background:#1a1a1a;font-weight:600}
+    .tokenomics-tip{margin-top:1rem;text-align:left;font-size:0.8rem}
+    .tokenomics-tip ul{list-style:disc;padding-left:1.25rem}
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HBUB (Hambubter)",
+  "url": "https://hbubcoin.com",
+  "logo": "https://hbubcoin.com/assets/logo.webp",
+  "sameAs": [
+    "https://twitter.com/hbubcoin",
+    "https://discord.gg/hbub",
+    "https://github.com/hbubcoin"
+  ]
+}
+</script>
 </head>
 
 <body>
-
 <header>
   <div class="header-inner">
-    <img src="https://hbubcoin.com/images/hbub3.png"
-         alt="HBUB Logo"
-         class="header-logo"
-         width="110" height="110" loading="eager">
+    <img src="https://hbubcoin.com/images/hbub3.png" alt="HBUB Logo" class="header-logo" width="110" height="110" loading="eager">
     <div class="header-text">
       <div class="header-line1">HBUB Hambubter Meme Coin</div>
-      <div class="header-line2">Pre-listing! Community-driven FUN Meme Coin</div>
-      <div class="header-line3">· Universe · Roadmap · Tokenomics</div>
+      <div class="header-line2">Pre-Listing! 100% Community-Driven FUN Meme Coin</div>
+      <div class="header-line3">· Lore · Roadmap · Tokenomics</div>
     </div>
-    <button id="menu-btn"
-            class="menu-btn"
-            aria-label="Toggle navigation"
-            aria-controls="mobile-nav"
-            aria-expanded="false">☰</button>
+    <button id="menu-btn" class="menu-btn" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">☰</button>
   </div>
 
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Primary">
-    <a href="#about"      rel="noopener">About</a>
-    <a href="#tokenomics" rel="noopener">Tokenomics</a>
-    <a href="#roadmap"    rel="noopener">Roadmap</a>
-    <a href="#community"  rel="noopener">Community</a>
-    <a href="#faq"        rel="noopener">FAQ</a>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Main menu">
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#community">Community</a>
+    <a href="#faq">FAQ</a>
   </nav>
 </header>
 
@@ -123,31 +149,48 @@
 
 <!-- ============ Tokenomics ============ -->
 <section id="tokenomics">
-  <div class="section-title">📊 Tokenomics & Distribution</div>
-
-  <div class="tokenomics-info">
-    <div class="info-block"><div class="ib-title">Name</div>Hambubter</div>
-    <div class="info-block"><div class="ib-title">Symbol</div>HBUB</div>
-    <div class="info-block"><div class="ib-title">Total Supply</div>100 000 000 000</div>
-    <div class="info-block"><div class="ib-title">Network</div>Solana</div>
-  </div>
-
-  <table class="tokenomics-table">
-    <tr><th>Category</th><th>Amount</th><th>Share</th><th>Lock-up / Details</th></tr>
-    <tr><td>Community / Airdrop</td><td>50 000 000 000</td><td>50 %</td><td>Pre-listing distribution & events</td></tr>
-    <tr><td>Team & Development</td><td>20 000 000 000</td><td>20 %</td><td>6-month lock-up, gradual vesting after listing</td></tr>
-    <tr><td>Marketing & Events</td><td>15 000 000 000</td><td>15 %</td><td>Meme contests, bounties</td></tr>
-    <tr><td>Liquidity (at listing)</td><td>15 000 000 000</td><td>15 %</td><td>Initial LP & CEX/DEX listing</td></tr>
-  </table>
-
-  <div class="tokenomics-tip">
-    <ul>
-      <li><b>HBUB cannot be traded or sold before official exchange listing.</b></li>
-      <li>All allocations, lock-ups and wallets are 100 % transparent.</li>
-      <li>Only active contributors get airdrop/event allocations.</li>
-    </ul>
+  <div class="container">
+    <div class="section-title">📊 Tokenomics & Distribution</div>
+    <div class="tokenomics-flex">
+      <canvas id="hbubChart" width="240" height="240"></canvas>
+      <div class="tokenomics-info">
+        <div class="info-block"><div class="ib-title">Name</div>Hambubter</div>
+        <div class="info-block"><div class="ib-title">Symbol</div>HBUB</div>
+        <div class="info-block"><div class="ib-title">Total Supply</div>100,000,000,000</div>
+        <div class="info-block"><div class="ib-title">Network</div>Solana</div>
+      </div>
+    </div>
+    <table class="tokenomics-table">
+      <tr><th>Category</th><th>Amount</th><th>Share</th><th>Lockup · Details</th></tr>
+      <tr><td>Community · Airdrop</td><td>50,000,000,000</td><td>50 %</td><td>Pre-listing, event rewards</td></tr>
+      <tr><td>Team · Development</td><td>20,000,000,000</td><td>20 %</td><td>6-month lock, gradual vesting</td></tr>
+      <tr><td>Marketing · Events</td><td>15,000,000,000</td><td>15 %</td><td>Meme contests, bug bounties</td></tr>
+      <tr><td>Liquidity (Listing)</td><td>15,000,000,000</td><td>15 %</td><td>Initial LP, CEX/DEX listing</td></tr>
+    </table>
+    <div class="tokenomics-tip">
+      <ul>
+        <li><strong>HBUB cannot be bought or sold until official listing.</strong></li>
+        <li>All allocations, lockups, and wallet addresses will be 100% transparent.</li>
+        <li>Airdrops and event tokens go only to real contributors.</li>
+      </ul>
+    </div>
   </div>
 </section>
+
+<script defer>
+document.addEventListener('DOMContentLoaded',()=>{
+  const ctx=document.getElementById('hbubChart');
+  if(ctx){
+    new Chart(ctx,{
+      type:'doughnut',
+      data:{labels:['Community','Development','Marketing','Liquidity','Reserve'],
+            datasets:[{data:[50,20,15,10,5],
+            backgroundColor:['#ffbd59','#59caff','#ff6fa7','#9eff8b','#ffe35b']}]},
+      options:{plugins:{legend:{position:'bottom',labels:{color:'#fff',boxWidth:12}}},cutout:'55%'}
+    });
+  }
+});
+</script>
 
 <div class="section-divider"></div>
 
@@ -156,35 +199,35 @@
   <div class="section-title">🗺️ HBUB Roadmap</div>
 
   <div class="roadmap-step">
-    <div class="roadmap-q">2024 Q4 – 2025 Q1 | Project Launch & Lore Reveal</div>
+    <div class="roadmap-q">2025 Q3 ~ Q4 | Launch & Universe Reveal</div>
     <ul class="roadmap-list">
-      <li>Universe and memes revealed</li>
-      <li>Website, Discord, X(Twitter), Telegram launch</li>
-      <li>First airdrop, early contributors onboarded</li>
-      <li>Core team introduced publicly, open wallet disclosure</li>
-      <li>Token smart-contract development</li>
+      <li>Reveal lore and memes</li>
+      <li>Website, Discord, X (Twitter), and Telegram launch</li>
+      <li>1st airdrop & onboarding core contributors</li>
+      <li>Public team & wallet addresses</li>
+      <li>Token smart contract development</li>
     </ul>
   </div>
 
   <div class="roadmap-step">
-    <div class="roadmap-q">2025 Q2 | Community Growth & Full Transparency</div>
+    <div class="roadmap-q">2026 Q1 | Community Growth & Full Transparency</div>
     <ul class="roadmap-list">
-      <li>Meme contest, second airdrop, community missions</li>
-      <li>Team KYC and investor list disclosed</li>
-      <li>Listing preparation, partner collaborations</li>
-      <li>Smart-contract audit, testnet launch</li>
-      <li>Regular on-chain progress reports</li>
+      <li>Meme contests, 2nd airdrop, community missions</li>
+      <li>Team KYC and investor list revealed</li>
+      <li>Listing prep & partner collaboration</li>
+      <li>Smart contract audit, testnet launch</li>
+      <li>On-chain progress updates</li>
     </ul>
   </div>
 
   <div class="roadmap-step">
-    <div class="roadmap-q">2025 Q3 – Q4 | Listing & DAO Transition</div>
+    <div class="roadmap-q">2026 Q2 ~ Q4 | Listing & DAO Transition</div>
     <ul class="roadmap-list">
-      <li>Major CEX/DEX listing, liquidity pool opened</li>
-      <li>DAO transition: community governance live</li>
-      <li>Open voting for roadmap & allocations</li>
-      <li>HBUB DApps/tools released</li>
-      <li>Global expansion, new partners, continuous event rewards</li>
+      <li>Liquidity pools open, preparing for exchange listings</li>
+      <li>DAO: Launch community governance</li>
+      <li>On-chain voting for roadmap, budget, proposals</li>
+      <li>HBUB ecosystem DApp/tool release</li>
+      <li>Global expansion, new partnerships, ongoing rewards</li>
     </ul>
   </div>
 </section>
