@@ -45,41 +45,6 @@
   <!-- Chart.js for Tokenomics -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 
-  <style>
-    #tokenomics {padding:3rem 0;text-align:center;}
-    #tokenomics canvas {width:240px;height:240px;margin:0 auto;display:block;}
-    .tokenomics-flex {display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem;}
-    .tokenomics-info {display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.75rem;text-align:left;width:100%;max-width:240px;}
-    .info-block {padding:0.75rem;border:1px solid #444;border-radius:6px;font-size:0.85rem;}
-    .ib-title {font-weight:600;margin-bottom:0.15rem;color:#ffe35b;font-size:0.85rem;}
-    .tokenomics-table {width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.8rem;}
-    .tokenomics-table th, .tokenomics-table td {border:1px solid #444;padding:4px 6px;text-align:center;}
-    .tokenomics-table th {background:#1a1a1a;font-weight:600;}
-    .tokenomics-tip {margin-top:1rem;text-align:left;font-size:0.85rem;}
-    .tokenomics-tip ul {list-style:disc;padding-left:1.25rem;}
-    .airdrop-btn {display:inline-block;background:#ffe35b;color:#111;font-weight:700;padding:0.8em 1.4em;margin:1.3em 0 0 0;border-radius:2em;box-shadow:0 2px 6px rgba(0,0,0,0.07);font-size:1.1em;text-decoration:none;}
-    .airdrop-btn:hover {background:#ffbd59;}
-    .sns-btn-row {margin:1.5em 0;display:flex;gap:0.9em;flex-wrap:wrap;justify-content:center;}
-    .sns-btn {display:inline-block;padding:0.5em 1.2em;border-radius:1.6em;font-weight:600;background:#222;color:#ffe35b;text-decoration:none;transition:background 0.16s;}
-    .sns-btn.discord:hover {background:#5562ea;}
-    .sns-btn.twitter:hover {background:#1da1f2;}
-    .sns-btn.telegram:hover {background:#28a8ea;}
-    .community-note {margin-top:1em;font-size:1em;font-weight:600;color:#ffbd59;text-align:center;}
-    .section-divider {border-bottom:1px solid #333;margin:2.2em 0;}
-    .section-title {font-size:2em;font-weight:700;margin-bottom:1em;text-align:center;}
-    .sub-title {font-size:1.15em;margin:1.8em 0 0.6em 0;text-align:center;}
-    .about-grid {display:flex;flex-wrap:wrap;gap:1.2em;justify-content:center;}
-    .about-card {background:#222;border-radius:1em;padding:1.1em 1.2em;max-width:19em;min-width:13em;flex:1 1 220px;text-align:left;}
-    .about-icons {font-size:2em;margin-bottom:0.2em;}
-    .faq-item {margin-bottom:1em;}
-    .faq-q {background:none;border:none;font-weight:700;color:#ffe35b;font-size:1em;text-align:left;width:100%;cursor:pointer;outline:0;}
-    .faq-a {margin-top:0.4em;color:#eee;font-size:0.97em;display:none;}
-    .faq-item.open .faq-a {display:block;}
-    @media (max-width: 700px) {
-      .about-grid, .tokenomics-flex {flex-direction:column;align-items:center;}
-    }
-  </style>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
