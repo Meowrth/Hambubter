@@ -34,6 +34,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
  <!-- Chart.js for Tokenomics Doughnut -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
@@ -168,16 +169,19 @@
 
 <!-- chart init script (single instance) -->
 <script defer>
-document.addEventListener('DOMContentLoaded', () => {
-  const ctx = document.getElementById('hbubChart');
+document.addEventListener('DOMContentLoaded',()=>{
+  const ctx=document.getElementById('hbubChart');
   if(ctx){
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['커뮤니티', '개발·운영', '마케팅', '유동성', '예비'],
-        datasets: [{
-          data: [50, 20, 15, 10, 5],
-          backgroundColor: ['#ffbd59','#59caff','#ff6fa7','#9eff8
+    new Chart(ctx,{
+      type:'doughnut',
+      data:{labels:['커뮤니티','개발·운영','마케팅','유동성','예비'],
+            datasets:[{data:[50,20,15,10,5],
+            backgroundColor:['#ffbd59','#59caff','#ff6fa7','#9eff8b','#ffe35b']}]},
+      options:{plugins:{legend:{position:'bottom',labels:{color:'#fff',boxWidth:12}}},cutout:'55%'}
+    });
+  }
+});
+</script>
 
 <div class="section-divider"></div>
 
