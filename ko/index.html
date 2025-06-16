@@ -35,6 +35,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
 
+ <!-- Chart.js for Tokenomics Doughnut -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+
+  <!-- Compact Tokenomics styles (only what is new) -->
+  <style>
+    /* Compact tokenomics specific tweaks */
+    #tokenomics{padding:3rem 0;text-align:center}
+    #tokenomics canvas{width:240px;height:240px;margin:0 auto;display:block}
+    .tokenomics-flex{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem}
+    .tokenomics-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.75rem;text-align:left;width:100%;max-width:240px}
+    .info-block{padding:0.75rem;border:1px solid #444;border-radius:6px;font-size:0.85rem}
+    .ib-title{font-weight:600;margin-bottom:0.15rem;color:#ffe35b;font-size:0.85rem}
+    .tokenomics-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.8rem}
+    .tokenomics-table th,.tokenomics-table td{border:1px solid #444;padding:4px 6px;text-align:center}
+    .tokenomics-table th{background:#1a1a1a;font-weight:600}
+    .tokenomics-tip{margin-top:1rem;text-align:left;font-size:0.8rem}
+    .tokenomics-tip ul{list-style:disc;padding-left:1.25rem}
+  </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -119,30 +138,47 @@
 
 <!-- ====================== Tokenomics ====================== -->
 <section id="tokenomics">
-  <div class="section-title">📊 토크노믹스 & 분배</div>
-
-  <div class="tokenomics-info">
-    <div class="info-block"><div class="ib-title">이름</div>햄버터 (Hambubter)</div>
-    <div class="info-block"><div class="ib-title">심볼</div>HBUB</div>
-    <div class="info-block"><div class="ib-title">총 발행량</div>100,000,000,000</div>
-    <div class="info-block"><div class="ib-title">네트워크</div>Solana</div>
+  <div class="container">
+    <div class="section-title">📊 토크노믹스 & 분배</div>
+    <div class="tokenomics-flex">
+      <canvas id="hbubChart" width="240" height="240"></canvas>
+      <div class="tokenomics-info">
+        <div class="info-block"><div class="ib-title">이름</div>햄버터 (Hambubter)</div>
+        <div class="info-block"><div class="ib-title">심볼</div>HBUB</div>
+        <div class="info-block"><div class="ib-title">총 발행량</div>100,000,000,000</div>
+        <div class="info-block"><div class="ib-title">네트워크</div>Solana</div>
+      </div>
+    </div>
+    <table class="tokenomics-table">
+      <tr><th>카테고리</th><th>수량</th><th>비율</th><th>락업 · 세부사항</th></tr>
+      <tr><td>커뮤니티 · 에어드랍</td><td>50,000,000,000</td><td>50 %</td><td>프리 리스팅 배분 · 이벤트 보상</td></tr>
+      <tr><td>팀 · 개발</td><td>20,000,000,000</td><td>20 %</td><td>6개월 락업 후 단계적 베스팅</td></tr>
+      <tr><td>마케팅 · 이벤트</td><td>15,000,000,000</td><td>15 %</td><td>밈 콘테스트 · 버그바운티</td></tr>
+      <tr><td>유동성(상장 시)</td><td>15,000,000,000</td><td>15 %</td><td>초기 LP · CEX/DEX 상장</td></tr>
+    </table>
+    <div class="tokenomics-tip">
+      <ul>
+        <li><strong>HBUB은 공식 상장 전까지 매매가 불가능합니다.</strong></li>
+        <li>모든 할당, 락업, 지갑 주소는 100 % 투명 공개됩니다.</li>
+        <li>실제 기여자만 에어드랍·이벤트 토큰을 받을 수 있습니다.</li>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <table class="tokenomics-table">
-    <tr><th>카테고리</th><th>수량</th><th>비율</th><th>락업 · 세부사항</th></tr>
-    <tr><td>커뮤니티 · 에어드랍</td><td>50,000,000,000</td><td>50 %</td><td>프리 리스팅 배분 · 이벤트 보상</td></tr>
-    <tr><td>팀 · 개발</td><td>20,000,000,000</td><td>20 %</td><td>6개월 락업 후 단계적 베스팅</td></tr>
-    <tr><td>마케팅 · 이벤트</td><td>15,000,000,000</td><td>15 %</td><td>밈 콘테스트 · 버그바운티</td></tr>
-    <tr><td>유동성(상장 시)</td><td>15,000,000,000</td><td>15 %</td><td>초기 LP · CEX/DEX 상장</td></tr>
-  </table>
+<!-- chart init script (single instance) -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('hbubChart');
+  if(ctx){
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['커뮤니티', '개발·운영', '마케팅', '유동성', '예비'],
+        datasets: [{
+          data: [50, 20, 15, 10, 5],
+          backgroundColor: ['#ffbd59','#59caff','#ff6fa7','#9eff8
 
-  <div class="tokenomics-tip">
-    <ul>
-      <li><b>HBUB은 공식 상장 전까지 매매가 불가능합니다.</b></li>
-      <li>모든 할당, 락업, 지갑 주소는 100 % 투명 공개됩니다.</li>
-      <li>실제 기여자만 에어드랍·이벤트 토큰을 받을 수 있습니다.</li>
-    </ul>
-  </div>
 </section>
 
 <div class="section-divider"></div>
