@@ -1,1 +1,13 @@
-
+{
+  "name": "Hambubter Meme Coin",
+  "short_name": "HBUB",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7e2",
+  "theme_color": "#ff9434",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "lang": "en"
+}
