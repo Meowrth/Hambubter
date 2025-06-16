@@ -119,84 +119,31 @@
 
 <!-- ====================== Tokenomics ====================== -->
 <section id="tokenomics">
-  <div class="container">
-    <div class="section-title">📊 토크노믹스 & 분배</div>
+  <div class="section-title">📊 토크노믹스 & 분배</div>
 
-    <div class="tokenomics-flex">
-      <!-- 도넛 차트 -->
-      <canvas id="hbubChart" width="240" height="240"></canvas>
+  <div class="tokenomics-info">
+    <div class="info-block"><div class="ib-title">이름</div>햄버터 (Hambubter)</div>
+    <div class="info-block"><div class="ib-title">심볼</div>HBUB</div>
+    <div class="info-block"><div class="ib-title">총 발행량</div>100,000,000,000</div>
+    <div class="info-block"><div class="ib-title">네트워크</div>Solana</div>
+  </div>
 
-      <!-- 토큰 기본 정보 -->
-      <div class="tokenomics-info">
-        <div class="info-block"><div class="ib-title">이름</div>햄버터 (Hambubter)</div>
-        <div class="info-block"><div class="ib-title">심볼</div>HBUB</div>
-        <div class="info-block"><div class="ib-title">총 발행량</div>100,000,000,000</div>
-        <div class="info-block"><div class="ib-title">네트워크</div>Solana</div>
-      </div>
-    </div>
+  <table class="tokenomics-table">
+    <tr><th>카테고리</th><th>수량</th><th>비율</th><th>락업 · 세부사항</th></tr>
+    <tr><td>커뮤니티 · 에어드랍</td><td>50,000,000,000</td><td>50 %</td><td>프리 리스팅 배분 · 이벤트 보상</td></tr>
+    <tr><td>팀 · 개발</td><td>20,000,000,000</td><td>20 %</td><td>6개월 락업 후 단계적 베스팅</td></tr>
+    <tr><td>마케팅 · 이벤트</td><td>15,000,000,000</td><td>15 %</td><td>밈 콘테스트 · 버그바운티</td></tr>
+    <tr><td>유동성(상장 시)</td><td>15,000,000,000</td><td>15 %</td><td>초기 LP · CEX/DEX 상장</td></tr>
+  </table>
 
-    <!-- 분배 표 -->
-    <table class="tokenomics-table">
-      <tr><th>카테고리</th><th>수량</th><th>비율</th><th>락업 · 세부사항</th></tr>
-      <tr><td>커뮤니티 · 에어드랍</td><td>50,000,000,000</td><td>50 %</td><td>프리 리스팅 배분 · 이벤트 보상</td></tr>
-      <tr><td>팀 · 개발</td><td>20,000,000,000</td><td>20 %</td><td>6개월 락업 후 단계적 베스팅</td></tr>
-      <tr><td>마케팅 · 이벤트</td><td>15,000,000,000</td><td>15 %</td><td>밈 콘테스트 · 버그바운티</td></tr>
-      <tr><td>유동성(상장 시)</td><td>15,000,000,000</td><td>15 %</td><td>초기 LP · CEX/DEX 상장</td></tr>
-    </table>
-
-    <!-- 안내 -->
-    <div class="tokenomics-tip">
-      <ul>
-        <li><strong>HBUB은 공식 상장 전까지 매매가 불가능합니다.</strong></li>
-        <li>모든 할당, 락업, 지갑 주소는 100 % 투명 공개됩니다.</li>
-        <li>실제 기여자만 에어드랍·이벤트 토큰을 받을 수 있습니다.</li>
-      </ul>
-    </div>
+  <div class="tokenomics-tip">
+    <ul>
+      <li><b>HBUB은 공식 상장 전까지 매매가 불가능합니다.</b></li>
+      <li>모든 할당, 락업, 지갑 주소는 100 % 투명 공개됩니다.</li>
+      <li>실제 기여자만 에어드랍·이벤트 토큰을 받을 수 있습니다.</li>
+    </ul>
   </div>
 </section>
-
-<script defer>
-document.addEventListener('DOMContentLoaded', () => {
-  const ctx = document.getElementById('hbubChart');
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['커뮤니티', '개발·운영', '마케팅', '유동성', '예비'],
-      datasets: [{
-        data: [50, 20, 15, 10, 5],
-        backgroundColor: ['#ffbd59','#59caff','#ff6fa7','#9eff8b','#ffe35b']
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { position: 'bottom', labels: { color: '#ffffff', boxWidth:12 } }
-      },
-      cutout: '55%'
-    }
-  });
-});
-</script>
-<script defer>
-document.addEventListener('DOMContentLoaded', () => {
-  const ctx = document.getElementById('hbubChart');
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['커뮤니티', '개발·운영', '마케팅', '유동성', '예비'],
-      datasets: [{
-        data: [50, 20, 15, 10, 5],
-        backgroundColor: ['#ffbd59','#59caff','#ff6fa7','#9eff8b','#ffe35b']
-      }]
-    },
-    options: {
-      plugins: {
-        legend: { position: 'bottom', labels: { color: '#ffffff', boxWidth:12 } }
-      },
-      cutout: '55%'
-    }
-  });
-});
-</script>
 
 <div class="section-divider"></div>
 
