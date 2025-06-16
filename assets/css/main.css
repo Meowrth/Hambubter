@@ -22,9 +22,9 @@ body{
   -webkit-tap-highlight-color:rgba(255,148,52,.08);
 
   /* ── 모바일 뷰포트 좌우 흔들림 방지 ── */
-  overflow-x:hidden;       /* 페이지 자체 가로 스크롤 차단 */
-  word-break:break-word;   /* 긴 단어/URL 자동 줄바꿈 */
-  overflow-wrap:anywhere;  /* 줄바꿈이 더 필요하면 어디서든 */
+  overflow-x:hidden;
+  word-break:break-word;
+  overflow-wrap:anywhere;
 }
 
 header{
@@ -35,7 +35,6 @@ header{
   border-radius:0 0 2rem 2rem;
   animation:header-fadein 1.2s;
 }
-
 
 /* --- Header inner --- */
 .header-inner{max-width:980px;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center;gap:1.7rem}
@@ -91,16 +90,42 @@ section{max-width:1200px;margin:2.5em auto 2em;border-radius:2.1rem;padding:2.6e
 /* Community */
 #community{background:#fffbe7}
 .sns-btn-row{display:flex;flex-wrap:wrap;gap:1.2em;justify-content:center;margin:1.3em 0 1.7em}
-.sns-btn{display:flex;align-items:center;justify-content:center;font-size:1.13rem;font-weight:700;padding:.82em 2.3em;border-radius:2.2em;background:var(--primary);color:#fff;text-decoration:none;box-shadow:0 1px 14px #ffcf4d33;transition:background .13s,transform .13s}
+
+.sns-btn{
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.13rem;font-weight:700;
+  padding:.82em 2.3em;border-radius:2.2em;
+  background:var(--primary);color:#fff;text-decoration:none;
+  box-shadow:0 1px 14px #ffcf4d33;
+  transition:background .13s,transform .13s;
+  max-width:100%;                  /* NEW: 폭 제한 */
+  box-sizing:border-box;           /* NEW */
+}
 .sns-btn.discord{background:#5765F2}.sns-btn.discord:hover{background:#4b57c7}
 .sns-btn.twitter{background:#222}.sns-btn.twitter:hover{background:#3e3e3e}
 .sns-btn.telegram{background:#27A6E5}.sns-btn.telegram:hover{background:#158abf}
 .sns-btn:hover{background:#ffb84d;color:var(--secondary);transform:translateY(-2px) scale(1.04);box-shadow:0 4px 18px #ffcf4d41}
 
 .airdrop-center{text-align:center;margin:1.7em 0}
-.airdrop-btn{display:inline-block;background:var(--primary);color:#fff;font-weight:700;padding:.97em 2em;border-radius:2em;text-decoration:none;font-size:1.13rem;box-shadow:0 1px 12px #ffcf4d50;transition:background .13s,box-shadow .13s}
+.airdrop-btn{
+  display:inline-block;background:var(--primary);color:#fff;font-weight:700;
+  padding:.97em 2em;border-radius:2em;text-decoration:none;font-size:1.13rem;
+  box-shadow:0 1px 12px #ffcf4d50;transition:background .13s,box-shadow .13s;
+  max-width:100%;                  /* NEW */
+  box-sizing:border-box;           /* NEW */
+}
 .airdrop-btn:hover{background:#ffb84d;color:var(--secondary);box-shadow:0 4px 18px #ffcf4d41}
 .community-note{color:var(--text-brown);font-size:1.07em;text-align:center}
+
+/* 👉 모바일(터치)에서는 버튼 확대 효과 제거 */
+@media (pointer:coarse){           /* NEW */
+  .sns-btn:hover,
+  .sns-btn:active,
+  .airdrop-btn:hover,
+  .airdrop-btn:active{
+    transform:translateY(-2px);    /* scale 제거 */
+  }
+}
 
 /* FAQ */
 #faq{background:#fffbe7}
