@@ -1,1 +1,125 @@
+/* ---------- CSS Root Vars ---------- */
+:root{
+  --main-bg:#fff7e2;
+  --primary:#ff9434;
+  --primary-grad:linear-gradient(90deg,#ffcf4d 0%,#ff9434 100%);
+  --secondary:#3e1c06;
+  --card:#fffbe7;
+  --shadow:0 6px 32px #ffda7766,0 1.5px 6px #ff943422;
+  --text-brown:#7a4a0f;
+  font-size:16px;
+}
 
+/* ---------- 기본 레이아웃 ---------- */
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--main-bg);
+  font-family:'Gothic A1','Jua',sans-serif;color:var(--secondary);
+  line-height:1.85;-webkit-tap-highlight-color:rgba(255,148,52,.08);
+}
+
+header{
+  background:var(--primary-grad);text-align:center;padding:1.2rem 1rem .8rem;
+  box-shadow:0 2px 16px #ff943433;border-radius:0 0 2rem 2rem;
+  animation:header-fadein 1.2s;
+}
+
+/* --- Header inner --- */
+.header-inner{max-width:980px;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center;gap:1.7rem}
+.header-logo{width:110px;height:110px;border-radius:2.2rem;box-shadow:0 1.5px 14px #ffcf4d51;background:#fffde7;object-fit:contain}
+.header-text{display:flex;flex-direction:column;align-items:flex-start;gap:.1em;text-align:left}
+.header-line1{font-family:'Jua',sans-serif;font-size:2.25rem;font-weight:900;color:var(--primary);text-shadow:0 2px 10px #ffdf96,0 2px 6px #ffecd4;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.22em;line-height:1.17}
+.header-line2{font-size:1.19rem;font-weight:700;color:#fff;background:#ff9434d0;padding:.13em .88em;border-radius:1.3em;box-shadow:0 2px 10px #ffcf4d36;margin-bottom:.12em;line-height:1.25;position:relative}
+.header-line2::before{content:"🎉 "}
+.header-line3{font-size:1.08rem;color:var(--text-brown);background:#fffbe8;padding:.05em .77em;border-radius:1em;box-shadow:0 1px 7px #ffe0ab4d;margin-top:.09em;letter-spacing:1.7px;position:relative}
+.header-line3::before{content:"🍞";margin-right:.28em}
+.header-line3::after{content:"✨";margin-left:.25em}
+
+/* --- Navigation --- */
+.menu-btn{background:none;border:none;color:var(--secondary);font-size:2rem;cursor:pointer}
+.menu-btn:focus-visible{outline:3px solid var(--primary);border-radius:50%}
+nav a{display:inline-block;background:#fffbe7;color:var(--secondary);font-weight:700;margin:0 .1em;padding:.58em 1.39em;border-radius:1.5em;font-size:1.07rem;text-decoration:none;transition:background .15s,color .15s;min-width:44px;min-height:44px;text-align:center}
+nav a:hover,nav a.active{background:var(--primary);color:#fff}
+
+/* mobile-nav hidden 기본값, active 표시 */
+nav.mobile-nav{display:none;flex-direction:column;gap:.3rem;margin-top:.6rem}
+nav.mobile-nav.active{display:flex;animation:section-fadein .25s}
+
+/* --- Section wrapper --- */
+section{max-width:1200px;margin:2.5em auto 2em;border-radius:2.1rem;padding:2.6em 2.3em;box-shadow:var(--shadow);background:#fff;scroll-margin-top:115px;animation:section-fadein .8s}
+.section-title{font-family:'Jua',sans-serif;font-size:2.08rem;font-weight:700;letter-spacing:.5px;margin-bottom:.85em;background:-webkit-linear-gradient(90deg,#ff9434 40%,#ffcf4d 90%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-divider{max-width:100px;height:4px;border-radius:2px;background:var(--primary-grad);margin:2.5em auto;opacity:.65}
+
+/* --- About, Tokenomics, Roadmap etc (원본 유지) --- */
+#about{background:#fff9f1}
+.about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8em;margin-bottom:1.7em}
+.about-card{background:var(--card);border-radius:1.35em;box-shadow:0 3px 18px #ffcf4d18;padding:1.3em;border:1.5px solid #ffe6ab55;font-size:1.11rem;transition:transform .13s}
+.about-card:hover{transform:translateY(-3px) scale(1.02)}
+.about-icons{font-size:2.2em;margin-bottom:.3em}
+.sub-title{font-size:1.13rem;color:#d88a2e;font-weight:600;margin:1.7em 0 .65em}
+
+/* Tokenomics */
+#tokenomics{background:#ffe7be}
+.tokenomics-info{display:flex;flex-wrap:wrap;gap:1.2em;justify-content:center;margin-bottom:1.4em}
+.tokenomics-info .info-block{flex:1 1 165px;background:#fffef9;border-radius:1.08em;padding:1.1em 1em .7em;box-shadow:0 1px 7px #ffd9862e;border:1.5px solid #ffcf4d55;text-align:center;font-size:1.08rem}
+.tokenomics-info .ib-title{font-size:1.09rem;color:#e98c11;margin-bottom:.16em;font-weight:700}
+.tokenomics-table{width:100%;border-collapse:collapse;margin:1.3em 0;background:#fff;border-radius:.8em;overflow:hidden;box-shadow:0 2px 10px #ffd98627;font-size:1.08rem}
+.tokenomics-table th,.tokenomics-table td{border:1px solid #ffe6ab;padding:.73em 1em;text-align:center}
+.tokenomics-table th{background:#ffe9be;color:#ae721a;font-weight:700}
+.tokenomics-tip{font-size:1.05em;color:var(--text-brown);background:#fff7de;border-radius:1em;padding:1em;margin-top:1.25em}
+
+/* Roadmap */
+#roadmap{background:#fff9ec}
+.roadmap-step{margin:1.17em 0 2.2em;background:#fff7e6;border-radius:1.22em;padding:1.22em;border:1.5px solid #ffe6ab4d;box-shadow:0 1px 6px #ffcf4d22;transition:box-shadow .18s}
+.roadmap-step:hover{box-shadow:0 8px 28px #ffd98644}
+.roadmap-q{font-size:1.17em;font-family:'Jua',sans-serif;color:var(--text-brown);font-weight:bold;margin-bottom:.35em}
+.roadmap-list{padding-left:1.15em;margin:.07em 0}
+
+/* Community */
+#community{background:#fffbe7}
+.sns-btn-row{display:flex;flex-wrap:wrap;gap:1.2em;justify-content:center;margin:1.3em 0 1.7em}
+.sns-btn{display:flex;align-items:center;justify-content:center;font-size:1.13rem;font-weight:700;padding:.82em 2.3em;border-radius:2.2em;background:var(--primary);color:#fff;text-decoration:none;box-shadow:0 1px 14px #ffcf4d33;transition:background .13s,transform .13s}
+.sns-btn.discord{background:#5765F2}.sns-btn.discord:hover{background:#4b57c7}
+.sns-btn.twitter{background:#222}.sns-btn.twitter:hover{background:#3e3e3e}
+.sns-btn.telegram{background:#27A6E5}.sns-btn.telegram:hover{background:#158abf}
+.sns-btn:hover{background:#ffb84d;color:var(--secondary);transform:translateY(-2px) scale(1.04);box-shadow:0 4px 18px #ffcf4d41}
+
+.airdrop-center{text-align:center;margin:1.7em 0}
+.airdrop-btn{display:inline-block;background:var(--primary);color:#fff;font-weight:700;padding:.97em 2em;border-radius:2em;text-decoration:none;font-size:1.13rem;box-shadow:0 1px 12px #ffcf4d50;transition:background .13s,box-shadow .13s}
+.airdrop-btn:hover{background:#ffb84d;color:var(--secondary);box-shadow:0 4px 18px #ffcf4d41}
+.community-note{color:var(--text-brown);font-size:1.07em;text-align:center}
+
+/* FAQ */
+#faq{background:#fffbe7}
+.faq-item{margin-bottom:1em}
+.faq-q{width:100%;padding:.45em .8em;border-radius:1em;background:#fff9ef;border:none;font-weight:bold;font-size:1.07em;text-align:left;cursor:pointer;min-height:44px;transition:background .15s}
+.faq-q:focus-visible,.faq-q:active{background:#ffe4b7}
+.faq-a{display:none;margin-left:1.2em;padding-top:.25em;font-size:.99em;color:#6e431b}
+.faq-q[aria-expanded="true"] + .faq-a{display:block}
+
+/* Footer */
+.footer{text-align:center;padding:2.7em 1em 1em;color:var(--text-brown);font-size:1em;letter-spacing:.1px}
+
+/* ---------- Animations ---------- */
+@keyframes header-fadein{0%{opacity:0;transform:translateY(-50px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes section-fadein{from{opacity:0;transform:translateY(70px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- Responsive ---------- */
+@media(max-width:700px){
+  .header-inner{flex-direction:column;gap:.2rem;margin-bottom:.4rem}
+  .header-logo{width:48px;height:48px}
+  .header-line1{font-size:1rem;margin-bottom:.1em}
+  .header-line2{font-size:.84rem;padding:.1em .6em}
+  .header-line3{font-size:.7rem}
+  header{padding:.5em .4em .4em}
+  nav.mobile-nav{margin-top:.5em}
+  section{padding:1.2em 1em;border-radius:1.1rem;scroll-margin-top:60px}
+  .about-grid{grid-template-columns:1fr}
+  .tokenomics-info{flex-direction:column;gap:.6em}
+  .sns-btn-row{flex-direction:column;gap:.8em}
+  .sns-btn,.airdrop-btn{width:100%;max-width:370px;margin:0 auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
