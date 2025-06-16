@@ -12,17 +12,30 @@
 
 /* ---------- 기본 레이아웃 ---------- */
 html{scroll-behavior:smooth}
+
 body{
-  margin:0;background:var(--main-bg);
-  font-family:'Gothic A1','Jua',sans-serif;color:var(--secondary);
-  line-height:1.85;-webkit-tap-highlight-color:rgba(255,148,52,.08);
+  margin:0;
+  background:var(--main-bg);
+  font-family:'Gothic A1','Jua',sans-serif;
+  color:var(--secondary);
+  line-height:1.85;
+  -webkit-tap-highlight-color:rgba(255,148,52,.08);
+
+  /* ── 모바일 뷰포트 좌우 흔들림 방지 ── */
+  overflow-x:hidden;       /* 페이지 자체 가로 스크롤 차단 */
+  word-break:break-word;   /* 긴 단어/URL 자동 줄바꿈 */
+  overflow-wrap:anywhere;  /* 줄바꿈이 더 필요하면 어디서든 */
 }
 
 header{
-  background:var(--primary-grad);text-align:center;padding:1.2rem 1rem .8rem;
-  box-shadow:0 2px 16px #ff943433;border-radius:0 0 2rem 2rem;
+  background:var(--primary-grad);
+  text-align:center;
+  padding:1.2rem 1rem .8rem;
+  box-shadow:0 2px 16px #ff943433;
+  border-radius:0 0 2rem 2rem;
   animation:header-fadein 1.2s;
 }
+
 
 /* --- Header inner --- */
 .header-inner{max-width:980px;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center;gap:1.7rem}
