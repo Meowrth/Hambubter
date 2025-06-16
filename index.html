@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HBUB Hambubter: Meme the World, Butter the Chain!</title>
+  <title>Hambubter Meme Coin on Solana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="HBUB (Hambubter) is Solana’s meme coin from the hamster+butter+bun universe. Meme, vote, and earn in a truly transparent DAO. No rug, just bun.">
+  <meta name="description" content="HBUB (Hambubter) is a Solana-based hamster+butter+bun meme coin powered by NFTs, DAO governance and fair tokenomics.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#ff9434">
 
@@ -20,45 +20,61 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="en_US">
   <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:site_name" content="Hambubter | 햄버터">
-  <meta property="og:title" content="HBUB Hambubter: Meme the World, Butter the Chain!">
-  <meta property="og:description" content="Solana’s meme coin: hamster+butter+bun universe, DAO, NFT airdrops. Meme. Vote. WAGMI.">
-  <meta property="og:url" content="https://hbubcoin.com/">
-  <meta property="og:image" content="https://hbubcoin.com/images/og-image.png">
-  <meta property="og:image:alt" content="HBUB meme coin logo, hamster, bun, butter, community mascot">
+  <meta property="og:site_name"   content="Hambubter | 햄버터">
+  <meta property="og:title"       content="HBUB Hambubter Meme Coin – Solana NFT Airdrop & DAO">
+  <meta property="og:description" content="Join the hamster-butter-bun universe on Solana. Community-driven meme coin, NFT rewards and transparent DAO governance.">
+  <meta property="og:url"         content="https://hbubcoin.com/">
+  <meta property="og:image"       content="https://hbubcoin.com/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@Hambubter_coin">
-  <meta name="twitter:title" content="HBUB Hambubter Meme Coin – Meme. Vote. Butter.">
-  <meta name="twitter:description" content="Earn HBUB airdrops, vote like a bunlord, and join the most delicious DAO on Solana. No rug, just bun.">
-  <meta name="twitter:image" content="https://hbubcoin.com/images/og-image.png">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@Hambubter_coin">
+  <meta name="twitter:title"       content="HBUB Hambubter Meme Coin">
+  <meta name="twitter:description" content="Earn HBUB via airdrops, shape the DAO and join the fun community.">
+  <meta name="twitter:image"       content="https://hbubcoin.com/images/og-image.png">
 
   <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Chart.js for Tokenomics -->
+  <!-- Chart.js for Tokenomics Doughnut -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "HBUB (Hambubter)",
-    "url": "https://hbubcoin.com",
-    "logo": "https://hbubcoin.com/assets/logo.webp",
-    "sameAs": [
-      "https://twitter.com/hbubcoin",
-      "https://discord.gg/hbub",
-      "https://github.com/hbubcoin"
-    ]
-  }
-  </script>
+  <!-- Compact Tokenomics styles (only what is new) -->
+  <style>
+    #tokenomics{padding:3rem 0;text-align:center}
+    #tokenomics canvas{width:240px;height:240px;margin:0 auto;display:block}
+    .tokenomics-flex{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1.5rem}
+    .tokenomics-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.75rem;text-align:left;width:100%;max-width:240px}
+    .info-block{padding:0.75rem;border:1px solid #444;border-radius:6px;font-size:0.85rem}
+    .ib-title{font-weight:600;margin-bottom:0.15rem;color:#ffe35b;font-size:0.85rem}
+    .tokenomics-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.8rem}
+    .tokenomics-table th,.tokenomics-table td{border:1px solid #444;padding:4px 6px;text-align:center}
+    .tokenomics-table th{background:#1a1a1a;font-weight:600}
+    .tokenomics-tip{margin-top:1rem;text-align:left;font-size:0.8rem}
+    .tokenomics-tip ul{list-style:disc;padding-left:1.25rem}
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HBUB (Hambubter)",
+  "url": "https://hbubcoin.com",
+  "logo": "https://hbubcoin.com/assets/logo.webp",
+  "sameAs": [
+    "https://twitter.com/hbubcoin",
+    "https://discord.gg/hbub",
+    "https://github.com/hbubcoin"
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -66,12 +82,13 @@
   <div class="header-inner">
     <img src="https://hbubcoin.com/images/hbub3.png" alt="HBUB Logo" class="header-logo" width="110" height="110" loading="eager">
     <div class="header-text">
-      <h1 class="header-line1">HBUB Hambubter Meme Coin</h1>
-      <div class="header-line2">Meme the World, Butter the Chain – 100% Community Powered!</div>
-      <div class="header-line3">· Lore · Roadmap · Tokenomics · DAO</div>
+      <div class="header-line1">HBUB Hambubter Meme Coin</div>
+      <div class="header-line2">Pre-Listing! 100% Community-Driven FUN Meme Coin</div>
+      <div class="header-line3">· Lore · Roadmap · Tokenomics</div>
     </div>
     <button id="menu-btn" class="menu-btn" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">☰</button>
   </div>
+
   <nav id="mobile-nav" class="mobile-nav" aria-label="Main menu">
     <a href="#about">About</a>
     <a href="#tokenomics">Tokenomics</a>
@@ -81,48 +98,50 @@
   </nav>
 </header>
 
-<main>
 <!-- ============ About ============ -->
 <section id="about">
   <div class="section-title">🍞 What is HBUB?</div>
   <div class="about-grid">
     <div class="about-card">
       <div class="about-icons">🌎</div>
-      <b>Meme Lore</b><br>
-      HBUB is born from the wild world of <b>hamster + butter + bun</b>—a place where cute memes and community collide.<br>
-      Our rolling mascot Hambubter is more than a meme: it's a symbol of togetherness and Web3 power.
+      <b>Lore</b><br>
+      HBUB is born from the quirky world of “Hamster + Butter + Bun” — a universe where cuteness, humor and community run wild.<br>
+      Our mascot, the rolling Hambubter, is more than a meme: it’s a symbol of togetherness and grassroots power in Web3.
     </div>
     <div class="about-card">
       <div class="about-icons">💡</div>
       <b>Vision</b><br>
-      HBUB is all about fun, inclusiveness, and radical transparency in Web3.<br>
-      We connect <b>memes, decentralized investment, and real community</b>—giving every holder a voice.
+      HBUB aims to spark a global Web3 culture built on fun, inclusiveness and real transparency.<br>
+      We connect <b>memes, decentralized investment and genuine community</b> — putting all members at the heart of every decision.
     </div>
     <div class="about-card">
       <div class="about-icons">🤝</div>
-      <b>Core Contributors & Team</b>
+      <b>Early Contributors & Core Team</b>
       <ul>
-        <li>All core team & early contributors are doxxed: devs, designers, meme makers, community leads.</li>
-        <li>Open KYC: Full identity and wallet transparency before listing.</li>
-        <li>No pre-mining, no VC control, no secret allocations—100% fair launch.</li>
+        <li>Our core team and early contributors are doxxed, passionate builders — devs, designers, meme creators and community leads.</li>
+        <li>Open KYC: Full transparency and identity disclosure before any major exchange listing.</li>
+        <li>No pre-mining, no VC control, no secret allocations — 100 % fair, 100 % grassroots.</li>
       </ul>
     </div>
     <div class="about-card">
       <div class="about-icons">✨</div>
       <b>Why HBUB?</b>
       <ul>
-        <li><b>Most tokens</b> go to real community contributors.</li>
-        <li>Anyone can join, earn, and help shape HBUB’s future.</li>
-        <li>Step-by-step DAO: true on-chain governance and global meme movement.</li>
+        <li><b>Majority of tokens</b> are distributed to real community contributors.</li>
+        <li>Anyone can join, earn and help shape HBUB’s future from day one.</li>
+        <li>Step-by-step transition to a true DAO — real governance, on-chain votes and global meme movement.</li>
       </ul>
     </div>
   </div>
+
   <div class="sub-title">Who is behind HBUB?</div>
   <p>
-    <b>HBUB</b> is built by global crypto devs, artists, meme creators, early backers, and genuine community builders.<br>
-    All smart contract code, team wallets, and operations are <b>fully public</b>.<br>
-    Our mission: grow an open, fun, sustainable meme ecosystem—powered by <i>YOU</i>!<br>
-    Roadmap, events, and every decision: all voted by the community, always.
+    <b>HBUB</b> is developed and managed by a diverse global group of crypto developers, digital artists, meme makers,
+    early investors and genuine community builders.<br>
+    We believe in <b>radical transparency</b>: All smart-contract code, team wallets and operations are public.<br>
+    Our mission is to grow an open, fun and enduring ecosystem — powered by <i>YOU</i>.<br>
+    Every roadmap step, event and decision is shaped by community votes and open discussion.<br>
+    <b>Join us to build the world’s most playful, transparent and community-owned meme coin!</b>
   </p>
 </section>
 
@@ -133,7 +152,7 @@
   <div class="container">
     <div class="section-title">📊 Tokenomics & Distribution</div>
     <div class="tokenomics-flex">
-      <canvas id="hbubChart" width="240" height="240" aria-label="HBUB token distribution chart"></canvas>
+      <canvas id="hbubChart" width="240" height="240"></canvas>
       <div class="tokenomics-info">
         <div class="info-block"><div class="ib-title">Name</div>Hambubter</div>
         <div class="info-block"><div class="ib-title">Symbol</div>HBUB</div>
@@ -141,18 +160,18 @@
         <div class="info-block"><div class="ib-title">Network</div>Solana</div>
       </div>
     </div>
-    <table class="tokenomics-table" aria-label="Token allocation table">
-      <tr><th>Category</th><th>Amount</th><th>Share</th><th>Lockup / More Info</th></tr>
-      <tr><td>Community · Airdrop</td><td>50,000,000,000</td><td>50%</td><td>Pre-listing, meme event rewards</td></tr>
-      <tr><td>Team · Development</td><td>20,000,000,000</td><td>20%</td><td>6-month lock, gradual vesting</td></tr>
-      <tr><td>Marketing · Events</td><td>15,000,000,000</td><td>15%</td><td>Meme contests, bug bounties</td></tr>
-      <tr><td>Liquidity (Listing)</td><td>15,000,000,000</td><td>15%</td><td>Initial LP, CEX/DEX listing</td></tr>
+    <table class="tokenomics-table">
+      <tr><th>Category</th><th>Amount</th><th>Share</th><th>Lockup · Details</th></tr>
+      <tr><td>Community · Airdrop</td><td>50,000,000,000</td><td>50 %</td><td>Pre-listing, event rewards</td></tr>
+      <tr><td>Team · Development</td><td>20,000,000,000</td><td>20 %</td><td>6-month lock, gradual vesting</td></tr>
+      <tr><td>Marketing · Events</td><td>15,000,000,000</td><td>15 %</td><td>Meme contests, bug bounties</td></tr>
+      <tr><td>Liquidity (Listing)</td><td>15,000,000,000</td><td>15 %</td><td>Initial LP, CEX/DEX listing</td></tr>
     </table>
     <div class="tokenomics-tip">
       <ul>
-        <li><strong>Every $HBUB is traceable. Check the donut chart – no rug, just bun.</strong></li>
-        <li>DAO voting opens post-listing: Your HBUB, your vote. Shape the bunverse!</li>
-        <li>Airdrops and event tokens only go to real, active supporters. Don’t just watch – meme with us!</li>
+        <li><strong>HBUB cannot be bought or sold until official listing.</strong></li>
+        <li>All allocations, lockups, and wallet addresses will be 100% transparent.</li>
+        <li>Airdrops and event tokens go only to real contributors.</li>
       </ul>
     </div>
   </div>
@@ -164,15 +183,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(ctx){
     new Chart(ctx,{
       type:'doughnut',
-      data:{
-        labels:['Community','Development','Marketing','Liquidity'],
-        datasets:[{data:[50,20,15,15],
-          backgroundColor:['#ffbd59','#59caff','#ff6fa7','#9eff8b']}]
-      },
-      options:{
-        plugins:{legend:{position:'bottom',labels:{color:'#fff',boxWidth:12}}},
-        cutout:'55%'
-      }
+      data:{labels:['Community','Development','Marketing','Liquidity','Reserve'],
+            datasets:[{data:[50,20,15,10,5],
+            backgroundColor:['#ffbd59','#59caff','#ff6fa7','#9eff8b','#ffe35b']}]},
+      options:{plugins:{legend:{position:'bottom',labels:{color:'#fff',boxWidth:12}}},cutout:'55%'}
     });
   }
 });
@@ -183,34 +197,37 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- ============ Roadmap ============ -->
 <section id="roadmap">
   <div class="section-title">🗺️ HBUB Roadmap</div>
+
   <div class="roadmap-step">
-    <div class="roadmap-q">2025 Q3–Q4 | Launch & Lore Reveal</div>
+    <div class="roadmap-q">2025 Q3 ~ Q4 | Launch & Universe Reveal</div>
     <ul class="roadmap-list">
       <li>Reveal lore and memes</li>
-      <li>Launch website, Discord, X (Twitter), Telegram</li>
-      <li>1st airdrop & onboarding contributors</li>
+      <li>Website, Discord, X (Twitter), and Telegram launch</li>
+      <li>1st airdrop & onboarding core contributors</li>
       <li>Public team & wallet addresses</li>
       <li>Token smart contract development</li>
     </ul>
   </div>
+
   <div class="roadmap-step">
-    <div class="roadmap-q">2026 Q1 | Community Growth & Transparency</div>
+    <div class="roadmap-q">2026 Q1 | Community Growth & Full Transparency</div>
     <ul class="roadmap-list">
       <li>Meme contests, 2nd airdrop, community missions</li>
       <li>Team KYC and investor list revealed</li>
-      <li>Listing prep & partnerships</li>
+      <li>Listing prep & partner collaboration</li>
       <li>Smart contract audit, testnet launch</li>
-      <li>On-chain updates to community</li>
+      <li>On-chain progress updates</li>
     </ul>
   </div>
+
   <div class="roadmap-step">
-    <div class="roadmap-q">2026 Q2–Q4 | Listing & DAO Transition</div>
+    <div class="roadmap-q">2026 Q2 ~ Q4 | Listing & DAO Transition</div>
     <ul class="roadmap-list">
-      <li>Liquidity pools & exchange listing prep</li>
-      <li>DAO: launch on-chain governance</li>
+      <li>Liquidity pools open, preparing for exchange listings</li>
+      <li>DAO: Launch community governance</li>
       <li>On-chain voting for roadmap, budget, proposals</li>
-      <li>HBUB DApps/tools release</li>
-      <li>Global growth, partnerships, community rewards</li>
+      <li>HBUB ecosystem DApp/tool release</li>
+      <li>Global expansion, new partnerships, ongoing rewards</li>
     </ul>
   </div>
 </section>
@@ -220,20 +237,21 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- ============ Community & Airdrop ============ -->
 <section id="community">
   <div class="section-title">🤝 Join the Community & Airdrop</div>
+
   <div class="sns-btn-row">
-    <a class="sns-btn discord"  href="https://discord.gg/csWWaZbe" target="_blank" rel="noopener noreferrer" aria-label="Join HBUB Discord">Discord</a>
-    <a class="sns-btn twitter"  href="https://x.com/Hambubter_coin" target="_blank" rel="noopener noreferrer nofollow" aria-label="Join HBUB Twitter">Twitter (X)</a>
-    <a class="sns-btn telegram" href="https://t.me/XXXX" target="_blank" rel="noopener noreferrer" aria-label="Join HBUB Telegram">Telegram (Coming Soon)</a>
+    <a class="sns-btn discord"  href="https://discord.gg/csWWaZbe"  target="_blank" rel="noopener noreferrer">Discord</a>
+    <a class="sns-btn twitter"  href="https://x.com/Hambubter_coin" target="_blank" rel="noopener noreferrer nofollow">Twitter (X)</a>
+    <a class="sns-btn telegram" href="https://t.me/XXXX"            target="_blank" rel="noopener noreferrer">Telegram (Coming Soon)</a>
   </div>
+
   <div class="airdrop-center">
     <a class="airdrop-btn"
        href="https://forms.gle/XXXXX"
        target="_blank"
-       rel="noopener noreferrer nofollow"
-       aria-label="Apply for HBUB airdrop"
-       >Get That Bread (Apply for Airdrop!)</a>
+       rel="noopener noreferrer nofollow">Apply for Airdrop (Google Form)</a>
   </div>
-  <div class="community-note">No VCs, no rug, just bun. WAGMI 🐹🧈🥯</div>
+
+  <div class="community-note">Early community participation gets you airdrop priority!</div>
 </section>
 
 <div class="section-divider"></div>
@@ -241,52 +259,50 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="section-title">❓ Frequently Asked Questions (FAQ)</div>
+
   <div class="faq-item">
     <button class="faq-q" aria-expanded="false">Q. Can I buy HBUB now?</button>
-    <div class="faq-a">HBUB isn’t listed yet. You can only earn tokens through airdrops and meme events. Listing info will be posted on our official channels.</div>
+    <div class="faq-a">HBUB is not yet listed on any exchange. For now, tokens can only be earned via airdrop and community events. Listing info will be posted in our channels.</div>
   </div>
+
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Q. How do I qualify for the airdrop?</button>
-    <div class="faq-a">Join Discord, follow on Twitter, fill out the airdrop form. Active meme creators and real supporters get priority. Bots get nothing!</div>
+    <button class="faq-q" aria-expanded="false">Q. What’s the vision of HBUB?</button>
+    <div class="faq-a">To build a meme-coin universe that is fun, open and community-governed. Our goal is to become a true Web3 DAO meme project.</div>
   </div>
+
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Q. What’s the deal with the DAO?</button>
-    <div class="faq-a">Every HBUB holder can vote, propose, and help build the bunverse. DAO launches post-listing. No VC control, no centralized decisions.</div>
+    <button class="faq-q" aria-expanded="false">Q. Are there any NFT plans?</button>
+    <div class="faq-a">No NFT plans yet. If the community votes for it, we will add NFT features in the future.</div>
   </div>
+
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Q. Is HBUB just a meme?</button>
-    <div class="faq-a">Yes, but it’s also a community project with real voting, airdrops, meme contests, and on-chain governance. The joke is real.</div>
+    <button class="faq-q" aria-expanded="false">Q. When and where will HBUB be listed?</button>
+    <div class="faq-a">We aim for exchange listing in late 2025. All confirmed partners will be shared via official channels transparently.</div>
   </div>
+
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Q. Is HBUB safe? Is it audited?</button>
-    <div class="faq-a">All smart contracts and dev progress are open source on GitHub. A third-party audit will happen before listing. No rug, just bun.</div>
+    <button class="faq-q" aria-expanded="false">Q. Who are the team and investors? Is HBUB KYC'd?</button>
+    <div class="faq-a">The team and all early investors will be introduced publicly before listing. KYC and wallet transparency are core principles.</div>
   </div>
+
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Q. Where can I check code and progress?</button>
-    <div class="faq-a">All updates and code are on our GitHub (<a href="https://github.com/hbubcoin" target="_blank" rel="noopener">github.com/hbubcoin</a>).</div>
+    <button class="faq-q" aria-expanded="false">Q. Where can I see smart-contract code and development status?</button>
+    <div class="faq-a">You can check all updates and code on our official GitHub (<a href="https://github.com/hbubcoin" target="_blank" rel="noopener">github.com/hbubcoin</a>).</div>
   </div>
 </section>
-</main>
 
 <footer class="footer">
   <b>HBUB Hambubter Meme Coin</b> © 2025<br>
-  <span>Pre-listing · Community-powered Web3 project | help@hbubcoin.com</span>
-  <p class="risk-note">
+  <span>Pre-listing, community-powered Web3 project | help@hbubcoin.com</span>
+ <p class="risk-note">
     <small>
-      HBUB is a meme coin – but the risks are real! DYOR. No financial advice. No rug, just bun.<br>
-      Token value can go up, down, or sideways. Not an investment, just a meme adventure.
+      HBUB tokens are high-risk digital assets. Neither principal nor returns are guaranteed.
+      The project’s value can fluctuate due to market, technological, or regulatory factors.
+      Do your own research and invest at your own risk.
     </small>
   </p>
 </footer>
 
 <script src="/assets/js/main.js" defer></script>
-<script>
-document.querySelectorAll('.faq-q').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    this.parentNode.classList.toggle('open');
-    this.setAttribute('aria-expanded', this.parentNode.classList.contains('open'));
-  });
-});
-</script>
 </body>
 </html>
