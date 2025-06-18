@@ -43,17 +43,11 @@
   });
 
   /* -------- FAQ accordion -------- */
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('.faq-q').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        b.nextElementSibling.style.display = 'none';
-      });
-      if (!open) {
-        btn.setAttribute('aria-expanded', 'true');
-        btn.nextElementSibling.style.display = 'block';
-      }
-    });
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    if (!open) btn.setAttribute('aria-expanded', 'true');
   });
+});
 })();
