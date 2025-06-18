@@ -50,4 +50,3 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (!open) btn.setAttribute('aria-expanded', 'true');
   });
 });
-})();
