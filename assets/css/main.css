@@ -35,6 +35,7 @@ body {
 }
 
   /* ── 모바일 뷰포트 좌우 흔들림 방지 ── */
+html {
   overflow-x:hidden;
   word-break:break-word;
   overflow-wrap:anywhere;
