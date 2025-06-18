@@ -141,8 +141,11 @@ section{max-width:1200px;margin:2.5em auto 2em;border-radius:2.1rem;padding:2.6e
 
 /* FAQ */
 #faq{background:#fffbe7}
-.faq-a { display: none; }
-.faq-q[aria-expanded="true"] + .faq-a { display: block; }
+.faq-item{margin-bottom:1em}
+.faq-q{width:100%;padding:.45em .8em;border-radius:1em;background:#fff9ef;border:none;font-weight:bold;font-size:1.07em;text-align:left;cursor:pointer;min-height:44px;transition:background .15s}
+.faq-q:focus-visible,.faq-q:active{background:#ffe4b7}
+.faq-a{display:none;margin-left:1.2em;padding-top:.25em;font-size:.99em;color:#6e431b}
+.faq-q[aria-expanded="true"] + .faq-a{display:block}
 
 /* Footer */
 .footer{text-align:center;padding:2.7em 1em 1em;color:var(--text-brown);font-size:1em;letter-spacing:.1px}
