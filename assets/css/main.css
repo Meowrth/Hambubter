@@ -1,28 +1,31 @@
 /* ---------- CSS Root Vars ---------- */
-:root{
-  --main-bg:#fff7e2;
-  --primary:#ff9434;
-  --primary-grad:linear-gradient(90deg,#ffcf4d 0%,#ff9434 100%);
-  --secondary:#3e1c06;
-  --card:#fffbe7;
-  --shadow:0 6px 32px #ffda7766,0 1.5px 6px #ff943422;
-  --text-brown:#7a4a0f;
-  font-size:16px;
+:root {
+  font-size: 18px;
+}
+.section-title, .header-line1 { font-size: 2.7rem; }
+.header-line2 { font-size: 1.25rem; }
+.header-line3 { font-size: 1.13rem; }
+.sns-btn, .airdrop-btn { font-size: 1.19rem; }
+nav a { font-size: 1.13rem; }
+.footer { font-size: 1.08em; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--main-bg);
+  font-family: 'Inter', 'Fredoka', 'Jua', sans-serif;
+  font-size: 1.13em;
+  color: var(--secondary);
+  line-height: 1.85;
+  -webkit-tap-highlight-color: rgba(255,148,52,.08);
 }
 
-/* ---------- 기본 레이아웃 ---------- */
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:var(--main-bg);
-  font-family: 'Inter', 'Fredoka', 'Jua', sans-serif;
-  color:var(--secondary);
-  line-height:1.85;
-  -webkit-tap-highlight-color:rgba(255,148,52,.08);
-
-section-title, .header-line1, .roadmap-q {
+.section-title, .header-line1, .roadmap-q {
   font-family: 'Fredoka', 'Jua', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
 
   /* ── 모바일 뷰포트 좌우 흔들림 방지 ── */
   overflow-x:hidden;
