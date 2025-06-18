@@ -1,6 +1,18 @@
 /* =================================================================
    main.js – loaded with defer
 ================================================================= */
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://hbubcoin.com/",
+  "name": "HBUB Hambubter Meme Coin",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hbubcoin.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+
 (() => {
   /* -------- Mobile nav toggle -------- */
   const menuBtn   = document.getElementById('menu-btn');
