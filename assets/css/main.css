@@ -16,10 +16,13 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   background:var(--main-bg);
-  font-family:'Gothic A1','Jua',sans-serif;
+  font-family: 'Inter', 'Fredoka', 'Jua', sans-serif;
   color:var(--secondary);
   line-height:1.85;
   -webkit-tap-highlight-color:rgba(255,148,52,.08);
+
+section-title, .header-line1, .roadmap-q {
+  font-family: 'Fredoka', 'Jua', 'Inter', sans-serif;
 
   /* ── 모바일 뷰포트 좌우 흔들림 방지 ── */
   overflow-x:hidden;
